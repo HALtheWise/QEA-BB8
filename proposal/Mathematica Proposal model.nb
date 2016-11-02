@@ -10,6 +10,8 @@ Cell["Int 1: Governing Equations", "Title",
    3.6845412506801167`*^9}, {3.685128141054286*^9, 3.685128151201559*^9}, {
    3.685808829284281*^9, 3.685808833926445*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SetDirectory", "@", 
@@ -17,7 +19,13 @@ Cell[BoxData[{
  RowBox[{"<<", "\"\<../MMA library.m\>\""}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.682710916634346*^9, 3.682710945444784*^9}, {
-  3.682711378657494*^9, 3.682711389969411*^9}}],
+  3.682711378657494*^9, 3.682711389969411*^9}, {3.686952843845901*^9, 
+  3.686952844189089*^9}}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.686952598181964*^9, 3.686952598323319*^9}, 
+   3.686952842055252*^9}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -60,7 +68,8 @@ Cell[BoxData[
    3.685879436045581*^9, 3.685906065254373*^9, {3.6859219709754753`*^9, 
    3.685921979622607*^9}, {3.6859230727929707`*^9, 3.685923080679142*^9}, 
    3.6859240616402693`*^9, 3.6859242516672163`*^9, {3.6859244009781513`*^9, 
-   3.685924405355547*^9}, 3.685924454881299*^9, 3.68655991816676*^9}]
+   3.685924405355547*^9}, 3.685924454881299*^9, 3.68655991816676*^9, 
+   3.6869526242592583`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -93,13 +102,14 @@ Cell[BoxData[
    RowBox[{"m1", "\[Rule]", "1"}], ",", 
    RowBox[{"m2", "\[Rule]", "2"}], ",", 
    RowBox[{"g", "\[Rule]", "9.8`"}], ",", 
-   RowBox[{"radius", "\[Rule]", "2"}], ",", 
+   RowBox[{"0.38559516981725894`", "\[Rule]", "2"}], ",", 
    RowBox[{"i", "\[Rule]", "4"}]}], "\[RightAssociation]"}]], "Output",
  CellChangeTimes->{3.685883472658471*^9, 3.685883521077545*^9, 
   3.685900173990815*^9, 3.685906084780634*^9, 3.685906412931484*^9, 
   3.68592214257806*^9, 3.685922204996073*^9, 3.685923131900082*^9, 
   3.6859233634827023`*^9, 3.6859240618101807`*^9, 3.68592426076976*^9, 
-  3.685924405460938*^9, 3.685924456410075*^9, 3.686560029896991*^9}]
+  3.685924405460938*^9, 3.685924456410075*^9, 3.686560029896991*^9, 
+  3.686952642280195*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -108,21 +118,65 @@ Cell[CellGroupData[{
 Cell["Step 3: Define forces", "Subsection",
  CellChangeTimes->{{3.685879469503236*^9, 3.6858794798805227`*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
- RowBox[{
-  RowBox[{"xhat", "=", 
-   RowBox[{
-    RowBox[{"RotationMatrix", "[", 
-     RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], ".", 
-    RowBox[{"(", "\[Theta]hat", ")"}]}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"yhat", "=", 
-   RowBox[{
-    RowBox[{"RotationMatrix", "[", 
-     RowBox[{"Pi", "/", "2"}], "]"}], ".", "xhat"}]}], ";"}]}], "Input",
+ RowBox[{"xhat", "=", 
+  RowBox[{
+   RowBox[{"RotationMatrix", "[", 
+    RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], ".", 
+   RowBox[{"(", "\[Theta]hat", ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"yhat", "=", 
+  RowBox[{
+   RowBox[{"RotationMatrix", "[", 
+    RowBox[{"Pi", "/", "2"}], "]"}], ".", "xhat"}]}]}], "Input",
  CellChangeTimes->{{3.685921998186811*^9, 3.685921999249124*^9}, {
   3.685922032880619*^9, 3.6859220717440557`*^9}, {3.685957812728654*^9, 
-  3.685957825489547*^9}, {3.6865594915986147`*^9, 3.686559494178542*^9}}],
+  3.685957825489547*^9}, {3.6865594915986147`*^9, 3.686559494178542*^9}, {
+  3.6869526438852777`*^9, 3.686952646832136*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], ",", 
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], ",", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], "}"}]}], "}"}], ".", 
+  "\[Theta]hat"}]], "Output",
+ CellChangeTimes->{3.686952647645115*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], ",", 
+      RowBox[{"-", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], ",", 
+      RowBox[{"-", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}]}], "}"}]}], "}"}], ".", 
+  "\[Theta]hat"}]], "Output",
+ CellChangeTimes->{3.686952647646201*^9}]
+}, Open  ]],
 
 Cell[BoxData[{
  RowBox[{
@@ -156,7 +210,8 @@ Cell[BoxData[{
    3.6859213400736637`*^9, 3.685921370641079*^9}, {3.685923102684258*^9, 
    3.68592312078994*^9}, 3.685923859124634*^9, 3.6859252036480637`*^9, {
    3.685957802550817*^9, 3.685957809507978*^9}, {3.686559517224442*^9, 
-   3.686559633144186*^9}, {3.6865596674041862`*^9, 3.686559667495376*^9}}]
+   3.686559633144186*^9}, {3.6865596674041862`*^9, 3.686559667495376*^9}, 
+   3.686952644253379*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -504,8 +559,9 @@ Cell[BoxData[
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, {
                     Directive[
                     Opacity[1.], 
@@ -558,8 +614,9 @@ xjTxP59LQoUyqCJAv83YJXTO4j96a7SFoPsiQEff91tmV9U/CC6jzRNWI0Ca
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -576,7 +633,8 @@ xjTxP59LQoUyqCJAv83YJXTO4j96a7SFoPsiQEff91tmV9U/CC6jzRNWI0Ca
                     Part[{{Identity, Identity}, {Identity, Identity}}, 1, 
                     2][#]& )[
                     Part[#, 1]], 
-                    (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 
+                    (
+                    Part[{{Identity, Identity}, {Identity, Identity}}, 2, 
                     2][#]& )[
                     Part[#, 2]]}& )}}, 
                    PlotRange -> {{0., 10.}, {0., 6.182361667866165}}, 
@@ -621,8 +679,9 @@ xjTxP59LQoUyqCJAv83YJXTO4j96a7SFoPsiQEff91tmV9U/CC6jzRNWI0Ca
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, {
                     Directive[
                     Opacity[1.], 
@@ -675,8 +734,9 @@ xjTxP59LQoUyqCJAv83YJXTO4j96a7SFoPsiQEff91tmV9U/CC6jzRNWI0Ca
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -771,8 +831,9 @@ xjTxP59LQoUyqCJAv83YJXTO4j96a7SFoPsiQEff91tmV9U/CC6jzRNWI0Ca
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, {
                     Directive[
                     Opacity[1.], 
@@ -825,8 +886,9 @@ kSHBJTqmv2z7RgaIqiNA4rnIGhTshb8yFFD6//8jQGi9/HwijQm/m6nH0w==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -835,7 +897,8 @@ kSHBJTqmv2z7RgaIqiNA4rnIGhTshb8yFFD6//8jQGi9/HwijQm/m6nH0w==
                     Part[{{Identity, Identity}, {Identity, Identity}}, 1, 
                     2][#]& )[
                     Part[#, 1]], 
-                    (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 
+                    (
+                    Part[{{Identity, Identity}, {Identity, Identity}}, 2, 
                     2][#]& )[
                     Part[#, 2]]}& ), "CopiedValueFunction" -> ({
                     (
@@ -888,8 +951,9 @@ kSHBJTqmv2z7RgaIqiNA4rnIGhTshb8yFFD6//8jQGi9/HwijQm/m6nH0w==
                    None, Evaluator -> Automatic, Method -> "Preemptive"], 
                   Alignment -> {Center, Center}, ImageSize -> 
                   Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                  GraphicsBox[{{{{}, {}, {
                     Directive[
                     Opacity[1.], 
@@ -942,8 +1006,9 @@ kSHBJTqmv2z7RgaIqiNA4rnIGhTshb8yFFD6//8jQGi9/HwijQm/m6nH0w==
                    GridLines -> {None, None}, GridLinesStyle -> Directive[
                     GrayLevel[0.5, 0.4]], ImageSize -> 
                    Dynamic[{
-                    Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}], 
+                    Automatic, 
+                    3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}], 
                    Method -> {
                     "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
                     AbsolutePointSize[6], "ScalingFunctions" -> None, 
@@ -1776,22 +1841,27 @@ I0AsC6yCJok2v47eQrA29yNAHti+pAYPMr+Yr6OL+PgjQFduU3zhKiy/ooAE
 Z7r6I0A0UTZIeTglv6tRZUJ8/CNAG6UW9RyNHr+0IsYdPv4jQNaidAHKqRS/
 vvMm+f//I0A5ojaWK40Jvx9Q8zg=
       "]]}}, {{{}, 
-     {GrayLevel[0.4], AbsoluteThickness[
-      0.5], {LineBox[{
-        Scaled[{0.02, 0}, {10., 0.10009107658353819`}], 
-         Offset[{3, 0}, Scaled[{0.02, 0}, {10., 0.10009107658353819`}]], 
-         Offset[{7, 0}, Scaled[{0.02, 0}, {10., 0.5931852742638263}]], 
-         Offset[{12, 0}, Scaled[{0.02, 0}, {10., 0.5931852742638263}]]}], 
-       LineBox[{
-        Scaled[{0.02, 0}, {10., -0.000048735516226476286`}], 
-         Offset[{3, 0}, Scaled[{0.02, 0}, {10., -0.000048735516226476286`}]], 
-         Offset[{7, 0}, Scaled[{0.02, 0}, {10., -0.4931429295797587}]], 
-         Offset[{12, 0}, Scaled[{0.02, 0}, {10., -0.4931429295797587}]]}]}, {
-       InsetBox["\[Theta]", Offset[{15, 0}, 
-        Scaled[{0.02, 0}, {10., 0.5931852742638263}]], ImageScaled[{0, 0.5}]],
-        InsetBox["x", Offset[{15, 0}, 
-        Scaled[{0.02, 0}, {10., -0.4931429295797587}]], 
-        ImageScaled[{0, 0.5}]]}, {}, {}}}, {}}, {{}, {}}},
+     {GrayLevel[0.4], AbsoluteThickness[0.5], 
+      StyleBox[{{
+         LineBox[{
+          Scaled[{0.02, 0}, {10., 0.10009107658353819`}], 
+           Offset[{3, 0}, Scaled[{0.02, 0}, {10., 0.10009107658353819`}]], 
+           Offset[{7, 0}, Scaled[{0.02, 0}, {10., 0.5931852742638263}]], 
+           Offset[{12, 0}, Scaled[{0.02, 0}, {10., 0.5931852742638263}]]}], 
+         LineBox[{
+          Scaled[{0.02, 0}, {10., -0.000048735516226476286`}], 
+           Offset[{3, 0}, 
+            Scaled[{0.02, 0}, {10., -0.000048735516226476286`}]], 
+           Offset[{7, 0}, Scaled[{0.02, 0}, {10., -0.4931429295797587}]], 
+           Offset[{12, 0}, 
+            Scaled[{0.02, 0}, {10., -0.4931429295797587}]]}]}, {
+         InsetBox["\[Theta]", Offset[{15, 0}, 
+          Scaled[{0.02, 0}, {10., 0.5931852742638263}]], 
+          ImageScaled[{0, 0.5}]], 
+         InsetBox["x", Offset[{15, 0}, 
+          Scaled[{0.02, 0}, {10., -0.4931429295797587}]], 
+          ImageScaled[{0, 0.5}]]}, {}, {}},
+       FontColor->GrayLevel[0.4]]}}, {}}, {{}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
@@ -2000,8 +2070,8 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{960, 1016},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowSize->{2560, 1376},
+WindowMargins->{{0, Automatic}, {-360, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 InputAliases->{"intt" -> RowBox[{"\[Integral]", 
      RowBox[{"\[SelectionPlaceholder]", 

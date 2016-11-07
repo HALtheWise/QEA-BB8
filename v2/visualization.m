@@ -22,8 +22,14 @@
 (* ::Input::Initialization:: *)
 getBody[x0_,\[Theta]_]:=Module[{params},
 params={width->.4, height->.2,R->2};
-Graphics[{Red,Rotate[Translate[Rectangle[{-width/2,0},{width/2,height}],{0,R}],-\[Theta]]}]/.params
+Graphics[{Red,Rotate[Translate[Rectangle[{-width/2,0},{width/2,height}],{x0,R}],-\[Theta],{x0,0}]}]/.params
 ]
+getBall[x0_]:=Module[{params, \[Psi]},
+params={R->2};
+\[Psi]=x0/R;
+Graphics@{Gray,DiskSegment[{x0,0},R,{-\[Psi],Pi-\[Psi]}],Black,DiskSegment[{x0,0},R,{Pi-\[Psi],2Pi-\[Psi]}]}/.params
+]
+getBB8[x0_,\[Theta]_]:=Show[getBall[x0],getBody[x0,\[Theta]]]
 
 
 

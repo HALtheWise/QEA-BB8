@@ -88,9 +88,35 @@ Cell[BoxData[{
    RowBox[{"x0_", ",", "\[Theta]_"}], "]"}], ":=", 
   RowBox[{"Show", "[", 
    RowBox[{
-    RowBox[{"getBall", "[", "x0", "]"}], ",", 
-    RowBox[{"getBody", "[", 
-     RowBox[{"x0", ",", "\[Theta]"}], "]"}]}], "]"}]}]}], "Input",
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"getBall", "[", "x0", "]"}], ",", 
+      RowBox[{"getBody", "[", 
+       RowBox[{"x0", ",", "\[Theta]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"testAnimageBB8", "[", "]"}], ":=", 
+  RowBox[{"Animate", "[", 
+   RowBox[{
+    RowBox[{"Evaluate", "@", 
+     RowBox[{"getBB8", "[", 
+      RowBox[{"x", ",", "th"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"th", ",", 
+      RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+    RowBox[{"RefreshRate", "\[Rule]", "60"}]}], "]"}]}]}], "Input",
  InitializationCell->True],
 
 Cell[CellGroupData[{
@@ -121,8 +147,22 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"getBB8", "[", 
-  RowBox[{"1", ",", "1"}], "]"}]], "Input"],
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"getBB8", "[", 
+     RowBox[{"1", ",", "1"}], "]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}], "}"}]}], 
+  "]"}]], "Input"],
 
 Cell[BoxData[
  GraphicsBox[{{
@@ -163,8 +203,76 @@ Cell[BoxData[
     GeometricTransformationBox[
      GeometricTransformationBox[RectangleBox[{-0.2, 0}, {0.2, 0.2}], {1, 
       2}], {{{0.5403023058681398, 0.8414709848078965}, {-0.8414709848078965, 
-      0.5403023058681398}}, {0.45969769413186023`, 
-      0.8414709848078965}}]}}]], "Output"]
+      0.5403023058681398}}, {0.45969769413186023`, 0.8414709848078965}}]}},
+  PlotRange->{{-10, 10}, {-10, 10}}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testAnimageBB8", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`th$$ = -2, $CellContext`x$$ = 0, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 0, 5}, {
+      Hold[$CellContext`th$$], -2, 2}}, Typeset`size$$ = {360., {177., 183.}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$61973$$ = 0, $CellContext`th$61974$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`th$$ = -2, $CellContext`x$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$61973$$, 0], 
+        Hold[$CellContext`th$$, $CellContext`th$61974$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[{{
+          GrayLevel[0.5], 
+          
+          DiskSegment[{$CellContext`x$$, 0}, 2, {
+           Rational[-1, 2] $CellContext`x$$, Pi + 
+            Rational[-1, 2] $CellContext`x$$}], 
+          GrayLevel[0], 
+          
+          DiskSegment[{$CellContext`x$$, 0}, 2, {
+           Pi + Rational[-1, 2] $CellContext`x$$, 2 Pi + 
+            Rational[-1, 2] $CellContext`x$$}]}, {
+          RGBColor[1, 0, 0], 
+          Rotate[
+           Translate[
+            
+            Rectangle[{-0.2, 0}, {0.2, 0.2}], {$CellContext`x$$, 
+             2}], -$CellContext`th$$, {$CellContext`x$$, 0}]}}, {
+        PlotRange -> {{-10, 10}, {-10, 10}}}], 
+      "Specifications" :> {{$CellContext`x$$, 0, 5, RefreshRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}, {$CellContext`th$$, -2, 2, RefreshRate -> 60, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {224., 231.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input"]

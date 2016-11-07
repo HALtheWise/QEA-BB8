@@ -29,7 +29,8 @@ params={R->2};
 \[Psi]=x0/R;
 Graphics@{Gray,DiskSegment[{x0,0},R,{-\[Psi],Pi-\[Psi]}],Black,DiskSegment[{x0,0},R,{Pi-\[Psi],2Pi-\[Psi]}]}/.params
 ]
-getBB8[x0_,\[Theta]_]:=Show[getBall[x0],getBody[x0,\[Theta]]]
+getBB8[x0_,\[Theta]_]:=Show[{getBall[x0],getBody[x0,\[Theta]]},{PlotRange->{{-10,10},{-10,10}}}]
+testAnimageBB8[]:=Animate[Evaluate@getBB8[x,th],{x,0,5},{th,-2,2},RefreshRate->60]
 
 
 

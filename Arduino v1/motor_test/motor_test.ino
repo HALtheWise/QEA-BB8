@@ -10,9 +10,9 @@
 
 const int LOOP_DURATION = 10; //(ms) This is the inverse of the main loop frequency
 
-Adafruit_MotorShield AFMS = Adafruit_MotorShield(); 
-Adafruit_DCMotor *leftMotor  = AFMS.getMotor(1);
-Adafruit_DCMotor *rightMotor = AFMS.getMotor(2);
+const byte RIGHT_ENABLE_1	= 4;
+const byte RIGHT_ENABLE_2	= 5;
+const byte RIGHT_POWER		= 6;
 
 // Global variable setup (things that change each loop)
 long lastActionTime;
@@ -33,7 +33,9 @@ void setup()
 
 	// Initialize pins
 	// Note that the analog sensors don't need initialization
-	AFMS.begin();
+	pinMode(RIGHT_ENABLE_1, OUTPUT);
+	pinMode(RIGHT_ENABLE_2, OUTPUT);
+	pinMode(RIGHT_POWER, OUTPUT);
 
 	// pid.SetMode(AUTOMATIC);
 	// pid.SetSampleTime(LOOP_DURATION);
@@ -46,7 +48,7 @@ void loop()
 	// Every (configurable) milliseconds, average together the readings recieved and transmit them
 	long time = millis();
 	handleIncomingSerial();
-	
+
 	if (time - lastActionTime >= LOOP_DURATION) {
 
 		testMotors();
@@ -74,6 +76,8 @@ void handleIncomingSerial()
 		while(Serial.available()){
 		    Serial.read();
 		}
+
+		Serial.println(testSpeed);
 	}
 }
 
@@ -83,14 +87,17 @@ void driveMotors(int power){
 
 	// For each motor, decide whether to run it FORWARD, BACKWARD, (or RELEASE)
 	// These are ternary operators, returning FORWARD if power > 0 and backward otherwise.
-	byte direction	= (power  > 0) ? FORWARD : BACKWARD;
+	if(power > 0){
+	    // Go forward
+	    digitalWrite(RIGHT_ENABLE_1, HIGH);
+	    digitalWrite(RIGHT_ENABLE_2, LOW);
+	} else {
+		// Go backward
+	    digitalWrite(RIGHT_ENABLE_1, LOW);
+	    digitalWrite(RIGHT_ENABLE_2, HIGH);
+	}
 	
 	// Set motor speeds
-	leftMotor	->	setSpeed(abs(power));
-	rightMotor	->	setSpeed(abs(power));
-
-	// Set motor directions
-	leftMotor	->	run(direction);
-	rightMotor	->	run(direction);
+	analogWrite(RIGHT_POWER, abs(power));
 
 }

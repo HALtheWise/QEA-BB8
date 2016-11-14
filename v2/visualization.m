@@ -21,7 +21,7 @@
 
 (* ::Input::Initialization:: *)
 Module[{headImg,bodyImg,params,width,R,overlap},
-params={width->2,R->2,overlap->.1};
+params={width->.5,R->.788/2,overlap->.03};
 headImg=Image[CompressedData["
 1:eJztXS2sHUeWPjtJZjLZ3exs9sdLDPYBAxMDA69k8LRGHukBa1YmRndGzo4e
 eStlLK2MHgkxMYpkYPKAiYlRiIE1FxmYPGBgYmTwQICBpYBIXmX7S3XL7b51

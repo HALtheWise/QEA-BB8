@@ -4,11 +4,14 @@
 #include <Adafruit_MotorShield.h>
 #include "utility/Adafruit_MS_PWMServoDriver.h"
 
+#include "sensor.h"
+
 #include <PID_v1.h>
 
 // Controlling constants
 
 const int LOOP_DURATION = 10; //(ms) This is the inverse of the main loop frequency
+const int START_DELAY = 20000;
 
 const byte RIGHT_ENABLE_1	= 4;
 const byte RIGHT_ENABLE_2	= 5;
@@ -21,13 +24,13 @@ long lastActionTime;
 // double PIDerror=0, PIDsetpoint=0, PIDoutput;
 // double kp=1,ki=0,kd=0;
 
-int testSpeed = 100;
+int testSpeed = 0;
 
 // PID pid(&PIDerror, &PIDoutput, &PIDsetpoint, kp, ki, kd, DIRECT);
 
 void setup()
 {
-	Serial.begin(9600);
+	Serial.begin(115200);
 
 	lastActionTime = millis();
 
@@ -36,6 +39,8 @@ void setup()
 	pinMode(RIGHT_ENABLE_1, OUTPUT);
 	pinMode(RIGHT_ENABLE_2, OUTPUT);
 	pinMode(RIGHT_POWER, OUTPUT);
+
+	setupSensor();
 
 	// pid.SetMode(AUTOMATIC);
 	// pid.SetSampleTime(LOOP_DURATION);
@@ -49,10 +54,16 @@ void loop()
 	long time = millis();
 	handleIncomingSerial();
 
+	loopSensor();
+
+	if(millis() < START_DELAY){
+	    return;
+	}
+
 	if (time - lastActionTime >= LOOP_DURATION) {
 
-		testMotors();
-
+		// testMotors();
+		testSensorsMotors();
 
 		// This formulation attempts to ensure average loop duration is LOOP_DURATION,
 		// without causing hyperactive behavior if something blocks for a while.
@@ -62,6 +73,23 @@ void loop()
 
 void testMotors(){
 	driveMotors(testSpeed);
+}
+
+void testSensorsMotors(){
+	float theta = ypr[2];
+
+	int power = 0;
+
+	if (theta > 5 * M_PI/180){
+		power = 200;
+	}
+	if (theta < -5 * M_PI/180){
+		power = -200;
+	}
+
+	Serial.print("power:\t"); Serial.println(power);
+
+	driveMotors(power);
 }
 
 void handleIncomingSerial()

@@ -64,6 +64,8 @@ void dmpDataReady() {
 // ================================================================
 
 void setupSensor() {
+    // Set up all I2C communication between accelerometer and the Arduino
+    
     // join I2C bus (I2Cdev library doesn't do this automatically)
     #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
         Wire.begin();
@@ -140,6 +142,8 @@ void setupSensor() {
 // ================================================================
 
 void loopSensor() {
+    // gets the yaw pitch and role angles
+  
     // if programming failed, don't try to do anything
     if (!dmpReady) return;
 
@@ -177,7 +181,7 @@ void loopSensor() {
             // display Euler angles in degrees
             mpu.dmpGetQuaternion(&q, fifoBuffer);
             mpu.dmpGetGravity(&gravity, &q);
-            mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
+            mpu.dmpGetYawPitchRoll(ypr, &q, &gravity); //set the next value of ypr
             Serial.print("ypr\t");
             Serial.print(ypr[0] * 180/M_PI);
             Serial.print("\t");

@@ -1,12 +1,8 @@
 #include <stdlib.h>
 
 #include <Wire.h>
-#include <Adafruit_MotorShield.h>
-#include "utility/Adafruit_MS_PWMServoDriver.h"
 
 #include "sensor.h"
-
-#include <PID_v1.h>
 
 // Controlling constants
 
@@ -52,13 +48,16 @@ void loop()
 
 	// Every (configurable) milliseconds, average together the readings recieved and transmit them
 	long time = millis();
-	handleIncomingSerial();
+	handleIncomingSerial(); // In the future we might want to read values from serial
 
-	loopSensor();
+	loopSensor(); // sets the new value of ypr. This happens in the sensor.h script
 
+  // Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
+  // This is because the accelerometer sensor needs about 12-15 seconds to calibrate
 	if(millis() < START_DELAY){
 	    return;
 	}
+ 
 
 	if (time - lastActionTime >= LOOP_DURATION) {
 

@@ -13,6 +13,10 @@ const byte RIGHT_ENABLE_1	= 4;
 const byte RIGHT_ENABLE_2	= 5;
 const byte RIGHT_POWER		= 6;
 
+const byte LEFT_ENABLE_1  = 7;
+const byte LEFT_ENABLE_2  = 8;
+const byte LEFT_POWER     = 9;
+
 // Global variable setup (things that change each loop)
 long lastActionTime;
 
@@ -34,7 +38,11 @@ void setup()
 	// Note that the analog sensors don't need initialization
 	pinMode(RIGHT_ENABLE_1, OUTPUT);
 	pinMode(RIGHT_ENABLE_2, OUTPUT);
-	pinMode(RIGHT_POWER, OUTPUT);
+	pinMode(RIGHT_POWER,    OUTPUT);
+
+  pinMode(LEFT_ENABLE_1, OUTPUT);
+  pinMode(LEFT_ENABLE_2, OUTPUT);
+  pinMode(LEFT_POWER,    OUTPUT);
 
 	setupSensor();
 
@@ -80,10 +88,10 @@ void testSensorsMotors(){
 	int power = 0;
 
 	if (theta > 5 * M_PI/180){
-		power = 200;
+		power = 255;
 	}
 	if (theta < -5 * M_PI/180){
-		power = -200;
+		power = -255;
 	}
 
 	Serial.print("power:\t"); Serial.println(power);
@@ -118,13 +126,18 @@ void driveMotors(int power){
 	    // Go forward
 	    digitalWrite(RIGHT_ENABLE_1, HIGH);
 	    digitalWrite(RIGHT_ENABLE_2, LOW);
+      digitalWrite(LEFT_ENABLE_1, HIGH);
+      digitalWrite(LEFT_ENABLE_2, LOW);
 	} else {
 		// Go backward
 	    digitalWrite(RIGHT_ENABLE_1, LOW);
 	    digitalWrite(RIGHT_ENABLE_2, HIGH);
+      digitalWrite(LEFT_ENABLE_1, LOW);
+      digitalWrite(LEFT_ENABLE_2, HIGH);
 	}
 	
 	// Set motor speeds
 	analogWrite(RIGHT_POWER, abs(power));
+  analogWrite(LEFT_POWER, abs(power));
 
 }

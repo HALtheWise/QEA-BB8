@@ -1,0 +1,659 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Motors", "Section"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"wheelDiameter", "=", 
+    TemplateBox[{"40","\"mm\"","millimeters","\"Millimeters\""},
+     "Quantity"]}], ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"63", "mm", " ", "for", " ", "vex"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"motorTorque", " ", "=", " ", 
+   TemplateBox[{
+    "1500",RowBox[{"\"g\"", "\[ThinSpace]", "\"cm\""}],"gram centimeters",
+     RowBox[{"\"Centimeters\"", " ", "\"Grams\""}]},
+    "Quantity"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"motorSpeed", "=", 
+   TemplateBox[{
+    "1000",RowBox[{
+      "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       "\"min\""}],"revolutions per minute",FractionBox[
+     "\"Revolutions\"", "\"Minutes\""]},
+    "Quantity"]}], ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"motorTorque", "/", 
+      RowBox[{"(", 
+       RowBox[{"wheelDiameter", "/", "2"}], ")"}]}], "//", "N"}], ",", 
+    "\"\<kg\>\""}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   UnitConvert[
+    N[$CellContext`motorTorque/($CellContext`wheelDiameter/2)], "kg"], 
+   StandardForm],
+  ImageSizeCache->{59., {7., 15.}}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"speed", "=", 
+   RowBox[{
+    RowBox[{"motorSpeed", "*", 
+     RowBox[{"(", 
+      RowBox[{"wheelDiameter", "*", 
+       RowBox[{"Pi", "/", 
+        TemplateBox[{
+         InterpretationBox["\[InvisibleSpace]", 1],"\"rev\"","revolutions",
+          "\"Revolutions\""},
+         "Quantity"]}]}], ")"}]}], "//", "N"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"UnitConvert", "@", "speed"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ DynamicBox[
+  ToBoxes[$CellContext`speed = 
+   N[$CellContext`motorSpeed ($CellContext`wheelDiameter (Pi/Quantity[
+       1, "Revolutions"]))], StandardForm],
+  ImageSizeCache->{118., {6., 15.}}]], "Output"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   UnitConvert[$CellContext`speed], StandardForm],
+  ImageSizeCache->{84., {6., 14.}}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ball", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "Density of water", Typeset`boxes$$ = 
+     RowBox[{
+       TemplateBox[{"\"water\"", 
+         RowBox[{"Entity", "[", 
+           RowBox[{"\"Chemical\"", ",", "\"Water\""}], "]"}], 
+         "\"Entity[\\\"Chemical\\\", \\\"Water\\\"]\"", "\"chemical\""}, 
+        "Entity"], "[", 
+       TemplateBox[{"\"density\"", 
+         RowBox[{"EntityProperty", "[", 
+           RowBox[{"\"Chemical\"", ",", "\"Density\""}], "]"}], 
+         "\"EntityProperty[\\\"Chemical\\\", \\\"Density\\\"]\""}, 
+        "EntityProperty"], "]"}], 
+     Typeset`allassumptions$$ = {{
+      "type" -> "Clash", "word" -> "water", "template" -> 
+       "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Chemical", "desc" -> "a chemical compound", "input" -> 
+          "*C.water-_*Chemical-"}, {
+         "name" -> "FoodType", "desc" -> "a food type", "input" -> 
+          "*C.water-_*FoodType-"}}}}, Typeset`assumptions$$ = {}, 
+     Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.835139`6.373303758690941, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{284., {12., 23.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], "*", 
+   RowBox[{"Volume", "@", 
+    RowBox[{"Ball", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      TemplateBox[{"250","\"mm\"","millimeters","\"Millimeters\""},
+       "Quantity"]}], "]"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{"65.44984694978736`","\"kg\"","kilograms","\"Kilograms\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "@", 
+  RowBox[{"UnitSimplify", "[", 
+   RowBox[{
+    TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+     "Quantity"], "/", 
+    RowBox[{"Area", "[", 
+     RowBox[{"Sphere", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{
+        TemplateBox[{"20","\"in\"","inches","\"Inches\""},
+         "Quantity"], "/", "2"}]}], "]"}], "]"}]}], "]"}]}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"0.18382395927113912`","\"in\"","inches","\"Inches\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "@", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Volume", "@", 
+       RowBox[{"Ball", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         TemplateBox[{"10","\"in\"","inches","\"Inches\""},
+          "Quantity"]}], "]"}]}], "-", 
+      RowBox[{"Volume", "@", 
+       RowBox[{"Ball", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{
+          TemplateBox[{"10","\"in\"","inches","\"Inches\""},
+           "Quantity"], "-", "t"}]}], "]"}]}]}], "\[Equal]", 
+     TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+      "Quantity"]}], ",", "t", ",", "Reals"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"t", "\[Rule]", 
+    TemplateBox[{"0.18731057841996207`","\"in\"","inches","\"Inches\""},
+     "Quantity"]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ NamespaceBox["WolframAlphaQueryParseResults",
+  DynamicModuleBox[{Typeset`q$$ = "1 gal in in^3", Typeset`newq$$ = 
+   "1 gal in in^3", Typeset`chosen$$ = 
+   "UnitConvert[Quantity[1, \"Gallons\"], \"Inches\"^3]", Typeset`open$$ = 
+   False}, 
+   PaneSelectorBox[{False->
+    DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+     WolframAlphaClient`Private`assumptionsQ$$ = True}, 
+     TagBox[
+      FrameBox[
+       TagBox[GridBox[{
+          {
+           InputFieldBox[Dynamic[Typeset`newq$$], String,
+            Appearance->None,
+            BaseStyle->{"CalculateInput"},
+            ContinuousAction->True,
+            Enabled->True,
+            FieldSize->{{1, 40}, {1, 
+               DirectedInfinity[1]}},
+            TrapSelection->False], 
+           ButtonBox[
+            TagBox[
+             TooltipBox[
+              StyleBox["\<\"\[RightGuillemet]\"\>",
+               StripOnInput->False,
+               LineColor->RGBColor[1, 0.5, 0],
+               FrontFaceColor->RGBColor[1, 0.5, 0],
+               BackFaceColor->RGBColor[1, 0.5, 0],
+               GraphicsColor->RGBColor[1, 0.5, 0],
+               FontColor->RGBColor[1, 0.5, 0]],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource[
+                "WAStrings", "InterpretationAssumptions"], StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource[
+               "WAStrings", "InterpretationAssumptions"]], "Tooltip"]& ],
+            Appearance->None,
+            BaselinePosition->Baseline,
+            ButtonFunction:>(Quiet[
+               WolframAlpha[]]; Typeset`open$$ = True; 
+             WolframAlphaClient`Private`extrudeFromFastParse[
+              "1 gal in in^3", 
+               Defer[
+                UnitConvert[
+                 Quantity[1, "Gallons"], "Inches"^3]], "Fast parse"]; 
+             Typeset`open$$ = False),
+            ContentPadding->False,
+            Evaluator->Automatic,
+            Method->"Queued"], 
+           ItemBox[
+            ButtonBox[
+             PaneSelectorBox[{True->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "OrangeSquarePlus"],
+                 ImageSizeCache->{10., {3., 8.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ], False->
+              TagBox[
+               TooltipBox[
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "WABitmaps", "GraySquarePlus"],
+                 ImageSizeCache->{10., {3., 8.}}],
+                DynamicBox[
+                 ToBoxes[
+                  FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"], 
+                  StandardForm]]],
+               Annotation[#, 
+                Dynamic[
+                 FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"]], 
+                "Tooltip"]& ]}, Dynamic[WolframAlphaClient`Private`show$$],
+              ImageSize->All],
+             Appearance->None,
+             ButtonFunction:>(Quiet[
+                WolframAlpha[]]; If[
+                Or[
+                 CurrentValue["OptionKey"], 
+                 CurrentValue["AltKey"]], SelectionMove[
+                  ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                  Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                   "TextForm"], All], Typeset`open$$ = True; 
+                WolframAlphaClient`Private`extrudeFromFastParse[
+                 "1 gal in in^3", 
+                  Defer[
+                   UnitConvert[
+                    Quantity[1, "Gallons"], "Inches"^3]], "Fast parse"]; 
+                Typeset`open$$ = False]),
+             Evaluator->Automatic,
+             Method->"Queued"],
+            Alignment->{Right, Top},
+            StripOnInput->False]},
+          {
+           PaneBox[
+            TagBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                StyleBox[
+                 RowBox[{"UnitConvert", "[", 
+                  RowBox[{
+                   TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+                    "Quantity"], ",", " ", 
+                   RowBox[{"\"\<Inches\>\"", "^", "3"}]}], "]"}],
+                 StripOnInput->False,
+                 NumberMarks->False], True->
+                StyleBox[
+                 RowBox[{"UnitConvert", "[", 
+                  RowBox[{
+                   TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+                    "Quantity"], ",", " ", 
+                   RowBox[{"\"\<Inches\>\"", "^", "3"}]}], "]"}],
+                 StripOnInput->False,
+                 ShowSyntaxStyles->False,
+                 NumberMarks->False,
+                 FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                 CurrentValue["MouseOver"]],
+                BaseStyle->{ShowStringCharacters -> True},
+                FrameMargins->0,
+                ImageSize->Automatic],
+               Alignment->Left,
+               Appearance->None,
+               BaseStyle->{},
+               ButtonFunction:>(SelectionMove[
+                  ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                  ButtonNotebook[], 
+                  Cell[
+                   BoxData[
+                    RowBox[{"UnitConvert", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[{"1", "\"gal\"", "gallons", "\"Gallons\""}, 
+                    "Quantity", SyntaxForm -> Mod], ",", " ", 
+                    RowBox[{"\"Inches\"", "^", "3"}]}], "]"}]], "Input"], 
+                  All]; SelectionMove[
+                  ButtonNotebook[], After, CellContents]),
+               Evaluator->Automatic,
+               ImageSize->Automatic,
+               Method->"Preemptive"],
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                StandardForm]]],
+             Annotation[#, 
+              Dynamic[
+               FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+              "Tooltip"]& ],
+            AppearanceElements->{},
+            BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+            ImageSize->{Automatic, {1, 100}},
+            Scrollbars->{False, Automatic}], "\[SpanFromLeft]", 
+           "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         BaselinePosition->{1, 1},
+         FrameStyle->GrayLevel[0.85],
+         GridBoxAlignment->{"Columns" -> {{Left}}},
+         GridBoxDividers->{
+          "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       Alignment->Top,
+       Background->Dynamic[
+         FEPrivate`If[
+          FEPrivate`And[
+           FEPrivate`SameQ[
+            FEPrivate`Head[Typeset`newq$$], String], 
+           FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+          RGBColor[1., 0.975, 0.95], 
+          GrayLevel[1]]],
+       BaselinePosition->Baseline,
+       FrameStyle->GrayLevel[0.85],
+       ImageSize->Automatic,
+       RoundingRadius->5,
+       StripOnInput->False],
+      EventHandlerTag[{
+       "MouseEntered" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, True], "MouseExited" :> 
+        FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+        "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+     DynamicModuleValues:>{}], True->
+    TagBox[GridBox[{
+       {
+        DynamicModuleBox[{WolframAlphaClient`Private`show$$ = False, 
+         WolframAlphaClient`Private`assumptionsQ$$ = True}, 
+         TagBox[
+          FrameBox[
+           TagBox[GridBox[{
+              {
+               InputFieldBox[Dynamic[Typeset`newq$$], String,
+                Appearance->None,
+                BaseStyle->{"CalculateInput"},
+                ContinuousAction->True,
+                Enabled->True,
+                FieldSize->{{1, 40}, {1, 
+                   DirectedInfinity[1]}},
+                TrapSelection->False], 
+               ButtonBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\"\[RightGuillemet]\"\>",
+                   StripOnInput->False,
+                   LineColor->RGBColor[1, 0.5, 0],
+                   FrontFaceColor->RGBColor[1, 0.5, 0],
+                   BackFaceColor->RGBColor[1, 0.5, 0],
+                   GraphicsColor->RGBColor[1, 0.5, 0],
+                   FontColor->RGBColor[1, 0.5, 0]],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "InterpretationAssumptions"], StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "WAStrings", "InterpretationAssumptions"]], "Tooltip"]& ],
+                Appearance->None,
+                BaselinePosition->Baseline,
+                ButtonFunction:>(Quiet[
+                   WolframAlpha[]]; Typeset`open$$ = True; 
+                 WolframAlphaClient`Private`extrudeFromFastParse[
+                  "1 gal in in^3", 
+                   Defer[
+                    UnitConvert[
+                    Quantity[1, "Gallons"], "Inches"^3]], "Fast parse"]; 
+                 Typeset`open$$ = False),
+                ContentPadding->False,
+                Evaluator->Automatic,
+                Method->"Queued"], 
+               ItemBox[
+                ButtonBox[
+                 PaneSelectorBox[{True->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "OrangeSquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ], False->
+                  TagBox[
+                   TooltipBox[
+                    
+                    DynamicBox[FEPrivate`FrontEndResource[
+                    "WABitmaps", "GraySquarePlus"]],
+                    DynamicBox[
+                    ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "ShowAllResults"],
+                     StandardForm]]],
+                   Annotation[#, 
+                    Dynamic[
+                    FEPrivate`FrontEndResource[
+                    "WAStrings", "ShowAllResults"]], "Tooltip"]& ]}, Dynamic[
+                  WolframAlphaClient`Private`show$$],
+                  ImageSize->All],
+                 Appearance->None,
+                 ButtonFunction:>(Quiet[
+                    WolframAlpha[]]; If[
+                    Or[
+                    CurrentValue["OptionKey"], 
+                    CurrentValue["AltKey"]], SelectionMove[
+                    ButtonNotebook[], All, ButtonCell, AutoScroll -> False]; 
+                    NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    Typeset`newq$$, "WolframAlphaShort", FormatType -> 
+                    "TextForm"], All], Typeset`open$$ = True; 
+                    WolframAlphaClient`Private`extrudeFromFastParse[
+                    "1 gal in in^3", 
+                    Defer[
+                    UnitConvert[
+                    Quantity[1, "Gallons"], "Inches"^3]], "Fast parse"]; 
+                    Typeset`open$$ = False]),
+                 Evaluator->Automatic,
+                 Method->"Queued"],
+                Alignment->{Right, Top},
+                StripOnInput->False]},
+              {
+               PaneBox[
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   PaneSelectorBox[{False->
+                    StyleBox[
+                    RowBox[{"UnitConvert", "[", 
+                    RowBox[{
+                    TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+                    "Quantity"], ",", " ", 
+                    RowBox[{"\<\"Inches\"\>", "^", "3"}]}], "]"}],
+                    StripOnInput->False,
+                    NumberMarks->False], True->
+                    StyleBox[
+                    RowBox[{"UnitConvert", "[", 
+                    RowBox[{
+                    TemplateBox[{"1","\"gal\"","gallons","\"Gallons\""},
+                    "Quantity"], ",", " ", 
+                    RowBox[{"\<\"Inches\"\>", "^", "3"}]}], "]"}],
+                    StripOnInput->False,
+                    ShowSyntaxStyles->False,
+                    NumberMarks->False,
+                    FontColor->RGBColor[1, 0.5, 0]]}, Dynamic[
+                    CurrentValue["MouseOver"]],
+                    BaseStyle->{ShowStringCharacters -> True},
+                    FrameMargins->0,
+                    ImageSize->Automatic],
+                   Alignment->Left,
+                   Appearance->None,
+                   BaseStyle->{},
+                   ButtonFunction:>(SelectionMove[
+                    ButtonNotebook[], All, ButtonCell]; NotebookWrite[
+                    ButtonNotebook[], 
+                    Cell[
+                    BoxData[
+                    RowBox[{"UnitConvert", "[", 
+                    RowBox[{
+                    
+                    TemplateBox[{"1", "\"gal\"", "gallons", "\"Gallons\""}, 
+                    "Quantity", SyntaxForm -> Mod], ",", " ", 
+                    RowBox[{"\"Inches\"", "^", "3"}]}], "]"}]], "Input"], 
+                    All]; SelectionMove[
+                    ButtonNotebook[], After, CellContents]),
+                   Evaluator->Automatic,
+                   ImageSize->Automatic,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource["WAStrings", "RemoveResults"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource["WAStrings", "RemoveResults"]], 
+                  "Tooltip"]& ],
+                AppearanceElements->{},
+                BaseStyle->{ShowStringCharacters -> True, ScriptLevel -> 0},
+                ImageSize->{Automatic, {1, 100}},
+                Scrollbars->{False, Automatic}], "\[SpanFromLeft]", 
+               "\[SpanFromLeft]"}
+             },
+             AutoDelete->False,
+             BaselinePosition->{1, 1},
+             FrameStyle->GrayLevel[0.85],
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxDividers->{
+              "Columns" -> {{False}}, "Rows" -> {False, {True}, False}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Top,
+           Background->Dynamic[
+             FEPrivate`If[
+              FEPrivate`And[
+               FEPrivate`SameQ[
+                FEPrivate`Head[Typeset`newq$$], String], 
+               FEPrivate`UnsameQ[Typeset`q$$, Typeset`newq$$]], 
+              RGBColor[1., 0.975, 0.95], 
+              GrayLevel[1]]],
+           BaselinePosition->Baseline,
+           FrameStyle->GrayLevel[0.85],
+           ImageSize->Automatic,
+           RoundingRadius->5,
+           StripOnInput->False],
+          
+          EventHandlerTag[{
+           "MouseEntered" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, True], 
+            "MouseExited" :> 
+            FEPrivate`Set[WolframAlphaClient`Private`show$$, False], Method -> 
+            "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> True}]],
+         DynamicModuleValues:>{}]},
+       {
+        InterpretationBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEExpressions", "NecklaceAnimator"][20]],
+          AnimatorBoxOptions->{ImageSize->20}],
+         Animator[Appearance -> "Necklace", ImageSize -> 20],
+         BaseStyle->{"Deploy"}]}
+      },
+      BaselinePosition->{1, 1},
+      DefaultBaseStyle->"Column",
+      GridBoxAlignment->{"Columns" -> {{Left}}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+     
+     "Column"]}, Dynamic[
+     TrueQ[Typeset`open$$]],
+    BaseStyle->{Deployed -> True},
+    ImageSize->Automatic],
+   DynamicModuleValues:>{}],
+  BaseStyle->{Deployed -> True},
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True]], "WolframAlphaShortInput"],
+
+Cell[BoxData[
+ TemplateBox[{"231",RowBox[{
+     SuperscriptBox["\"in\"", "3"]}],"inches cubed",SuperscriptBox[
+   "\"Inches\"", "3"]},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"x","\"cm\"","centimeters","\"Centimeters\""},
+    "Quantity"], ",", "\"\<SIBase\>\""}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{FractionBox["x", "100"],"\"m\"","meters","\"Meters\""},
+  "Quantity"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"x", "=", "5"}], "\[IndentingNewLine]", 
+ RowBox[{"Evaluate", "[", "x", "]"}]}], "Input"],
+
+Cell[BoxData["5"], "Output"],
+
+Cell[BoxData["5"], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{875, 1016},
+WindowMargins->{{Automatic, 124}, {-2, Automatic}},
+TrackCellChangeTimes->False,
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+

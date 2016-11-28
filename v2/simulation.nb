@@ -1,22 +1,3 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 11.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       158,          7]
-NotebookDataLength[     28543,        834]
-NotebookOptionsPosition[     26821,        767]
-NotebookOutlinePosition[     27183,        783]
-CellTagsIndexPosition[     27140,        780]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
@@ -269,7 +250,8 @@ Cell[BoxData[
     RowBox[{"m2", "\[Rule]", "1"}], ",", 
     RowBox[{"g", "\[Rule]", "9.8"}], ",", 
     RowBox[{"i", "\[Rule]", "2.7425"}], ",", 
-    RowBox[{"R", "\[Rule]", ".788"}]}], "}"}]}]], "Input"],
+    RowBox[{"R", "\[Rule]", ".788"}], ",", 
+    RowBox[{"wheeldiam", "\[Rule]", ".038"}]}], "}"}]}]], "Input"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -278,7 +260,8 @@ Cell[BoxData[
    RowBox[{"m2", "\[Rule]", "1"}], ",", 
    RowBox[{"g", "\[Rule]", "9.8`"}], ",", 
    RowBox[{"i", "\[Rule]", "2.7425`"}], ",", 
-   RowBox[{"R", "\[Rule]", "0.788`"}]}], "}"}]], "Output"]
+   RowBox[{"R", "\[Rule]", "0.788`"}], ",", 
+   RowBox[{"wheeldiam", "\[Rule]", "0.038`"}]}], "}"}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -339,25 +322,9 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{"goal", "[", "t", "]"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"t", ",", "0", ",", "100"}], "}"}]}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"ceq", "=", 
-  RowBox[{
-   RowBox[{"f2", "[", "t", "]"}], "\[Equal]", 
-   RowBox[{
-    RowBox[{"10", 
-     RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
-    RowBox[{"1.5", 
-     RowBox[{
-      RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "+", 
-    RowBox[{".1", 
-     RowBox[{"(", 
-      RowBox[{
-       RowBox[{"x0", "[", "t", "]"}], "-", 
-       RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
-    RowBox[{".5", " ", 
-     RowBox[{
-      RowBox[{"x0", "'"}], "[", "t", "]"}]}]}]}]}]}], "Input"],
+    RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Cylinder position goal\>\""}]}], 
+  "]"}]}], "Input"],
 
 Cell[BoxData[
  GraphicsBox[{{{{}, {}, 
@@ -466,6 +433,7 @@ mQVHGTJ/Ivjiy/4Fzf6N4CetNl969i+Cv25Dwff//xF8AK8erRw=
          Part[#, 1]], 
         (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
          Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"Cylinder position goal\"", TraditionalForm],
   PlotRange->{{0, 100}, {-5., 5.}},
   PlotRangeClipping->True,
   PlotRangePadding->{{
@@ -473,106 +441,66 @@ mQVHGTJ/Ivjiy/4Fzf6N4CetNl969i+Cv25Dwff//xF8AK8erRw=
      Scaled[0.02]}, {
      Scaled[0.05], 
      Scaled[0.05]}},
-  Ticks->{Automatic, Automatic}]], "Output"],
+  Ticks->{Automatic, Automatic}]], "Output"]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"f2", "[", "t", "]"}], "\[Equal]", 
-  RowBox[{
-   RowBox[{"0.1`", " ", 
-    RowBox[{"(", 
+  RowBox[{"ceq", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
      RowBox[{
-      RowBox[{"-", 
+      RowBox[{"motorspeed", "[", "t", "]"}], "==", 
+      RowBox[{
        RowBox[{"(", 
-        TagBox[GridBox[{
-           {"\[Piecewise]", GridBox[{
-              {"0", 
-               RowBox[{"t", "<", "5"}]},
-              {
-               RowBox[{"5", " ", 
-                RowBox[{"(", 
-                 RowBox[{
-                  RowBox[{"-", "5"}], "+", "t"}], ")"}]}], 
-               RowBox[{"t", "<", "6"}]},
-              {"5", 
-               RowBox[{"t", "<", "40"}]},
-              {
-               RowBox[{"5", "-", 
-                RowBox[{"10", " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "40"}], "+", "t"}], ")"}]}]}], 
-               RowBox[{"t", "<", "41"}]},
-              {
-               RowBox[{"-", "5"}], 
-               RowBox[{"t", "<", "80"}]},
-              {
-               RowBox[{
-                RowBox[{"-", "5"}], "+", 
-                RowBox[{"5", " ", 
-                 RowBox[{"(", 
-                  RowBox[{
-                   RowBox[{"-", "80"}], "+", "t"}], ")"}]}]}], 
-               RowBox[{"t", "<", "81"}]},
-              {"0", 
-               TagBox["True",
-                "PiecewiseDefault",
-                AutoDelete->True]}
-             },
-             AllowedDimensions->{2, Automatic},
-             Editable->True,
-             
-             GridBoxAlignment->{
-              "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
-               "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-             
-             GridBoxItemSize->{
-              "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
-               "Rows" -> {{1.}}, "RowsIndexed" -> {}},
-             GridBoxSpacings->{"Columns" -> {
-                 Offset[0.27999999999999997`], {
-                  Offset[0.84]}, 
-                 Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
-               "Rows" -> {
-                 Offset[0.2], {
-                  Offset[0.4]}, 
-                 Offset[0.2]}, "RowsIndexed" -> {}},
-             Selectable->True]}
-          },
-          
-          GridBoxAlignment->{
-           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
-            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
-          
-          GridBoxItemSize->{
-           "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
-            "Rows" -> {{1.}}, "RowsIndexed" -> {}},
-          GridBoxSpacings->{"Columns" -> {
-              Offset[0.27999999999999997`], {
-               Offset[0.35]}, 
-              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
-              Offset[0.2], {
-               Offset[0.4]}, 
-              Offset[0.2]}, "RowsIndexed" -> {}}],
-         "Piecewise",
-         DeleteWithContents->True,
-         Editable->False,
-         SelectWithContents->True,
-         Selectable->False], ")"}]}], "+", 
-      RowBox[{"x0", "[", "t", "]"}]}], ")"}]}], "+", 
-   RowBox[{"10", " ", 
-    RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
-   RowBox[{"0.5`", " ", 
-    RowBox[{
-     SuperscriptBox["x0", "\[Prime]",
-      MultilineFunction->None], "[", "t", "]"}]}], "+", 
-   RowBox[{"1.5`", " ", 
-    RowBox[{
-     SuperscriptBox["\[Theta]", "\[Prime]",
-      MultilineFunction->None], "[", "t", "]"}]}]}]}]], "Output"]
-}, Open  ]],
-
-Cell[BoxData[""], "Input"]
+        RowBox[{
+         RowBox[{"R", " ", 
+          RowBox[{
+           RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "-", 
+         RowBox[{
+          RowBox[{"x0", "'"}], "[", "t", "]"}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"wheeldiam", "*", "Pi"}], ")"}]}]}], " ", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Rotations", " ", "per", " ", "second"}], " ", "*)"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"command", "[", "t", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"wheeldiam", "/", "2"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"10", 
+          RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
+         RowBox[{".695", " ", 
+          RowBox[{
+           RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "+", 
+         RowBox[{"b", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"x0", "[", "t", "]"}], "-", 
+            RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
+         RowBox[{".725", " ", 
+          RowBox[{
+           RowBox[{"x0", "'"}], "[", "t", "]"}]}]}], ")"}]}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"torque", "[", "t", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"command", "[", "t", "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{".01", " ", 
+          RowBox[{"Abs", "@", 
+           RowBox[{"motorspeed", "[", "t", "]"}]}]}], "+", "1"}], ")"}]}]}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f2", "[", "t", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"torque", "[", "t", "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"wheeldiam", "/", "2"}], ")"}]}]}]}], "}"}]}], ";"}]], "Input"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -582,76 +510,58 @@ Cell["Solve ODE", "Section"],
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Manipulate", "[", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{
-    RowBox[{"ceq", "=", 
+   RowBox[{"sol", "=", 
+    RowBox[{"Quiet", "[", 
      RowBox[{
-      RowBox[{"f2", "[", "t", "]"}], "\[Equal]", 
-      RowBox[{
-       RowBox[{"10", 
-        RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
-       RowBox[{"0.442", " ", 
-        RowBox[{
-         RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "+", 
-       RowBox[{"0.0884", " ", 
-        RowBox[{"(", 
-         RowBox[{
-          RowBox[{"x0", "[", "t", "]"}], "-", 
-          RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
-       RowBox[{"0.648", " ", 
-        RowBox[{
-         RowBox[{"x0", "'"}], "[", "t", "]"}]}]}]}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"sol", "=", 
-     RowBox[{"NDSolveValue", "[", 
-      RowBox[{
+      RowBox[{"NDSolveValue", "[", 
        RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"eq", ",", "initial", ",", "ceq"}], "}"}], "/.", 
+          "params"}], "/.", 
+         RowBox[{"b", "\[Rule]", "bb"}]}], ",", 
         RowBox[{"{", 
-         RowBox[{"eq", ",", "initial", ",", "ceq"}], "}"}], "/.", "params"}], 
-       ",", 
-       RowBox[{"{", 
-        RowBox[{"x0", ",", "\[Theta]", ",", "f1"}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"t", ",", "0", ",", "120"}], "}"}], ",", 
-       RowBox[{"MaxSteps", "\[Rule]", "Infinity"}]}], "]"}]}]}], ",", 
+         RowBox[{"x0", ",", "\[Theta]", ",", "motorspeed"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "120"}], "}"}], ",", 
+        RowBox[{"MaxSteps", "\[Rule]", "Infinity"}]}], "]"}], ",", 
+      RowBox[{"NDSolveValue", "::", "pdord"}]}], "]"}]}], ",", 
    RowBox[{"{", 
-    RowBox[{"b", ",", ".3", ",", "1"}], "}"}]}], "]"}]], "Input"],
+    RowBox[{"bb", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`b$$ = 0.3, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`bb$$ = 0, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`b$$], 0.3, 1}}, Typeset`size$$ = {384.5, {141., 27.}},
-     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`b$25732$$ = 0}, 
+      Hold[$CellContext`bb$$], 0, 1}}, Typeset`size$$ = {397.5, {141., 27.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`bb$460319$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`b$$ = 0.3}, 
+     1, StandardForm, "Variables" :> {$CellContext`bb$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`b$$, $CellContext`b$25732$$, 0]}, 
+        Hold[$CellContext`bb$$, $CellContext`bb$460319$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, 
-      "Body" :> ($CellContext`ceq = $CellContext`f2[$CellContext`t] == 
-         10 $CellContext`\[Theta][$CellContext`t] + 
-          0.442 Derivative[1][$CellContext`\[Theta]][$CellContext`t] + 
-          0.0884 ($CellContext`x0[$CellContext`t] - \
-$CellContext`goal[$CellContext`t]) + 
-          0.648 Derivative[
-            1][$CellContext`x0][$CellContext`t]; $CellContext`sol = 
-        NDSolveValue[
-          
-          ReplaceAll[{$CellContext`eq, $CellContext`initial, \
-$CellContext`ceq}, $CellContext`params], {$CellContext`x0, $CellContext`\
-\[Theta], $CellContext`f1}, {$CellContext`t, 0, 120}, MaxSteps -> Infinity]), 
-      "Specifications" :> {{$CellContext`b$$, 0.3, 1}}, "Options" :> {}, 
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`sol = Quiet[
+         NDSolveValue[
+          ReplaceAll[
+           
+           ReplaceAll[{$CellContext`eq, $CellContext`initial, \
+$CellContext`ceq}, $CellContext`params], $CellContext`b -> \
+$CellContext`bb$$], {$CellContext`x0, $CellContext`\[Theta], \
+$CellContext`motorspeed}, {$CellContext`t, 0, 120}, MaxSteps -> Infinity], 
+         MessageName[NDSolveValue, "pdord"]]), 
+      "Specifications" :> {{$CellContext`bb$$, 0, 1}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{432., {124., 131.}},
+     ImageSizeCache->{445., {124., 131.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -661,15 +571,7 @@ $CellContext`ceq}, $CellContext`params], {$CellContext`x0, $CellContext`\
     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
    Deployed->True,
    StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output"],
-
-Cell[BoxData[
- TemplateBox[{
-  "NDSolveValue","pdord",
-   "\"Some of the functions have zero differential order, so the equations \
-will be solved as a system of differential-algebraic equations.\"",2,14,75,
-   20752798401691173528,"Local"},
-  "MessageTemplate"]], "Message", "MSG"]
+  Manipulate`InterpretManipulate[1]]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -693,7 +595,7 @@ Cell[BoxData[
     Evaluate[
      Map[#[$CellContext`t]& , $CellContext`sol]], {$CellContext`t, 0, 120}, 
     PlotRange -> All, PlotLegends -> Automatic], StandardForm],
-  ImageSizeCache->{420., {108., 113.}}]], "Output"]
+  ImageSizeCache->{422., {104., 110.}}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -728,17 +630,17 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+   DynamicModuleBox[{$CellContext`t$$ = 104.07499609863466`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`t$$], 0, 120}}, Typeset`size$$ = {360., {169., 176.}},
+      Hold[$CellContext`t$$], 0, 120}}, Typeset`size$$ = {709., {343., 349.}},
      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`t$26889$$ = 0}, 
+    True, $CellContext`t$8868$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`t$$, $CellContext`t$26889$$, 0]}, 
+        Hold[$CellContext`t$$, $CellContext`t$8868$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -748,7 +650,7 @@ Cell[BoxData[
         Part[$CellContext`sol, 2][$CellContext`t$$]], 
       "Specifications" :> {{$CellContext`t$$, 0, 120}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{407., {212., 219.}},
+     ImageSizeCache->{756., {397., 404.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -758,85 +660,80 @@ Cell[BoxData[
     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
    Deployed->True,
    StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output"]
+  Manipulate`InterpretManipulate[1]]], "Output"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,36,87,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,36,88,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,36,89,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","stop",
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Part\\\", \\\"::\\\", \
+\\\"partd\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"",2,36,90,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,77,114,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,77,115,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"1\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,85,117,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Part","partd",
+   "\"Part specification \\!\\(\\*RowBox[{\\\"None\\\", \\\"\
+\[LeftDoubleBracket]\\\", \\\"2\\\", \\\"\[RightDoubleBracket]\\\"}]\\) is \
+longer than depth of object.\"",2,85,118,30924065746292683364,"Local"},
+  "MessageTemplate"]], "Message", "MSG"]
 }, Open  ]],
 
 Cell[BoxData["\[IndentingNewLine]"], "Input"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{956, 1041},
-WindowMargins->{{Automatic, 2}, {2, Automatic}},
+WindowSize->{956, 1016},
+WindowMargins->{{Automatic, 2}, {0, Automatic}},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
-(* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[CellGroupData[{
-Cell[580, 22, 76, 0, 150, "Title"],
-Cell[CellGroupData[{
-Cell[681, 26, 35, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[741, 30, 2953, 87, 230, "Input"],
-Cell[3697, 119, 3084, 93, 120, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[6830, 218, 44, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[6899, 222, 438, 14, 32, "Input"],
-Cell[7340, 238, 486, 15, 35, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[7875, 259, 36, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[7936, 263, 302, 8, 35, "Input"],
-Cell[8241, 273, 274, 7, 32, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8564, 286, 35, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[8624, 290, 2121, 69, 117, "Input"],
-Cell[10748, 361, 5875, 114, 232, "Output"],
-Cell[16626, 477, 3337, 94, 146, "Output"]
-}, Open  ]],
-Cell[19978, 574, 26, 0, 30, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[20041, 579, 28, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[20094, 583, 1190, 35, 83, "Input"],
-Cell[21287, 620, 2116, 43, 272, "Output"],
-Cell[23406, 665, 282, 6, 41, "Message"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[23725, 676, 399, 11, 35, "Input"],
-Cell[24127, 689, 250, 6, 238, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[24426, 701, 36, 0, 65, "Section"],
-Cell[24465, 703, 196, 5, 55, "Input"],
-Cell[CellGroupData[{
-Cell[24686, 712, 428, 13, 32, "Input"],
-Cell[25117, 727, 1616, 33, 448, "Output"]
-}, Open  ]],
-Cell[26748, 763, 45, 0, 50, "Input"]
-}, Open  ]]
-}, Open  ]]
-}
-]
-*)
-

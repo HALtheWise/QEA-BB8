@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28543,        834]
-NotebookOptionsPosition[     26821,        767]
-NotebookOutlinePosition[     27183,        783]
-CellTagsIndexPosition[     27140,        780]
+NotebookDataLength[     30960,        909]
+NotebookOptionsPosition[     28991,        834]
+NotebookOutlinePosition[     29403,        852]
+CellTagsIndexPosition[     29360,        849]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -589,7 +589,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"f2", "[", "t", "]"}], "\[Equal]", 
       RowBox[{
-       RowBox[{"10", 
+       RowBox[{"5", " ", 
         RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
        RowBox[{"0.442", " ", 
         RowBox[{
@@ -611,34 +611,34 @@ Cell[BoxData[
          RowBox[{"eq", ",", "initial", ",", "ceq"}], "}"}], "/.", "params"}], 
        ",", 
        RowBox[{"{", 
-        RowBox[{"x0", ",", "\[Theta]", ",", "f1"}], "}"}], ",", 
+        RowBox[{"x0", ",", "\[Theta]"}], "}"}], ",", 
        RowBox[{"{", 
         RowBox[{"t", ",", "0", ",", "120"}], "}"}], ",", 
        RowBox[{"MaxSteps", "\[Rule]", "Infinity"}]}], "]"}]}]}], ",", 
    RowBox[{"{", 
-    RowBox[{"b", ",", ".3", ",", "1"}], "}"}]}], "]"}]], "Input"],
+    RowBox[{"b", ",", "5", ",", "15"}], "}"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`b$$ = 0.3, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`b$$ = 5, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`b$$], 0.3, 1}}, Typeset`size$$ = {384.5, {141., 27.}},
-     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`b$25732$$ = 0}, 
+      Hold[$CellContext`b$$], 5, 15}}, Typeset`size$$ = {274., {197., 20.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`b$152585$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`b$$ = 0.3}, 
+     1, StandardForm, "Variables" :> {$CellContext`b$$ = 5}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`b$$, $CellContext`b$25732$$, 0]}, 
+        Hold[$CellContext`b$$, $CellContext`b$152585$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, 
       "Body" :> ($CellContext`ceq = $CellContext`f2[$CellContext`t] == 
-         10 $CellContext`\[Theta][$CellContext`t] + 
+         5 $CellContext`\[Theta][$CellContext`t] + 
           0.442 Derivative[1][$CellContext`\[Theta]][$CellContext`t] + 
           0.0884 ($CellContext`x0[$CellContext`t] - \
 $CellContext`goal[$CellContext`t]) + 
@@ -648,10 +648,10 @@ $CellContext`goal[$CellContext`t]) +
           
           ReplaceAll[{$CellContext`eq, $CellContext`initial, \
 $CellContext`ceq}, $CellContext`params], {$CellContext`x0, $CellContext`\
-\[Theta], $CellContext`f1}, {$CellContext`t, 0, 120}, MaxSteps -> Infinity]), 
-      "Specifications" :> {{$CellContext`b$$, 0.3, 1}}, "Options" :> {}, 
+\[Theta]}, {$CellContext`t, 0, 120}, MaxSteps -> Infinity]), 
+      "Specifications" :> {{$CellContext`b$$, 5, 15}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{432., {124., 131.}},
+     ImageSizeCache->{331., {156., 164.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -667,8 +667,8 @@ Cell[BoxData[
  TemplateBox[{
   "NDSolveValue","pdord",
    "\"Some of the functions have zero differential order, so the equations \
-will be solved as a system of differential-algebraic equations.\"",2,14,75,
-   20752798401691173528,"Local"},
+will be solved as a system of differential-algebraic equations.\"",2,36,327,
+   20755773769435530769,"Local"},
   "MessageTemplate"]], "Message", "MSG"]
 }, Open  ]],
 
@@ -685,15 +685,82 @@ Cell[BoxData[
     RowBox[{"{", 
      RowBox[{"t", ",", "0", ",", "120"}], "}"}], ",", 
     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
-    RowBox[{"PlotLegends", "->", "Automatic"}]}], "]"}]}]], "Input"],
+    RowBox[{"PlotLegends", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Position x\>\"", ",", "\"\<Angle \[Theta]\>\""}], 
+      "}"}]}]}], "]"}]}]], "Input"],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Plot[
     Evaluate[
      Map[#[$CellContext`t]& , $CellContext`sol]], {$CellContext`t, 0, 120}, 
-    PlotRange -> All, PlotLegends -> Automatic], StandardForm],
-  ImageSizeCache->{420., {108., 113.}}]], "Output"]
+    PlotRange -> All, PlotLegends -> {"Position x", "Angle \[Theta]"}], 
+   StandardForm],
+  ImageSizeCache->{584., {126., 134.}}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"plot1", "="}]], "Input",
+ EmphasizeSyntaxErrors->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plot2", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Accumulate", "[", 
+     RowBox[{"RandomReal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "100"}], "}"}], ",", 
+       RowBox[{"{", "100", "}"}]}], "]"}], "]"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "25"}], ",", 
+    RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+    RowBox[{"Frame", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"False", ",", "False", ",", "False", ",", "True"}], "}"}]}], 
+    ",", 
+    RowBox[{"FrameTicks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"None", ",", "None", ",", "None", ",", "All"}], "}"}]}], ",", 
+    RowBox[{"FrameStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", "Automatic", ",", "Automatic", ",", "Red"}], 
+      "}"}]}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot","argr",
+   "\"\\!\\(\\*RowBox[{\\\"Plot\\\"}]\\) called with 1 argument; \
+\\!\\(\\*RowBox[{\\\"2\\\"}]\\) arguments are expected.\"",2,34,325,
+   20755773769435530769,"Local"},
+  "MessageTemplate"]], "Message", "MSG"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Accumulate", "[", 
+    RowBox[{"RandomReal", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "100"}], "}"}], ",", 
+      RowBox[{"{", "100", "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+   RowBox[{"ImagePadding", "\[Rule]", "25"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+   RowBox[{"Frame", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", "False", ",", "False", ",", "True"}], "}"}]}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None", ",", "None", ",", "All"}], "}"}]}], ",", 
+   RowBox[{"FrameStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Automatic", ",", "Automatic", ",", "Automatic", ",", "Red"}], 
+     "}"}]}]}], "]"}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -732,13 +799,13 @@ Cell[BoxData[
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`t$$], 0, 120}}, Typeset`size$$ = {360., {169., 176.}},
+      Hold[$CellContext`t$$], 0, 120}}, Typeset`size$$ = {412., {192., 200.}},
      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`t$26889$$ = 0}, 
+    True, $CellContext`t$153641$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`t$$, $CellContext`t$26889$$, 0]}, 
+        Hold[$CellContext`t$$, $CellContext`t$153641$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -748,7 +815,7 @@ Cell[BoxData[
         Part[$CellContext`sol, 2][$CellContext`t$$]], 
       "Specifications" :> {{$CellContext`t$$, 0, 120}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{407., {212., 219.}},
+     ImageSizeCache->{469., {244., 252.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -765,9 +832,11 @@ Cell[BoxData["\[IndentingNewLine]"], "Input"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{956, 1041},
-WindowMargins->{{Automatic, 2}, {2, Automatic}},
+WindowSize->{636, 1041},
+WindowMargins->{{642, 642}, {2, Automatic}},
+CellContext->Notebook,
 TrackCellChangeTimes->False,
+Magnification:>1.25 Inherited,
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
@@ -783,57 +852,63 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 76, 0, 150, "Title"],
+Cell[580, 22, 76, 0, 258, "Title"],
 Cell[CellGroupData[{
-Cell[681, 26, 35, 0, 65, "Section"],
+Cell[681, 26, 35, 0, 81, "Section"],
 Cell[CellGroupData[{
-Cell[741, 30, 2953, 87, 230, "Input"],
-Cell[3697, 119, 3084, 93, 120, "Output"]
+Cell[741, 30, 2953, 87, 470, "Input"],
+Cell[3697, 119, 3084, 93, 298, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6830, 218, 44, 0, 65, "Section"],
+Cell[6830, 218, 44, 0, 81, "Section"],
 Cell[CellGroupData[{
-Cell[6899, 222, 438, 14, 32, "Input"],
-Cell[7340, 238, 486, 15, 35, "Output"]
+Cell[6899, 222, 438, 14, 40, "Input"],
+Cell[7340, 238, 486, 15, 40, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7875, 259, 36, 0, 65, "Section"],
+Cell[7875, 259, 36, 0, 81, "Section"],
 Cell[CellGroupData[{
-Cell[7936, 263, 302, 8, 35, "Input"],
-Cell[8241, 273, 274, 7, 32, "Output"]
+Cell[7936, 263, 302, 8, 44, "Input"],
+Cell[8241, 273, 274, 7, 67, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8564, 286, 35, 0, 65, "Section"],
+Cell[8564, 286, 35, 0, 81, "Section"],
 Cell[CellGroupData[{
-Cell[8624, 290, 2121, 69, 117, "Input"],
-Cell[10748, 361, 5875, 114, 232, "Output"],
-Cell[16626, 477, 3337, 94, 146, "Output"]
+Cell[8624, 290, 2121, 69, 255, "Input"],
+Cell[10748, 361, 5875, 114, 275, "Output"],
+Cell[16626, 477, 3337, 94, 275, "Output"]
 }, Open  ]],
-Cell[19978, 574, 26, 0, 30, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[20041, 579, 28, 0, 65, "Section"],
-Cell[CellGroupData[{
-Cell[20094, 583, 1190, 35, 83, "Input"],
-Cell[21287, 620, 2116, 43, 272, "Output"],
-Cell[23406, 665, 282, 6, 41, "Message"]
+Cell[19978, 574, 26, 0, 38, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23725, 676, 399, 11, 35, "Input"],
-Cell[24127, 689, 250, 6, 238, "Output"]
+Cell[20041, 579, 28, 0, 81, "Section"],
+Cell[CellGroupData[{
+Cell[20094, 583, 1183, 35, 251, "Input"],
+Cell[21280, 620, 2093, 43, 340, "Output"],
+Cell[23376, 665, 283, 6, 72, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23696, 676, 494, 14, 102, "Input"],
+Cell[24193, 692, 277, 7, 280, "Output"]
+}, Open  ]],
+Cell[24485, 702, 78, 2, 40, "Input"],
+Cell[CellGroupData[{
+Cell[24588, 708, 873, 23, 268, "Input"],
+Cell[25464, 733, 256, 6, 50, "Message"],
+Cell[25723, 741, 822, 21, 229, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24426, 701, 36, 0, 65, "Section"],
-Cell[24465, 703, 196, 5, 55, "Input"],
+Cell[26594, 768, 36, 0, 81, "Section"],
+Cell[26633, 770, 196, 5, 70, "Input"],
 Cell[CellGroupData[{
-Cell[24686, 712, 428, 13, 32, "Input"],
-Cell[25117, 727, 1616, 33, 448, "Output"]
+Cell[26854, 779, 428, 13, 94, "Input"],
+Cell[27285, 794, 1618, 33, 516, "Output"]
 }, Open  ]],
-Cell[26748, 763, 45, 0, 50, "Input"]
+Cell[28918, 830, 45, 0, 64, "Input"]
 }, Open  ]]
 }, Open  ]]
 }

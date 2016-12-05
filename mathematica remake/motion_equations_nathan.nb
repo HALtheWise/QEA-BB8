@@ -3552,6 +3552,50 @@ Cell[TextData[{
  " a0"
 }], "Subsection"],
 
+Cell[BoxData[{
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "(", "\[Lambda]", ")"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["a", "4"], 
+      SuperscriptBox["\[Lambda]", "4"]}], "+", 
+     RowBox[{
+      SubscriptBox["a", "3"], 
+      SuperscriptBox["\[Lambda]", "3"]}], "+", 
+     RowBox[{
+      SubscriptBox["a", "2"], 
+      SuperscriptBox["\[Lambda]", "2"]}], "+", 
+     RowBox[{
+      SubscriptBox["a", "1"], "\[Lambda]"}], "+", 
+     SubscriptBox["a", "0"]}], "=", "0"}]}], 
+  TraditionalForm], "\[IndentingNewLine]", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["a", "3"], " ", 
+    SubscriptBox["a", "2"]}], ">", 
+   RowBox[{
+    SubscriptBox["a", "4"], " ", 
+    SubscriptBox["a", "1"]}]}], TraditionalForm], "\n", 
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["a", "3"], " ", 
+    SubscriptBox["a", "2"], " ", 
+    SubscriptBox["a", "1"]}], ">", 
+   RowBox[{
+    SubscriptBox["a", "4"], 
+    FormBox[
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["a", "1"], "2"], "+", 
+      SuperscriptBox[
+       SubscriptBox["a", "3"], "2"]}],
+     TraditionalForm], 
+    SubscriptBox["a", "0"]}]}], TraditionalForm]}], "Input"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[{

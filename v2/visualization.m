@@ -1354,7 +1354,7 @@ repaired=Show[transformed,{PlotRange->Automatic, ImageSize->Automatic}];
 repaired/.params
 ];
 
-getBB8[x0_,\[Theta]_]:=Module[{},Show[{getBody[x0,\[Theta]],getHead[x0,\[Theta]]},{PlotRange->{{-10,10},{-10,10}},Axes->{True,False},AxesOrigin->{0,-R}}]/.params
+getBB8[x0_,\[Theta]_]:=Module[{},Show[{getBody[x0,\[Theta]],getHead[x0,\[Theta]]},{PlotRange->{{-8,8},{-1,1}},Axes->{True,False},AxesOrigin->{0,-R}}]/.params
 ];
 
 testAnimateBB8[]:=Module[{},Animate[Evaluate@getBB8[x,th],{x,0,5},{th,-2,2},RefreshRate->60]]

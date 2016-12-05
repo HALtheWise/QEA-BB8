@@ -1,8 +1,15 @@
 #include <Arduino.h>
 
-const byte motorApinA = 4;
-const byte motorApinB = 6;
-const byte motorApinSpeed = 5;
+const byte motorApinA = 7;
+const byte motorApinB = 8;
+const byte motorApinSpeed = 9;
+
+void init_motors(){
+   pinMode(motorApinA, OUTPUT);
+   pinMode(motorApinB, OUTPUT);
+   pinMode(motorApinSpeed, OUTPUT);
+
+}
 
 /* 
 moveMotor takes a speed in the range -255 ... 255

@@ -1484,13 +1484,14 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"motor", "[", "t", "]"}], ",", "t", ",", "s"}], "]"}]}], 
       ")"}], "/.", "lapsol"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"g1sol", "/.", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"m1", "\[Rule]", 
-     SubscriptBox["m", "1"]}], ",", 
-    RowBox[{"m2", "\[Rule]", 
-     SubscriptBox["m", "2"]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g1sol", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"m1", "\[Rule]", 
+      SubscriptBox["m", "1"]}], ",", 
+     RowBox[{"m2", "\[Rule]", 
+      SubscriptBox["m", "2"]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"HoldForm", "[", "g1", "]"}], "\[Equal]", "g1sol"}], "//", 
@@ -1508,13 +1509,14 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"motor", "[", "t", "]"}], ",", "t", ",", "s"}], "]"}]}], 
       ")"}], "/.", "lapsol"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"g2sol", "/.", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"m1", "\[Rule]", 
-     SubscriptBox["m", "1"]}], ",", 
-    RowBox[{"m2", "\[Rule]", 
-     SubscriptBox["m", "2"]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g2sol", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"m1", "\[Rule]", 
+      SubscriptBox["m", "1"]}], ",", 
+     RowBox[{"m2", "\[Rule]", 
+      SubscriptBox["m", "2"]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"HoldForm", "[", "g2", "]"}], "\[Equal]", "g2sol"}], "//", 
@@ -1537,37 +1539,6 @@ Cell[BoxData[{
     RowBox[{"HoldForm", "[", "g4", "]"}], "\[Equal]", "g4sol"}], "//", 
    "TraditionalForm"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input"],
-
-Cell[BoxData[
- FractionBox[
-  RowBox[{"i", "+", 
-   RowBox[{
-    SuperscriptBox["r", "2"], " ", 
-    RowBox[{"(", 
-     RowBox[{
-      SubscriptBox["m", "1"], "+", 
-      RowBox[{"2", " ", 
-       SubscriptBox["m", "2"]}]}], ")"}]}]}], 
-  RowBox[{
-   RowBox[{
-    RowBox[{"-", "r"}], " ", 
-    SuperscriptBox["s", "2"], " ", 
-    RowBox[{"(", 
-     RowBox[{"i", "+", 
-      RowBox[{
-       SuperscriptBox["r", "2"], " ", 
-       SubscriptBox["m", "1"]}]}], ")"}], " ", 
-    SubscriptBox["m", "2"]}], "+", 
-   RowBox[{"g", " ", 
-    SubscriptBox["m", "2"], " ", 
-    RowBox[{"(", 
-     RowBox[{"i", "+", 
-      RowBox[{
-       SuperscriptBox["r", "2"], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         SubscriptBox["m", "1"], "+", 
-         SubscriptBox["m", "2"]}], ")"}]}]}], ")"}]}]}]]], "Output"],
 
 Cell[BoxData[
  FormBox[
@@ -1596,34 +1567,6 @@ Cell[BoxData[
         RowBox[{"m1", " ", 
          SuperscriptBox["r", "2"]}]}], ")"}]}]}]]}], 
   TraditionalForm]], "Output"],
-
-Cell[BoxData[
- FractionBox[
-  RowBox[{
-   SuperscriptBox["r", "2"], " ", 
-   RowBox[{"(", 
-    RowBox[{"g", "-", 
-     RowBox[{"2", " ", "r", " ", 
-      SuperscriptBox["s", "2"]}]}], ")"}]}], 
-  RowBox[{
-   RowBox[{
-    RowBox[{"-", "r"}], " ", 
-    SuperscriptBox["s", "4"], " ", 
-    RowBox[{"(", 
-     RowBox[{"i", "+", 
-      RowBox[{
-       SuperscriptBox["r", "2"], " ", 
-       SubscriptBox["m", "1"]}]}], ")"}]}], "+", 
-   RowBox[{"g", " ", 
-    SuperscriptBox["s", "2"], " ", 
-    RowBox[{"(", 
-     RowBox[{"i", "+", 
-      RowBox[{
-       SuperscriptBox["r", "2"], " ", 
-       RowBox[{"(", 
-        RowBox[{
-         SubscriptBox["m", "1"], "+", 
-         SubscriptBox["m", "2"]}], ")"}]}]}], ")"}]}]}]]], "Output"],
 
 Cell[BoxData[
  FormBox[
@@ -1709,16 +1652,30 @@ Cell["Analyze the system", "Subsection"],
 Cell[CellGroupData[{
 
 Cell[BoxData[{
- RowBox[{"Roots", "[", 
-  RowBox[{
-   RowBox[{"0", "==", 
-    RowBox[{"Denominator", "[", "g1sol", "]"}]}], ",", "s"}], 
-  "]"}], "\[IndentingNewLine]", 
- RowBox[{"Roots", "[", 
-  RowBox[{
-   RowBox[{"0", "==", 
-    RowBox[{"Denominator", "[", "g2sol", "]"}]}], ",", "s"}], 
-  "]"}]}], "Input"],
+ RowBox[{
+  RowBox[{"Roots", "[", 
+   RowBox[{
+    RowBox[{"0", "==", 
+     RowBox[{"Denominator", "[", "g1sol", "]"}]}], ",", "s"}], "]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m1", "\[Rule]", 
+     SubscriptBox["m", "1"]}], ",", 
+    RowBox[{"m2", "\[Rule]", 
+     SubscriptBox["m", "2"]}], ",", 
+    RowBox[{"i", "\[Rule]", "\"\<I\>\""}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Roots", "[", 
+   RowBox[{
+    RowBox[{"0", "==", 
+     RowBox[{"Denominator", "[", "g2sol", "]"}]}], ",", "s"}], "]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m1", "\[Rule]", 
+     SubscriptBox["m", "1"]}], ",", 
+    RowBox[{"m2", "\[Rule]", 
+     SubscriptBox["m", "2"]}], ",", 
+    RowBox[{"i", "\[Rule]", "\"\<I\>\""}]}], "}"}]}]}], "Input"],
 
 Cell[BoxData[
  RowBox[{
@@ -1727,32 +1684,38 @@ Cell[BoxData[
     RowBox[{
      SqrtBox["g"], " ", 
      SqrtBox[
-      RowBox[{"i", "+", 
-       RowBox[{"m1", " ", 
-        SuperscriptBox["r", "2"]}], "+", 
-       RowBox[{"m2", " ", 
-        SuperscriptBox["r", "2"]}]}]]}], 
+      RowBox[{"\<\"I\"\>", "+", 
+       RowBox[{
+        SuperscriptBox["r", "2"], " ", 
+        SubscriptBox["m", "1"]}], "+", 
+       RowBox[{
+        SuperscriptBox["r", "2"], " ", 
+        SubscriptBox["m", "2"]}]}]]}], 
     SqrtBox[
      RowBox[{
-      RowBox[{"i", " ", "r"}], "+", 
-      RowBox[{"m1", " ", 
-       SuperscriptBox["r", "3"]}]}]]]}], "||", 
+      RowBox[{"\<\"I\"\>", " ", "r"}], "+", 
+      RowBox[{
+       SuperscriptBox["r", "3"], " ", 
+       SubscriptBox["m", "1"]}]}]]]}], "||", 
   RowBox[{"s", "\[Equal]", 
    RowBox[{"-", 
     FractionBox[
      RowBox[{
       SqrtBox["g"], " ", 
       SqrtBox[
-       RowBox[{"i", "+", 
-        RowBox[{"m1", " ", 
-         SuperscriptBox["r", "2"]}], "+", 
-        RowBox[{"m2", " ", 
-         SuperscriptBox["r", "2"]}]}]]}], 
+       RowBox[{"\<\"I\"\>", "+", 
+        RowBox[{
+         SuperscriptBox["r", "2"], " ", 
+         SubscriptBox["m", "1"]}], "+", 
+        RowBox[{
+         SuperscriptBox["r", "2"], " ", 
+         SubscriptBox["m", "2"]}]}]]}], 
      SqrtBox[
       RowBox[{
-       RowBox[{"i", " ", "r"}], "+", 
-       RowBox[{"m1", " ", 
-        SuperscriptBox["r", "3"]}]}]]]}]}]}]], "Output"],
+       RowBox[{"\<\"I\"\>", " ", "r"}], "+", 
+       RowBox[{
+        SuperscriptBox["r", "3"], " ", 
+        SubscriptBox["m", "1"]}]}]]]}]}]}]], "Output"],
 
 Cell[BoxData[
  RowBox[{
@@ -1763,32 +1726,38 @@ Cell[BoxData[
     RowBox[{
      SqrtBox["g"], " ", 
      SqrtBox[
-      RowBox[{"i", "+", 
-       RowBox[{"m1", " ", 
-        SuperscriptBox["r", "2"]}], "+", 
-       RowBox[{"m2", " ", 
-        SuperscriptBox["r", "2"]}]}]]}], 
+      RowBox[{"\<\"I\"\>", "+", 
+       RowBox[{
+        SuperscriptBox["r", "2"], " ", 
+        SubscriptBox["m", "1"]}], "+", 
+       RowBox[{
+        SuperscriptBox["r", "2"], " ", 
+        SubscriptBox["m", "2"]}]}]]}], 
     SqrtBox[
      RowBox[{
-      RowBox[{"i", " ", "r"}], "+", 
-      RowBox[{"m1", " ", 
-       SuperscriptBox["r", "3"]}]}]]]}], "||", 
+      RowBox[{"\<\"I\"\>", " ", "r"}], "+", 
+      RowBox[{
+       SuperscriptBox["r", "3"], " ", 
+       SubscriptBox["m", "1"]}]}]]]}], "||", 
   RowBox[{"s", "\[Equal]", 
    RowBox[{"-", 
     FractionBox[
      RowBox[{
       SqrtBox["g"], " ", 
       SqrtBox[
-       RowBox[{"i", "+", 
-        RowBox[{"m1", " ", 
-         SuperscriptBox["r", "2"]}], "+", 
-        RowBox[{"m2", " ", 
-         SuperscriptBox["r", "2"]}]}]]}], 
+       RowBox[{"\<\"I\"\>", "+", 
+        RowBox[{
+         SuperscriptBox["r", "2"], " ", 
+         SubscriptBox["m", "1"]}], "+", 
+        RowBox[{
+         SuperscriptBox["r", "2"], " ", 
+         SubscriptBox["m", "2"]}]}]]}], 
      SqrtBox[
       RowBox[{
-       RowBox[{"i", " ", "r"}], "+", 
-       RowBox[{"m1", " ", 
-        SuperscriptBox["r", "3"]}]}]]]}]}]}]], "Output"]
+       RowBox[{"\<\"I\"\>", " ", "r"}], "+", 
+       RowBox[{
+        SuperscriptBox["r", "3"], " ", 
+        SubscriptBox["m", "1"]}]}]]]}]}]}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2947,7 +2916,7 @@ this calculation.\"",2,94,8,30926971658705863250,"Local"},
 Cell[BoxData["$Aborted"], "Output"]
 }, Open  ]]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{

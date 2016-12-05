@@ -900,51 +900,124 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"sol", "[", 
-   RowBox[{"[", "1", "]"}], "]"}], "/.", "textReplace"}]], "Input"],
+  RowBox[{"Symbol", "[", "\"\<I\>\"", "]"}], "//", 
+  "TraditionalForm"}]], "Input"],
 
 Cell[BoxData[
- RowBox[{
+ FormBox["\[ImaginaryI]", TraditionalForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sol", "/.", "textReplace"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
   RowBox[{
-   SuperscriptBox["x", "\[Prime]\[Prime]",
-    MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
-  FractionBox[
    RowBox[{
-    SuperscriptBox["r", "2"], " ", 
-    RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+    FractionBox[
      RowBox[{
+      SuperscriptBox["r", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], ")"}], " ", 
+         RowBox[{"motor", "[", "t", "]"}]}], "+", 
+        RowBox[{
+         RowBox[{"Sin", "[", 
+          RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], " ", 
+         SubscriptBox["m", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "g"}], " ", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], "+", 
+           RowBox[{"r", " ", 
+            SuperscriptBox[
+             RowBox[{
+              SuperscriptBox["\[Theta]", "\[Prime]",
+               MultilineFunction->None], "[", "t", "]"}], "2"]}]}], ")"}]}]}],
+        ")"}]}], 
+     RowBox[{"\<\"I\"\>", "+", 
       RowBox[{
-       RowBox[{"(", 
-        RowBox[{"1", "+", 
-         RowBox[{"Cos", "[", 
-          RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], ")"}], " ", 
-       RowBox[{"motor", "[", "t", "]"}]}], "+", 
+       SuperscriptBox["r", "2"], " ", 
+       SubscriptBox["m", "1"]}], "+", 
       RowBox[{
-       RowBox[{"Sin", "[", 
-        RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], " ", 
+       SuperscriptBox["r", "2"], " ", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", 
+         RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], "2"], " ", 
+       SubscriptBox["m", "2"]}]}]]}], ",", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[Theta]", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"motor", "[", "t", "]"}]}], " ", 
+        RowBox[{"(", 
+         RowBox[{"\<\"I\"\>", "+", 
+          RowBox[{
+           SuperscriptBox["r", "2"], " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], " ", 
+           SubscriptBox["m", "2"]}], "+", 
+          RowBox[{
+           SuperscriptBox["r", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SubscriptBox["m", "1"], "+", 
+             SubscriptBox["m", "2"]}], ")"}]}]}], ")"}]}], "+", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], " ", 
+        SubscriptBox["m", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"g", " ", 
+           RowBox[{"(", 
+            RowBox[{"\<\"I\"\>", "+", 
+             RowBox[{
+              SuperscriptBox["r", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                SubscriptBox["m", "1"], "+", 
+                SubscriptBox["m", "2"]}], ")"}]}]}], ")"}]}], "-", 
+          RowBox[{
+           SuperscriptBox["r", "3"], " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], " ", 
+           SubscriptBox["m", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{
+             SuperscriptBox["\[Theta]", "\[Prime]",
+              MultilineFunction->None], "[", "t", "]"}], "2"]}]}], ")"}]}]}], 
+      ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"r", " ", 
        SubscriptBox["m", "2"], " ", 
        RowBox[{"(", 
-        RowBox[{
+        RowBox[{"\<\"I\"\>", "+", 
          RowBox[{
-          RowBox[{"-", "g"}], " ", 
-          RowBox[{"Cos", "[", 
-           RowBox[{"\[Theta]", "[", "t", "]"}], "]"}]}], "+", 
-         RowBox[{"r", " ", 
+          SuperscriptBox["r", "2"], " ", 
+          SubscriptBox["m", "1"]}], "+", 
+         RowBox[{
+          SuperscriptBox["r", "2"], " ", 
           SuperscriptBox[
-           RowBox[{
-            SuperscriptBox["\[Theta]", "\[Prime]",
-             MultilineFunction->None], "[", "t", "]"}], "2"]}]}], ")"}]}]}], 
-     ")"}]}], 
-   RowBox[{"\<\"I\"\>", "+", 
-    RowBox[{
-     SuperscriptBox["r", "2"], " ", 
-     SubscriptBox["m", "1"]}], "+", 
-    RowBox[{
-     SuperscriptBox["r", "2"], " ", 
-     SuperscriptBox[
-      RowBox[{"Sin", "[", 
-       RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], "2"], " ", 
-     SubscriptBox["m", "2"]}]}]]}]], "Output"]
+           RowBox[{"Sin", "[", 
+            RowBox[{"\[Theta]", "[", "t", "]"}], "]"}], "2"], " ", 
+          SubscriptBox["m", "2"]}]}], ")"}]}], ")"}]}]}]}], "}"}]], "Output"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2849,58 +2922,10 @@ Cell[BoxData[
                 RowBox[{"kpx", " ", "r"}], "+", 
                 RowBox[{"kdx", " ", "r", " ", "s"}]}], ")"}]}]}], ")"}]}]}], 
          ")"}]}]}], ")"}]}]}], ")"}]}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Simplify", "@", 
-  RowBox[{"Roots", "[", 
-   RowBox[{
-    RowBox[{"0", "==", 
-     RowBox[{"Denominator", "[", "fulltransferfunc", "]"}]}], ",", "s"}], 
-   "]"}]}]], "Input"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Simplify","time",
-   "\"Time spent on a transformation exceeded \
-\\!\\(\\*RowBox[{\\\"300.`\\\"}]\\) seconds, and the transformation was \
-aborted. Increasing the value of TimeConstraint option may improve the result \
-of simplification.\"",2,94,5,30926971658705863250,"Local"},
-  "MessageTemplate"]], "Message", "MSG"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Simplify","time",
-   "\"Time spent on a transformation exceeded \
-\\!\\(\\*RowBox[{\\\"300.`\\\"}]\\) seconds, and the transformation was \
-aborted. Increasing the value of TimeConstraint option may improve the result \
-of simplification.\"",2,94,6,30926971658705863250,"Local"},
-  "MessageTemplate"]], "Message", "MSG"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Simplify","time",
-   "\"Time spent on a transformation exceeded \
-\\!\\(\\*RowBox[{\\\"300.`\\\"}]\\) seconds, and the transformation was \
-aborted. Increasing the value of TimeConstraint option may improve the result \
-of simplification.\"",2,94,7,30926971658705863250,"Local"},
-  "MessageTemplate"]], "Message", "MSG"],
-
-Cell[BoxData[
- TemplateBox[{
-  "General","stop",
-   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Simplify\\\", \
-\\\"::\\\", \\\"time\\\"}], \\\"MessageName\\\"]\\) will be suppressed during \
-this calculation.\"",2,94,8,30926971658705863250,"Local"},
-  "MessageTemplate"]], "Message", "MSG"],
-
-Cell[BoxData["$Aborted"], "Output"]
-}, Open  ]]
-}, Open  ]]
-}, Closed]]
-}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -3819,8 +3844,10 @@ Cell[BoxData["\<\"\\\\[\\\\text{\\\\^ u}\\\\]\\n\\n\"\>"], "Output"]
 }, Open  ]]
 },
 WindowSize->{960, 1016},
-WindowMargins->{{0, Automatic}, {27, 10}},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
+

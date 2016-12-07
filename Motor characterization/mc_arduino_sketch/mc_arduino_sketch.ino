@@ -9,16 +9,16 @@ void setup() {
 }
 
 void loop() {
-	printIfNewEncoder();
+	// printIfNewEncoder();
 	readSerial();
 	// moveMotor(motorspeed * 255);
 }
 
-const int timeout = 10000; // ms
+const int timeout = 5*1000; // ms
 const int heightRead = 24; // encoder ticks
 const int heightStop = 48; // encoder ticks
 
-const int returnPower = -.2*256;
+const int returnPower = -.1*256;
 
 /* Lifts weight, measuring speed and current and returning ticks/second */
 float characterizeMotion(int power) {
@@ -63,6 +63,6 @@ void readSerial(){
 	    while(Serial.available()){
 	    	Serial.read();
 	    }
-	    characterizeMotion(motorspeed);
+	    characterizeMotion(motorspeed * 255);
 	}
 }

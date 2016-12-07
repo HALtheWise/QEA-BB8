@@ -9,7 +9,7 @@ void setup() {
 }
 
 void loop() {
-	// printIfNewEncoder();
+	printIfNewEncoder();
 	readSerial();
 	// moveMotor(motorspeed * 255);
 }
@@ -23,6 +23,7 @@ const int returnPower = .06*256;
 
 /* Lifts weight, measuring speed and current and returning ticks/second */
 float characterizeMotion(int power) {
+	encoder1.write(0);
 	long starttime = millis();
 
 	// Start lifting weight
@@ -61,9 +62,16 @@ void readSerial(){
 	    Serial.print("Motor speed set to ");
 	    Serial.println(motorspeed);
 	    delay(3);
+
+	    bool isTest = (Serial.read()=='t');
 	    while(Serial.available()){
 	    	Serial.read();
 	    }
-	    characterizeMotion(motorspeed * 255);
+
+	    if (isTest) {
+	    	characterizeMotion(motorspeed * 255);
+	    } else {
+	    	moveMotor(motorspeed * 255);
+	    }
 	}
 }

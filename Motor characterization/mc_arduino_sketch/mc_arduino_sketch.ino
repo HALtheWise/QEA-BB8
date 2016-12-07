@@ -18,7 +18,8 @@ const int timeout = 5*1000; // ms
 const int heightRead = 24; // encoder ticks
 const int heightStop = 48; // encoder ticks
 
-const int returnPower = -.1*256;
+const int holdPower = 0.10*256;
+const int returnPower = .06*256;
 
 /* Lifts weight, measuring speed and current and returning ticks/second */
 float characterizeMotion(int power) {
@@ -35,7 +36,7 @@ float characterizeMotion(int power) {
 
 	long readStopTime = millis();
 
-	moveMotor(0);
+	moveMotor(holdPower);
 
 	float dt = (readStopTime - readStartTime)/1000.0;
 	float measuredspeed = (heightStop - heightRead) / dt;

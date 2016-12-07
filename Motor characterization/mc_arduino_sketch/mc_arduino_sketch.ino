@@ -5,7 +5,7 @@ float motorspeed = 0.0;
 
 void setup() {
 	Serial.begin(57600);
-	Serial.println("Basic Encoder Test:");
+	Serial.println("Motor Characterization test:");
 }
 
 void loop() {
@@ -63,5 +63,6 @@ void readSerial(){
 	    while(Serial.available()){
 	    	Serial.read();
 	    }
+	    characterizeMotion(motorspeed);
 	}
 }

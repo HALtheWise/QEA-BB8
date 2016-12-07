@@ -1,13 +1,15 @@
 #include <Arduino.h>
 
-const byte motorApinA = 7;
-const byte motorApinB = 8;
-const byte motorApinSpeed = 9;
+const byte motorAenA = 7;
+const byte motorAenB = 8;
+const byte motorApwmA = 9;
+const byte motorApwmB = 10;
 
 void init_motors(){
-   pinMode(motorApinA, OUTPUT);
-   pinMode(motorApinB, OUTPUT);
-   pinMode(motorApinSpeed, OUTPUT);
+   pinMode(motorAenA, OUTPUT);
+   pinMode(motorAenB, OUTPUT);
+   pinMode(motorApwmA, OUTPUT);
+   pinMode(motorApwmB, OUTPUT);
 
 }
 
@@ -20,12 +22,13 @@ void moveMotor(int speed){
 
 	if (direction)
 	{
-		digitalWrite(motorApinA, LOW);
-		digitalWrite(motorApinB, HIGH);
+		analogWrite(motorApwmA, abs(speed));
+		digitalWrite(motorApwmB, LOW);
 	} else {
-		digitalWrite(motorApinA, HIGH);
-		digitalWrite(motorApinB, LOW);
+		analogWrite(motorApwmB, abs(speed));
+		digitalWrite(motorApwmA, LOW);
 	}
 
-	analogWrite(motorApinSpeed, abs(speed));
+	digitalWrite(motorAenA, HIGH);
+	digitalWrite(motorAenB, HIGH);
 }

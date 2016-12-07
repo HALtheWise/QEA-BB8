@@ -1,10 +1,10 @@
 #include "encoders.h"
 #include "motors.h"
 
-float motorspeed = 0.3;
+float motorspeed = 0.0;
 
 void setup() {
-	Serial.begin(9600);
+	Serial.begin(57600);
 	Serial.println("Basic Encoder Test:");
 }
 

@@ -1,6 +1,8 @@
 #include "encoders.h"
 #include "motors.h"
 
+float characterizeMotion(int power, bool goingUp = true);
+
 float motorspeed = 0.0;
 
 void setup() {
@@ -49,16 +51,73 @@ void manyCharacterize() {
 	}
 }
 
+void raiseSlowly(int distance = 200, float raiseSpeed = 30) {
+	const float kp = 10;
+	long startEncoder = encoder1.read();
+	long starttime = millis();
+
+	while(millis() - starttime < timeout){
+		float dt = (millis() - starttime)/1000.0;
+	    long posTarget = startEncoder - raiseSpeed * dt;
+
+	   	int power = (posTarget - encoder1.read()) * kp;
+	   	// power = min(power, maxPower);
+
+	   	moveMotor(power);
+
+	   	if(abs(posTarget - encoder1.read()) > 30) {
+	   		break;
+	   	}
+
+	   	if(encoder1.read() > distance+startEncoder){
+	   	    break;
+	   	}
+	}
+	moveMotor(0);
+}
+
+void lowerSlowly(float lowerSpeed = 50, int minPower = 0) {
+	const float kp = 10;
+	long startEncoder = encoder1.read();
+	long starttime = millis();
+
+	while(millis() - starttime < timeout){
+		float dt = (millis() - starttime)/1000.0;
+	    long posTarget = startEncoder - lowerSpeed * dt;
+
+	   	int power = (posTarget - encoder1.read()) * kp;
+	   	power = max(power, minPower);
+
+	   	moveMotor(power);
+
+	   	if(abs(posTarget - encoder1.read()) > 30) {
+	   		break;
+	   	}
+	}
+	moveMotor(0);
+}
+
 /* Lifts weight, measuring speed and current and returning speed in ticks/sec */
-float characterizeMotion(int power) {
+float characterizeMotion(int power, bool goingUp = true) {
+
+	if(!goingUp){
+	    raiseSlowly(heightStop);
+	}
+
 	encoder1.write(0);
 	long starttime = millis();
 
-	// Start lifting weight
+	// Start lifting/lowering weight
 	moveMotor(power);
-	while(encoder1.read() < heightRead && (millis() - starttime) < timeout) {}
+
+	if(goingUp){
+		while(encoder1.read() < heightRead && (millis() - starttime) < timeout) {}
+	} else {  
+		while(encoder1.read() > -heightRead && (millis() - starttime) < timeout) {}
+	}
+
 	if ((millis() - starttime) >= timeout) {
-		moveMotor(0);
+		lowerSlowly();
 		return 0;
 	}
 
@@ -67,28 +126,50 @@ float characterizeMotion(int power) {
 	long readStartTime = millis();
 
 	starttime = millis();
-	while(encoder1.read() < heightStop && (millis() - readStartTime) < timeout) {}
+
+	long readStartDist = encoder1.read();
+
+	long totalCurrent = 0;
+	long loopCount = 0;
+
+	if(goingUp){
+		while(encoder1.read() < heightStop && (millis() - starttime) < timeout) {
+			loopCount++;
+			totalCurrent += analogRead(currentpin);
+			delay(1);
+		}
+	} else {  
+		while(encoder1.read() > -heightStop + 24 && (millis() - starttime) < timeout) {
+			loopCount++;
+			totalCurrent += analogRead(currentpin);
+			delay(1);
+		}
+	}
+
+	long readStopDist = encoder1.read();
+	long readStopTime = millis();
+
 	if ((millis() - starttime) >= timeout) {
-		moveMotor(0);
+		lowerSlowly();
 		return 0;
 	}
 
-	long readStopTime = millis();
-
-	moveMotor(holdPower);
+	if(goingUp){
+		// Decelerate the motor
+		moveMotor(power*0.8);
+		delay(100);
+		moveMotor(power*0.6);
+		delay(100);
+	}
 
 	float dt = (readStopTime - readStartTime)/1000.0;
-	float measuredspeed = (heightStop - heightRead) / dt;
+	float measuredspeed = (readStopDist - readStartDist) / dt;
 
 	Serial.print("Power: "); Serial.print(power); 
 	Serial.print("\tSpeed: "); Serial.println(measuredspeed);
 
-	delay(1000);
-
-	moveMotor(returnPower);
-
-	starttime = millis();
-	while(/*encoder1.read() > 0 &&*/ (millis() - readStartTime) < timeout) {}
+	// Lower the motor
+	lowerSlowly();
 
 	moveMotor(0);
 	return measuredspeed;
@@ -112,6 +193,9 @@ void readSerial(){
 	    } else if(command=='s'){
 		    Serial.println("Sweeping");
 	       	manyCharacterize();
+	    } else if(command=='l'){
+		    Serial.println("Lowering");
+	       	lowerSlowly();
 	    } else {
 		    Serial.print("Motor speed set to ");
 		    Serial.println(motorspeed);

@@ -5,6 +5,8 @@ const byte motorAenB = 8;
 const byte motorApwmA = 9;
 const byte motorApwmB = 10;
 
+const byte currentpin = A2;
+
 void init_motors(){
    pinMode(motorAenA, OUTPUT);
    pinMode(motorAenB, OUTPUT);

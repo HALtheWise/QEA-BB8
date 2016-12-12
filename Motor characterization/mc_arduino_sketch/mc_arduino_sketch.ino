@@ -17,6 +17,8 @@ void loop() {
 }
 
 const int timeout = 5*1000; // ms
+const int testTimeout = 2*1000; //ms
+const int heightTest = 6; // encoder ticks
 const int heightRead = 24; // encoder ticks
 const int heightStop = 48; // encoder ticks
 
@@ -98,14 +100,22 @@ void lowerSlowly(float lowerSpeed = 50, int minPower = 0) {
 }
 
 /* Lifts weight, measuring speed and current and returning speed in ticks/sec */
-float characterizeMotion(int power, bool goingUp = true) {
-
-	if(!goingUp){
-	    raiseSlowly(heightStop);
-	}
+float characterizeMotion(int power) {
+	bool goingUp = true;
 
 	encoder1.write(0);
 	long starttime = millis();
+	moveMotor(power);
+	while(encoder1.read() < heightTest) {
+		if(millis() - starttime >= testTimeout){
+		    goingUp = false;
+		    lowerSlowly();
+	    	raiseSlowly(heightStop);
+		}
+	}
+
+	encoder1.write(0);
+	starttime = millis();
 
 	// Start lifting/lowering weight
 	moveMotor(power);
@@ -116,7 +126,7 @@ float characterizeMotion(int power, bool goingUp = true) {
 		while(encoder1.read() > -heightRead && (millis() - starttime) < timeout) {}
 	}
 
-	if ((millis() - starttime) >= timeout) {
+	if ((millis() - starttime) >= acceltimeout) {
 		lowerSlowly();
 		return 0;
 	}
@@ -139,7 +149,7 @@ float characterizeMotion(int power, bool goingUp = true) {
 			delay(1);
 		}
 	} else {  
-		while(encoder1.read() > -heightStop + 24 && (millis() - starttime) < timeout) {
+		while(encoder1.read() > -heightStop + heightRead && (millis() - starttime) < timeout) {
 			loopCount++;
 			totalCurrent += analogRead(currentpin);
 			delay(1);
@@ -163,16 +173,18 @@ float characterizeMotion(int power, bool goingUp = true) {
 	}
 
 	float dt = (readStopTime - readStartTime)/1000.0;
-	float measuredspeed = (readStopDist - readStartDist) / dt;
+	float measuredSpeed = (readStopDist - readStartDist) / dt;
+	float measuredCurrent = totalCurrent / loopCount;
 
 	Serial.print("Power: "); Serial.print(power); 
-	Serial.print("\tSpeed: "); Serial.println(measuredspeed);
+	Serial.print("Current: "); Serial.print(measuredCurrent); 
+	Serial.print("\tSpeed: "); Serial.println(measuredSpeed);
 
 	// Lower the motor
 	lowerSlowly();
 
 	moveMotor(0);
-	return measuredspeed;
+	return measuredSpeed;
 }
 
 void readSerial(){

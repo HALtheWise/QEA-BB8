@@ -16,36 +16,22 @@ void loop() {
 	// moveMotor(motorspeed * 255);
 }
 
-const int timeout = 5*1000; // ms
+const int timeout = 15*1000; // ms
 const int testTimeout = 2*1000; //ms
 const int heightTest = 6; // encoder ticks
 const int heightRead = 24; // encoder ticks
 const int heightStop = 48; // encoder ticks
+
+const int fallbuffer = 6; // encoder ticks
 
 int holdPower = 0;
 int returnPower = 0;
 
 const float maxSpeed = 100;
 
-void manyCharacterize() {
+void manyCharacterize(int startPower = 0) {
 
-	int minPower = 0;
-	for(int power=0; power<256; power += 10){
-	    float result = characterizeMotion(power);
-	    if (result > 0) {
-	    	minPower = power;
-	    	moveMotor(0);
-	    	break;
-	    }
-	}
-	Serial.print("Discovered lower bound power: ");
-	Serial.println(minPower);
-
-	holdPower = minPower - 10;
-	returnPower = minPower - 30;
-
-
-	for(int power=minPower; power<256; power += 10){
+	for(int power=startPower; power<256; power += 10){
 	    float result = characterizeMotion(power);
 	    if (result > maxSpeed) {
 	    	break;
@@ -60,9 +46,9 @@ void raiseSlowly(int distance, float raiseSpeed = 20) {
 
 	while(millis() - starttime < timeout){
 		float dt = (millis() - starttime)/1000.0;
-	    long posTarget = startEncoder - raiseSpeed * dt;
+	    long posTarget = startEncoder + raiseSpeed * dt;
 
-	   	int power = -(posTarget - encoder1.read()) * kp;
+	   	int power = (posTarget - encoder1.read()) * kp;
 	   	// power = min(power, maxPower);
 
 	   	moveMotor(power);
@@ -96,7 +82,7 @@ void lowerSlowly(float lowerSpeed = 30, int minPower = 0) {
 	   		break;
 	   	}
 	}
-	Serial.println("Finished lowering");
+	// Serial.println("Finished lowering");
 	moveMotor(0);
 }
 
@@ -112,6 +98,7 @@ float characterizeMotion(int power) {
 		    goingUp = false;
 		    lowerSlowly();
 	    	raiseSlowly(heightStop);
+	    	// Serial.println("Testing in braking mode");
 		}
 	}
 
@@ -129,6 +116,8 @@ float characterizeMotion(int power) {
 
 	if ((millis() - starttime) >= timeout) {
 		lowerSlowly();
+
+		Serial.print("Power, "); Serial.print(power); Serial.println(",\t--stall--");
 		return 0;
 	}
 
@@ -150,7 +139,7 @@ float characterizeMotion(int power) {
 			delay(1);
 		}
 	} else {  
-		while(encoder1.read() > -heightStop + heightRead && (millis() - starttime) < timeout) {
+		while(encoder1.read() > -heightStop + fallbuffer && (millis() - starttime) < timeout) {
 			loopCount++;
 			totalCurrent += analogRead(currentpin);
 			delay(1);
@@ -175,7 +164,7 @@ float characterizeMotion(int power) {
 
 	float dt = (readStopTime - readStartTime)/1000.0;
 	float measuredSpeed = (readStopDist - readStartDist) / dt;
-	float measuredCurrent = totalCurrent / loopCount;
+	float measuredCurrent = float(totalCurrent) / loopCount;
 
 	Serial.print("Power, "); Serial.print(power); 
 	Serial.print(",\tCurrent, "); Serial.print(measuredCurrent); 
@@ -209,6 +198,9 @@ void readSerial(){
 	    } else if(command=='l'){
 		    Serial.println("Lowering");
 	       	lowerSlowly();
+	    } else if(command=='r'){
+		    Serial.println("Raising");
+	       	raiseSlowly(heightStop-12);
 	    } else {
 		    Serial.print("Motor speed set to ");
 		    Serial.println(motorspeed);

@@ -1,0 +1,90 @@
+ -- 12V --
+
+50g weight
+
+Power, 25,	Current, 4.11,	Speed, 55.04
+
+Power, 38,	Current, 8.23,	Speed, 132.24
+
+Power, 0,	Current, 0.00,	Speed, -56.70
+Power, 10,	Current, 0.49,	Speed, 0.00
+Power, 20,	Current, 3.04,	Speed, 24.70
+Power, 30,	Current, 5.78,	Speed, 85.31
+Power, 40,	Current, 8.85,	Speed, 144.17
+Power, 50,	Current, 12.31,	Speed, 202.80
+
+Power, 63,	Current, 16.81,	Speed, 275.66
+Power, 63,	Current, 16.90,	Speed, 275.79
+Power, 63,	Current, 16.67,	Speed, 276.05
+
+
+Power, 0,	Current, 0.00,	Speed, -55.96
+Power, 10,	Current, 0.54,	Speed, 0.00
+Power, 20,	Current, 3.00,	Speed, 26.13
+Power, 30,	Current, 5.74,	Speed, 86.44
+Power, 40,	Current, 8.81,	Speed, 145.73
+Power, 50,	Current, 12.21,	Speed, 202.92
+
+Power, 60,	Current, 15.80,	Speed, 259.20
+
+Power, 69,	Current, 19.09,	Speed, 310.01
+
+
+100g weight
+
+Power, 0,	Current, 0.00,	Speed, -116.49
+Power, 10,	Current, 1.60,	Speed, -61.62
+Power, 20,	Current, 3.88,	Speed, -1.60
+Power, 30,	Current, 9.05,	Speed, 13.33
+Power, 40,	Current, 12.79,	Speed, 76.16
+Power, 50,	Current, 17.25,	Speed, 133.99
+Power, 60,	Current, 21.86,	Speed, 190.37
+Power, 70,	Current, 26.69,	Speed, 244.41
+Power, 80,	Current, 31.17,	Speed, 298.84
+
+Power, 79,	Current, 30.21,	Speed, 294.39
+
+150g weight
+
+
+Power, 0,	Current, 0.00,	Speed, -165.31
+Power, 10,	Current, 2.63,	Speed, -126.42
+Power, 20,	Current, 6.34,	Speed, -70.49
+Power, 30,	Current, 10.39,	Speed, -10.67
+Power, 40,	Current, 18.84,	Speed, 0.00
+Power, 50,	Current, 23.02,	Speed, 53.94
+Power, 60,	Current, 28.32,	Speed, 109.34
+Power, 70,	Current, 33.83,	Speed, 165.97
+Power, 80,	Current, 40.07,	Speed, 216.60
+Power, 90,	Current, 46.77,	Speed, 264.40
+Power, 100,	Current, 54.00,	Speed, 310.76
+
+
+200g
+
+
+Power, 10,	Current, 3.69,	Speed, -179.84
+Power, 20,	Current, 8.65,	Speed, -150.71
+Power, 30,	Current, 14.25,	Speed, -102.68
+Power, 40,	Current, 19.88,	Speed, -47.09
+Power, 50,	Current, 28.26,	Speed, -2.20
+Power, 60,	Current, 37.19,	Speed, -0.07
+Power, 70,	Current, 42.89,	Speed, 60.47
+Power, 80,	Current, 50.05,	Speed, 115.92
+Power, 90,	Current, 57.32,	Speed, 166.40
+Power, 100,	Current, 64.73,	Speed, 210.74
+Power, 110,	Current, 73.10,	Speed, 248.43
+Power, 120,	Current, 81.47,	Speed, 284.29
+
+
+300g
+
+
+Power, 30,	Current, 20.05,	Speed, -198.09
+Power, 40,	Current, 28.62,	Speed, -184.00
+Power, 50,	Current, 38.08,	Speed, -160.47
+Power, 60,	Current, 47.00,	Speed, -133.68
+Power, 70,	Current, 55.88,	Speed, -95.24
+Power, 80,	Current, 64.68,	Speed, 0.00
+Power, 90,	Current, 25.29,	Speed, 434.86
+

@@ -17,17 +17,18 @@ void loop() {
 }
 
 const int timeout = 15*1000; // ms
+const int movetimeout = 30*1000; // ms
 const int testTimeout = 2*1000; //ms
-const int heightTest = 6; // encoder ticks
-const int heightRead = 24; // encoder ticks
-const int heightStop = 48; // encoder ticks
+const int heightTest = 12; // encoder ticks
+const int heightRead = 36; // encoder ticks
+const int heightStop = 550; // encoder ticks
 
-const int fallbuffer = 6; // encoder ticks
+const int fallbuffer = 100; // encoder ticks
 
 int holdPower = 0;
 int returnPower = 0;
 
-const float maxSpeed = 100;
+const float maxSpeed = 240;
 
 void manyCharacterize(int startPower = 0) {
 
@@ -39,12 +40,12 @@ void manyCharacterize(int startPower = 0) {
 	}
 }
 
-void raiseSlowly(int distance, float raiseSpeed = 20) {
+void raiseSlowly(int distance, float raiseSpeed = 40) {
 	const float kp = 10;
 	long startEncoder = encoder1.read();
 	long starttime = millis();
 
-	while(millis() - starttime < timeout){
+	while(millis() - starttime < movetimeout){
 		float dt = (millis() - starttime)/1000.0;
 	    long posTarget = startEncoder + raiseSpeed * dt;
 
@@ -64,12 +65,12 @@ void raiseSlowly(int distance, float raiseSpeed = 20) {
 	moveMotor(0);
 }
 
-void lowerSlowly(float lowerSpeed = 30, int minPower = 0) {
+void lowerSlowly(float lowerSpeed = 45, int minPower = 0) {
 	const float kp = 10;
 	long startEncoder = encoder1.read();
 	long starttime = millis();
 
-	while(millis() - starttime < timeout){
+	while(millis() - starttime < movetimeout){
 		float dt = (millis() - starttime)/1000.0;
 	    long posTarget = startEncoder - lowerSpeed * dt;
 
@@ -157,8 +158,12 @@ float characterizeMotion(int power) {
 	if(goingUp){
 		// Decelerate the motor
 		moveMotor(power*0.8);
-		delay(100);
+		delay(200);
 		moveMotor(power*0.6);
+		delay(200);
+		moveMotor(power*0.4);
+		delay(150);
+		moveMotor(power*0.2);
 		delay(100);
 	}
 
@@ -194,7 +199,7 @@ void readSerial(){
 	    	characterizeMotion(motorspeed * 255);
 	    } else if(command=='s'){
 		    Serial.println("Sweeping");
-	       	manyCharacterize();
+	       	manyCharacterize(30);
 	    } else if(command=='l'){
 		    Serial.println("Lowering");
 	       	lowerSlowly();

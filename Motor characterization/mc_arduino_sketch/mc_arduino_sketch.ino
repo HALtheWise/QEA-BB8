@@ -114,12 +114,12 @@ float characterizeMotion(int power) {
 		while(encoder1.read() > -heightRead && (millis() - starttime) < timeout) {}
 	}
 
-	if ((millis() - starttime) >= timeout) {
-		lowerSlowly();
+	// if ((millis() - starttime) >= timeout) {
+	// 	lowerSlowly();
 
-		Serial.print("Power, "); Serial.print(power); Serial.println(",\t--stall--");
-		return 0;
-	}
+	// 	Serial.print("Power, "); Serial.print(power); Serial.println(",\t--stall--");
+	// 	return 0;
+	// }
 
 
 	// Take the reading
@@ -149,10 +149,10 @@ float characterizeMotion(int power) {
 	long readStopDist = encoder1.read();
 	long readStopTime = millis();
 
-	if ((millis() - starttime) >= timeout) {
-		lowerSlowly();
-		return 0;
-	}
+	// if ((millis() - starttime) >= timeout) {
+	// 	lowerSlowly();
+	// 	return 0;
+	// }
 
 	if(goingUp){
 		// Decelerate the motor

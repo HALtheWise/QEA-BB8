@@ -1,7 +1,7 @@
 #include "encoders.h"
 #include "motors.h"
 
-float characterizeMotion(int power, bool goingUp = true);
+// float characterizeMotion(int power, bool goingUp = true);
 
 float motorspeed = 0.0;
 
@@ -53,7 +53,7 @@ void manyCharacterize() {
 	}
 }
 
-void raiseSlowly(int distance = 200, float raiseSpeed = 30) {
+void raiseSlowly(int distance, float raiseSpeed = 20) {
 	const float kp = 10;
 	long startEncoder = encoder1.read();
 	long starttime = millis();
@@ -62,7 +62,7 @@ void raiseSlowly(int distance = 200, float raiseSpeed = 30) {
 		float dt = (millis() - starttime)/1000.0;
 	    long posTarget = startEncoder - raiseSpeed * dt;
 
-	   	int power = (posTarget - encoder1.read()) * kp;
+	   	int power = -(posTarget - encoder1.read()) * kp;
 	   	// power = min(power, maxPower);
 
 	   	moveMotor(power);
@@ -78,7 +78,7 @@ void raiseSlowly(int distance = 200, float raiseSpeed = 30) {
 	moveMotor(0);
 }
 
-void lowerSlowly(float lowerSpeed = 50, int minPower = 0) {
+void lowerSlowly(float lowerSpeed = 30, int minPower = 0) {
 	const float kp = 10;
 	long startEncoder = encoder1.read();
 	long starttime = millis();
@@ -96,6 +96,7 @@ void lowerSlowly(float lowerSpeed = 50, int minPower = 0) {
 	   		break;
 	   	}
 	}
+	Serial.println("Finished lowering");
 	moveMotor(0);
 }
 
@@ -126,7 +127,7 @@ float characterizeMotion(int power) {
 		while(encoder1.read() > -heightRead && (millis() - starttime) < timeout) {}
 	}
 
-	if ((millis() - starttime) >= acceltimeout) {
+	if ((millis() - starttime) >= timeout) {
 		lowerSlowly();
 		return 0;
 	}
@@ -176,9 +177,9 @@ float characterizeMotion(int power) {
 	float measuredSpeed = (readStopDist - readStartDist) / dt;
 	float measuredCurrent = totalCurrent / loopCount;
 
-	Serial.print("Power: "); Serial.print(power); 
-	Serial.print("Current: "); Serial.print(measuredCurrent); 
-	Serial.print("\tSpeed: "); Serial.println(measuredSpeed);
+	Serial.print("Power, "); Serial.print(power); 
+	Serial.print(",\tCurrent, "); Serial.print(measuredCurrent); 
+	Serial.print(",\tSpeed, "); Serial.println(measuredSpeed);
 
 	// Lower the motor
 	lowerSlowly();

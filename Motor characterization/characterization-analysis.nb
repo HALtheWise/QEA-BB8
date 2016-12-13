@@ -1,8 +1,1454 @@
 Notebook[{
-Cell["Motor Characterization Analysis", "Title"]
+
+Cell[CellGroupData[{
+Cell["Motor Characterization Analysis", "Title"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["Load and parse the data", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "@", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{"\"\<test results 12-12-2016.txt\>\"", ",", "\"\<Elements\>\""}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Data\"\>", ",", "\<\"Lines\"\>", ",", "\<\"Plaintext\"\>", 
+   ",", "\<\"String\"\>", ",", "\<\"Words\"\>"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<test results 12-12-2016.txt\>\"", ",", "\"\<Lines\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{
+    RowBox[{"Cases", "[", 
+     RowBox[{"data", ",", 
+      RowBox[{"Except", "[", "\"\<\>\"", "]"}]}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ";;"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Split", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{
+      RowBox[{"And", "[", 
+       RowBox[{
+        RowBox[{"StringContainsQ", "[", 
+         RowBox[{"#1", ",", "\"\<Current\>\""}], "]"}], ",", 
+        RowBox[{"StringContainsQ", "[", 
+         RowBox[{"#2", ",", "\"\<Current\>\""}], "]"}]}], "]"}], "&"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"weights", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"#", ",", "\"\<g\>\""}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "&"}], "/@", 
+    RowBox[{"Flatten", "@", 
+     RowBox[{"data", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ";;", ";;", "2"}], "]"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"data", "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ";;", ";;", "2"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"parsed", "=", 
+   RowBox[{"Flatten", "@", 
+    RowBox[{"MapThread", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"result", "@@", 
+             RowBox[{"Prepend", "[", 
+              RowBox[{
+               RowBox[{"ToExpression", "/@", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"StringSplit", "[", 
+                   RowBox[{"#", ",", "\"\<,\>\""}], "]"}], "[", 
+                  RowBox[{"[", 
+                   RowBox[{"2", ";;", ";;", "2"}], "]"}], "]"}], ")"}]}], ",",
+                "weight"}], "]"}]}], "&"}], ")"}], "/.", 
+          RowBox[{"weight", "\[Rule]", 
+           RowBox[{"ToExpression", "@", "#1"}]}]}], ",", "#2"}], "]"}], "&"}],
+       ",", 
+      RowBox[{"{", 
+       RowBox[{"weights", ",", "data"}], "}"}]}], "]"}]}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"\"\<result[mass,power,current,speed]\>\"", \
+"\[IndentingNewLine]", 
+ RowBox[{"Column", "@", "parsed"}]}], "Input"],
+
+Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "25", ",", "4.11`", ",", "55.04`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "38", ",", "8.23`", ",", "132.24`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "0", ",", "0.`", ",", 
+       RowBox[{"-", "56.7`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "10", ",", "0.49`", ",", "0.`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "20", ",", "3.04`", ",", "24.7`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "30", ",", "5.78`", ",", "85.31`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "40", ",", "8.85`", ",", "144.17`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "50", ",", "12.31`", ",", "202.8`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.81`", ",", "275.66`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.9`", ",", "275.79`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.67`", ",", "276.05`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "0", ",", "0.`", ",", 
+       RowBox[{"-", "55.96`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "10", ",", "0.54`", ",", "0.`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "20", ",", "3.`", ",", "26.13`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "30", ",", "5.74`", ",", "86.44`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "40", ",", "8.81`", ",", "145.73`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "50", ",", "12.21`", ",", "202.92`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "60", ",", "15.8`", ",", "259.2`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"50\"\>", ",", "69", ",", "19.09`", ",", "310.01`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "0", ",", "0.`", ",", 
+       RowBox[{"-", "116.49`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "10", ",", "1.6`", ",", 
+       RowBox[{"-", "61.62`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "20", ",", "3.88`", ",", 
+       RowBox[{"-", "1.6`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "30", ",", "9.05`", ",", "13.33`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "40", ",", "12.79`", ",", "76.16`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "50", ",", "17.25`", ",", "133.99`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "60", ",", "21.86`", ",", "190.37`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "70", ",", "26.69`", ",", "244.41`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "80", ",", "31.17`", ",", "298.84`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"100\"\>", ",", "79", ",", "30.21`", ",", "294.39`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "0", ",", "0.`", ",", 
+       RowBox[{"-", "165.31`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "10", ",", "2.63`", ",", 
+       RowBox[{"-", "126.42`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "20", ",", "6.34`", ",", 
+       RowBox[{"-", "70.49`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "30", ",", "10.39`", ",", 
+       RowBox[{"-", "10.67`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "40", ",", "18.84`", ",", "0.`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "50", ",", "23.02`", ",", "53.94`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "60", ",", "28.32`", ",", "109.34`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "70", ",", "33.83`", ",", "165.97`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "80", ",", "40.07`", ",", "216.6`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "90", ",", "46.77`", ",", "264.4`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"150\"\>", ",", "100", ",", "54.`", ",", "310.76`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "10", ",", "3.69`", ",", 
+       RowBox[{"-", "179.84`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "20", ",", "8.65`", ",", 
+       RowBox[{"-", "150.71`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "30", ",", "14.25`", ",", 
+       RowBox[{"-", "102.68`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "40", ",", "19.88`", ",", 
+       RowBox[{"-", "47.09`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "50", ",", "28.26`", ",", 
+       RowBox[{"-", "2.2`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "60", ",", "37.19`", ",", 
+       RowBox[{"-", "0.07`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "70", ",", "42.89`", ",", "60.47`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "80", ",", "50.05`", ",", "115.92`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "90", ",", "57.32`", ",", "166.4`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "100", ",", "64.73`", ",", "210.74`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "110", ",", "73.1`", ",", "248.43`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"200\"\>", ",", "120", ",", "81.47`", ",", "284.29`"}], 
+      "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "30", ",", "20.05`", ",", 
+       RowBox[{"-", "198.09`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "40", ",", "28.62`", ",", 
+       RowBox[{"-", "184.`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "50", ",", "38.08`", ",", 
+       RowBox[{"-", "160.47`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "60", ",", "47.`", ",", 
+       RowBox[{"-", "133.68`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "70", ",", "55.88`", ",", 
+       RowBox[{"-", "95.24`"}]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "80", ",", "64.68`", ",", "0.`"}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{"\<\"300\"\>", ",", "90", ",", "25.29`", ",", "434.86`"}], "]"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Convert the data to standard units", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"final", "=", "parsed"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"final", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "1"}], "]"}], "]"}], "=", 
+   RowBox[{"N", "@", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"final", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1"}], "]"}], "]"}], "*", 
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],"\"g\"","grams","\"Grams\""},
+        "Quantity"], "*", 
+       TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
+         "\"g\"", Italic, StripOnInput -> False],
+         "standard accelerations due to gravity on the surface of the earth",
+         "\"StandardAccelerationOfGravity\""},
+        "Quantity"], "*", 
+       TemplateBox[{"2.5","\"cm\"","centimeters","\"Centimeters\""},
+        "Quantity"]}], ",", "\"\<Newton-Meters\>\""}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"final", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "2"}], "]"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"N", "@", 
+     RowBox[{"final", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "/", "255"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"final", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "3"}], "]"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"final", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "3"}], "]"}], "]"}], "*", 
+    RowBox[{
+     TemplateBox[{"5","\"V\"","volts","\"Volts\""},
+      "Quantity"], "/", "1023"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"final", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "4"}], "]"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"final", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "4"}], "]"}], "]"}], "/", "12"}], "*", 
+    TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1],
+      RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"s\""}],"revolutions per second",FractionBox[
+      "\"Revolutions\"", "\"Seconds\""]},
+     "Quantity"]}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"\"\<result[mass,power,current,speed]\>\"", \
+"\[IndentingNewLine]", 
+ RowBox[{"Column", "@", "final"}]}], "Input"],
+
+Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.09803921568627451`", ",", 
+       TemplateBox[{"0.020087976539589443`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "4.586666666666666`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.14901960784313725`", ",", 
+       TemplateBox[{"0.04022482893450636`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "11.02`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.`", ",", 
+       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "4.725`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0392156862745098`", ",", 
+       TemplateBox[{"0.002394916911045943`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "0.`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0784313725490196`", ",", 
+       TemplateBox[{"0.014858260019550342`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "2.058333333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.02825024437927664`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "7.109166666666667`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.04325513196480938`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "12.014166666666664`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.06016617790811339`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "16.9`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.24705882352941178`", ",", 
+       TemplateBox[{"0.08216031280547409`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "22.971666666666668`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.24705882352941178`", ",", 
+       TemplateBox[{"0.0826001955034213`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "22.9825`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.24705882352941178`", ",", 
+       TemplateBox[{"0.08147605083088955`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "23.004166666666666`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.`", ",", 
+       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "4.663333333333333`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0392156862745098`", ",", 
+       TemplateBox[{"0.0026392961876832845`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "0.`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0784313725490196`", ",", 
+       TemplateBox[{"0.01466275659824047`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "2.1774999999999998`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.028054740957966767`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "7.203333333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.04305962854349951`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "12.144166666666665`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.059677419354838716`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "16.909999999999997`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.23529411764705882`", ",", 
+       TemplateBox[{"0.0772238514173998`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "21.599999999999998`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.27058823529411763`", ",", 
+       TemplateBox[{"0.09330400782013686`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "25.834166666666665`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.`", ",", 
+       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "9.7075`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0392156862745098`", ",", 
+       TemplateBox[{"0.007820136852394917`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "5.135`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0784313725490196`", ",", 
+       TemplateBox[{"0.018963831867057673`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "0.13333333333333333`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.04423264907135875`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "1.1108333333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.06251221896383186`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "6.346666666666666`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.08431085043988269`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "11.165833333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.23529411764705882`", ",", 
+       TemplateBox[{"0.10684261974584555`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "15.864166666666666`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.27450980392156865`", ",", 
+       TemplateBox[{"0.13044965786901272`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "20.3675`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3137254901960784`", ",", 
+       TemplateBox[{"0.15234604105571847`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "24.90333333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.30980392156862746`", ",", 
+       TemplateBox[{"0.14765395894428152`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "24.5325`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.`", ",", 
+       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "13.775833333333333`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0392156862745098`", ",", 
+       TemplateBox[{"0.012854349951124144`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "10.535`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0784313725490196`", ",", 
+       TemplateBox[{"0.030987292277614858`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "5.874166666666666`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.05078201368523949`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "0.8891666666666667`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.09208211143695015`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "0.`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.11251221896383186`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "4.494999999999999`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.23529411764705882`", ",", 
+       TemplateBox[{"0.13841642228739004`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "9.111666666666666`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.27450980392156865`", ",", 
+       TemplateBox[{"0.16534701857282502`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "13.830833333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3137254901960784`", ",", 
+       TemplateBox[{"0.19584555229716522`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "18.049999999999997`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3529411764705882`", ",", 
+       TemplateBox[{"0.22859237536656893`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "22.03333333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.39215686274509803`", ",", 
+       TemplateBox[{"0.26392961876832843`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "25.896666666666665`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0392156862745098`", ",", 
+       TemplateBox[{"0.018035190615835778`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "14.986666666666666`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.0784313725490196`", ",", 
+       TemplateBox[{"0.042277614858260024`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "12.559166666666666`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.06964809384164222`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "8.556666666666667`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.09716520039100683`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "3.924166666666667`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.13812316715542522`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "0.18333333333333335`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.23529411764705882`", ",", 
+       TemplateBox[{"0.18176930596285434`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "0.005833333333333334`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.27450980392156865`", ",", 
+       TemplateBox[{"0.20962854349951124`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "5.039166666666667`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3137254901960784`", ",", 
+       TemplateBox[{"0.24462365591397847`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "9.66`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3529411764705882`", ",", 
+       TemplateBox[{"0.2801564027370479`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "13.866666666666667`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.39215686274509803`", ",", 
+       TemplateBox[{"0.3163734115347019`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "17.561666666666667`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.43137254901960786`", ",", 
+       TemplateBox[{"0.3572825024437927`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "20.7025`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.47058823529411764`", ",", 
+       TemplateBox[{"0.3981915933528837`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "23.690833333333334`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.11764705882352941`", ",", 
+       TemplateBox[{"0.09799608993157381`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "16.5075`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.1568627450980392`", ",", 
+       TemplateBox[{"0.13988269794721409`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "15.333333333333332`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.19607843137254902`", ",", 
+       TemplateBox[{"0.186119257086999`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "13.372499999999999`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.23529411764705882`", ",", 
+       TemplateBox[{"0.22971652003910067`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "11.14`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.27450980392156865`", ",", 
+       TemplateBox[{"0.2731182795698925`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        RowBox[{"-", "7.936666666666666`"}],
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3137254901960784`", ",", 
+       TemplateBox[{"0.31612903225806455`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "0.`",RowBox[{
+          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+           "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]},
+    {
+     RowBox[{"result", "[", 
+      RowBox[{
+       TemplateBox[{
+        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
+         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+        "Quantity"], ",", "0.3529411764705882`", ",", 
+       TemplateBox[{"0.12360703812316715`","\"V\"","volts","\"Volts\""},
+        "Quantity"], ",", 
+       TemplateBox[{
+        "36.23833333333333`",
+         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+            "\"s\""}],"revolutions per second",FractionBox[
+         "\"Revolutions\"", "\"Seconds\""]},
+        "Quantity"]}], "]"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plot and analyze the data", "Section"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"weightGroupings", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"SortBy", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "&"}], ")"}]}], "]"}], "&"}], "/@", 
+    
+    RowBox[{"GatherBy", "[", 
+     RowBox[{"final", ",", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "&"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Column", "@", "weightGroupings"}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "4", "]"}], "]"}]}], "}"}], "&"}], "/@", "#"}], ")"}],
+      "&"}], "/@", "weightGroupings"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Power (percentage)\>\"", ",", "Automatic"}], "}"}]}]}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.016666666666666666`],
+      AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBmIQDQNpIPBM6ACMv5y35JbDcqEDImCwxB4mjp2/xf51
+4A651mxGBxi/HAwYHCTBYKd9xKdu1f0RQg5yYLDP/kIm81yzCzJwvsG0P0kn
+82UchMHgsD3X9cUFtlxqUPOO2IOVe2rA+ctA7mPXgJp/0l4jpv/Q1xcGcD7E
+PwZQ88/ZzwQDU4cF80HgvL0gCDCaw/mRIPf9MIPz34D889vMIRAMLtoDHf+p
++6qlAwAHZl+g
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.016666666666666666`],
+      AbsoluteThickness[1.6], 
+     LineBox[{{0., -9.7075}, {0.0392156862745098, -5.135}, {
+      0.0784313725490196, -0.13333333333333333`}, {0.11764705882352941`, 
+      1.1108333333333333`}, {0.1568627450980392, 6.346666666666666}, {
+      0.19607843137254902`, 11.165833333333333`}, {0.23529411764705882`, 
+      15.864166666666666`}, {0.27450980392156865`, 20.3675}, {
+      0.30980392156862746`, 24.5325}, {0.3137254901960784, 
+      24.90333333333333}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.016666666666666666`],
+      AbsoluteThickness[1.6], 
+     LineBox[{{0., -13.775833333333333`}, {0.0392156862745098, -10.535}, {
+      0.0784313725490196, -5.874166666666666}, {
+      0.11764705882352941`, -0.8891666666666667}, {0.1568627450980392, 0.}, {
+      0.19607843137254902`, 4.494999999999999}, {0.23529411764705882`, 
+      9.111666666666666}, {0.27450980392156865`, 13.830833333333333`}, {
+      0.3137254901960784, 18.049999999999997`}, {0.3529411764705882, 
+      22.03333333333333}, {0.39215686274509803`, 25.896666666666665`}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.016666666666666666`],
+      AbsoluteThickness[1.6], 
+     LineBox[{{0.0392156862745098, -14.986666666666666`}, {
+      0.0784313725490196, -12.559166666666666`}, {
+      0.11764705882352941`, -8.556666666666667}, {
+      0.1568627450980392, -3.924166666666667}, {
+      0.19607843137254902`, -0.18333333333333335`}, {
+      0.23529411764705882`, -0.005833333333333334}, {0.27450980392156865`, 
+      5.039166666666667}, {0.3137254901960784, 9.66}, {0.3529411764705882, 
+      13.866666666666667`}, {0.39215686274509803`, 17.561666666666667`}, {
+      0.43137254901960786`, 20.7025}, {0.47058823529411764`, 
+      23.690833333333334`}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.016666666666666666`],
+      AbsoluteThickness[1.6], 
+     LineBox[{{0.11764705882352941`, -16.5075}, {
+      0.1568627450980392, -15.333333333333332`}, {
+      0.19607843137254902`, -13.372499999999999`}, {
+      0.23529411764705882`, -11.14}, {
+      0.27450980392156865`, -7.936666666666666}, {0.3137254901960784, 0.}, {
+      0.3529411764705882, 36.23833333333333}}]}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Power (percentage)\"", TraditionalForm], 
+    FormBox[
+     TooltipBox[
+      StyleBox[
+       RowBox[{
+        "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+         "\"s\""}], ShowStringCharacters -> False], "revolutions per second"],
+      TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->{793., Automatic},
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 0.47058823529411764`}, {-16.5075, 36.23833333333333}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{556, Automatic}, {48, Automatic}},
+WindowSize->{960, 1016},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",

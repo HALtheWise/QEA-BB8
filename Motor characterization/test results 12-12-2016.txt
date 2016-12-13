@@ -60,7 +60,7 @@ Power, 90,	Current, 46.77,	Speed, 264.40
 Power, 100,	Current, 54.00,	Speed, 310.76
 
 
-200g
+200g weight
 
 
 Power, 10,	Current, 3.69,	Speed, -179.84
@@ -77,7 +77,7 @@ Power, 110,	Current, 73.10,	Speed, 248.43
 Power, 120,	Current, 81.47,	Speed, 284.29
 
 
-300g
+300g weight
 
 
 Power, 30,	Current, 20.05,	Speed, -198.09

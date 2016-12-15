@@ -7,8 +7,8 @@ int testSpeed = 0;
 #include "imu.h"
 #include "encoders.h"
 #include "sensorfusion.h"
-#include "controller.h"
 #include "motors.h"
+#include "controller.h"
 
 // Controlling constants
 

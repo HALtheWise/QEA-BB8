@@ -76,7 +76,7 @@ void setupSensor() {
     // initialize serial communication
     // (115200 chosen because it is required for Teapot Demo output, but it's
     // really up to you depending on your project)
-    Serial.begin(115200);
+    // Serial.begin(115200);
 
     // initialize device
     Serial.println(F("Initializing I2C devices..."));
@@ -179,12 +179,12 @@ void loopSensor() {
             mpu.dmpGetQuaternion(&q, fifoBuffer);
             mpu.dmpGetGravity(&gravity, &q);
             mpu.dmpGetYawPitchRoll(ypr, &q, &gravity); //set the next value of ypr
-            Serial.print("ypr\t");
-            Serial.print(ypr[0] * 180/M_PI);
-            Serial.print("\t");
-            Serial.print(ypr[1] * 180/M_PI);
-            Serial.print("\t");
-            Serial.println(ypr[2] * 180/M_PI);
+            // Serial.print("ypr\t");
+            // Serial.print(ypr[0] * 180/M_PI);
+            // Serial.print("\t");
+            // Serial.print(ypr[1] * 180/M_PI);
+            // Serial.print("\t");
+            // Serial.println(ypr[2] * 180/M_PI);
         #endif
 
         // blink LED to indicate activity

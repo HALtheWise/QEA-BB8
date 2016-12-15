@@ -1,10 +1,35 @@
 #include <Arduino.h>
 
-void testMotors(){
+float PDPDcontrol(){
+	const float kPtheta = 1;
+	const float kDtheta = -1;
+	const float kPx = 1;
+	const float kDx = 1;
+
+	float xset = zeromotion();
+
+	float forceCommand = kPtheta * (theta - 0) + kDtheta * (thetadot) + kPx * (x - xset) + kDx * (xdot);
+}
+
+float zeromotion(){
+	return 0.0;
+}
+
+float constantmotion(){
+	const int startTime = 3000;
+	const float speed = 1/1000.0
+	if (millis() < startTime)
+	{
+		return 0
+	}
+	return (millis() - startTime) * speed;
+}
+
+void Constantcontrol(){
 	moveMotors(testSpeed);
 }
 
-void testSensorsMotors(){
+void BangBangcontrol(){
 	float theta = ypr[2];
 
 	int power = 0;

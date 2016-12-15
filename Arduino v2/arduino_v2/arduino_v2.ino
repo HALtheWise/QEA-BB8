@@ -60,7 +60,7 @@ void loop()
 		// testSensorsMotors();
 
 		calculateFusedSensors();
-		float motorForce = calculatePDPD();
+		float motorForce = PDPDcontrol();
 		float motorPower = calculateMotorPower(motorForce);
 		moveMotors(motorPower);
 

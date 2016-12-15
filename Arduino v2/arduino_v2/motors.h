@@ -41,7 +41,8 @@ float calculateMotorPower(float desiredForce) {
 	{
 		power = 1;
 	}
-	if (power < -1){
+	if (power < -1)
+	{
 		power = -1;
 	}
 

@@ -44,6 +44,7 @@ void loop()
 	handleIncomingSerial(); // In the future we might want to read values from serial
 
 	loopSensor(); // sets the new value of ypr. This happens in the sensor.h script
+	loopEncoder();
 
 	// Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
 	// This is because the accelerometer sensor needs about 12-15 seconds to calibrate

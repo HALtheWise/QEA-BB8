@@ -14,6 +14,37 @@
 Encoder encoder1(5, 6);
 //   avoid using pins with LEDs attached
 
+long lastEncoderPosition = 0;
+long lastEncoderDeltaPosition = 0;
+unsigned long lastEncoderChangeTime = micros();
+unsigned long lastEncoderDeltaTime = 1; // microseconds
+
+const int ENCODER_TIMEOUT = 500*1000; // microseconds, speed is zero if no reading in this time.
+
+// Returns speed in ticks / second
+float getEncoderSpeed(){
+	unsigned long time = micros();
+	if (time - lastEncoderChangeTime >= ENCODER_TIMEOUT)
+	{
+		return 0.0;
+	}
+
+	return (float(lastEncoderDeltaPosition) / lastEncoderDeltaTime) * 1e6;
+}
+
+void loopEncoder(){
+	long val = encoder1.read();
+	if (val != lastEncoderPosition)
+	{
+		unsigned long time = micros();
+		lastEncoderDeltaTime = time - lastEncoderChangeTime;
+		lastEncoderDeltaPosition = lastEncoderPosition - val;
+
+		lastEncoderChangeTime = time;
+		lastEncoderPosition = val;
+	}
+}
+
 bool printIfNewEncoder(){
 	static long oldPosition  = -999;
 

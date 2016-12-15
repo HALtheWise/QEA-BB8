@@ -2,8 +2,11 @@
 
 #include <Wire.h>
 
+int testSpeed = 0;
+
 #include "sensor.h"
 #include "motors.h"
+#include "controller.h"
 
 // Controlling constants
 
@@ -17,7 +20,6 @@ long lastActionTime;
 // double PIDerror=0, PIDsetpoint=0, PIDoutput;
 // double kp=1,ki=0,kd=0;
 
-int testSpeed = 0;
 
 // PID pid(&PIDerror, &PIDoutput, &PIDsetpoint, kp, ki, kd, DIRECT);
 
@@ -32,6 +34,7 @@ void setup()
 	setupMotors();
 }
 
+
 void loop()
 {
 
@@ -44,9 +47,9 @@ void loop()
 	// Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
 	// This is because the accelerometer sensor needs about 12-15 seconds to calibrate
 	if(millis() < START_DELAY){
-	    return;
+		return;
 	}
- 
+
 
 	if (time - lastActionTime >= LOOP_DURATION) {
 
@@ -59,26 +62,6 @@ void loop()
 	}
 }
 
-void testMotors(){
-	moveMotors(testSpeed);
-}
-
-void testSensorsMotors(){
-	float theta = ypr[2];
-
-	int power = 0;
-
-	if (theta > 5 * M_PI/180){
-		power = 255;
-	}
-	if (theta < -5 * M_PI/180){
-		power = -255;
-	}
-
-	Serial.print("power:\t"); Serial.println(power);
-
-	moveMotors(power);
-}
 
 void handleIncomingSerial()
 {
@@ -90,7 +73,7 @@ void handleIncomingSerial()
 
 		// Ingest remainder of serial buffer in case something went wrong
 		while(Serial.available()){
-		    Serial.read();
+			Serial.read();
 		}
 
 		Serial.println(testSpeed);

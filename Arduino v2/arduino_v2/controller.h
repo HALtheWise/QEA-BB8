@@ -16,11 +16,11 @@ float constantmotion(){
 
 float PDPDcontrol(){
 	const float kPtheta = 10;
-	const float kDtheta = .442;
+	const float kDtheta = .7;
 	const float kPx = 0.0884;
 	const float kDx = 0.648;
 
-	const float kEverything = 1.0;
+	const float kEverything = 3.0;
 
 	float xset = zeromotion();
 
@@ -30,10 +30,8 @@ float PDPDcontrol(){
 	return forceCommand
 }
 
-
-
-void Constantcontrol(){
-	moveMotors(testSpeed);
+float Constantcontrol(){
+	return 2.0; // Newtons
 }
 
 void BangBangcontrol(){

@@ -34,19 +34,19 @@ float Constantcontrol(){
 	return 2.0; // Newtons
 }
 
-void BangBangcontrol(){
+float BangBangcontrol(){
 	float theta = ypr[2];
 
-	int power = 0;
+	int force = 0;
 
 	if (theta > 5 * M_PI/180){
-		power = 255;
+		force = 4.0;
 	}
 	if (theta < -5 * M_PI/180){
-		power = -255;
+		force = -4.0;
 	}
 
-	Serial.print("power:\t"); Serial.println(power);
+	Serial.print("force:\t"); Serial.println(force);
 
-	moveMotors(power);
+	return force;
 }

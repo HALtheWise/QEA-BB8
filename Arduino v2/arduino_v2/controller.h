@@ -15,15 +15,17 @@ float constantmotion(){
 }
 
 float PDPDcontrol(){
-	const float kPtheta = 1;
-	const float kDtheta = -1;
-	const float kPx = 1;
-	const float kDx = 1;
+	const float kPtheta = 10;
+	const float kDtheta = 1.5;
+	const float kPx = 0.1;
+	const float kDx = 0.5;
 
 	float xset = zeromotion();
 
 	float forceCommand = kPtheta * (theta - 0) + kDtheta * (thetadot) + kPx * (x - xset) + kDx * (xdot);
 }
+
+
 
 void Constantcontrol(){
 	moveMotors(testSpeed);

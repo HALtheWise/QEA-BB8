@@ -21,6 +21,11 @@ unsigned long lastEncoderDeltaTime = 1; // microseconds
 
 const int ENCODER_TIMEOUT = 500*1000; // microseconds, speed is zero if no reading in this time.
 
+// Returns position in ticks
+float getEncoderVal(){
+	return encoder1.read();
+}
+
 // Returns speed in ticks / second
 float getEncoderSpeed(){
 	unsigned long time = micros();

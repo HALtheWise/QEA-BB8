@@ -108,232 +108,11 @@ Cell[CellGroupData[{
 
 Cell[BoxData[{"\"\<result[mass,power,current,speed]\>\"", \
 "\[IndentingNewLine]", 
- RowBox[{"Column", "@", "parsed"}]}], "Input"],
+ RowBox[{
+  RowBox[{"Column", "@", "parsed"}], ";"}]}], "Input"],
 
-Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "25", ",", "4.11`", ",", "55.04`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "38", ",", "8.23`", ",", "132.24`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "0", ",", "0.`", ",", 
-       RowBox[{"-", "56.7`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "10", ",", "0.49`", ",", "0.`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "20", ",", "3.04`", ",", "24.7`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "30", ",", "5.78`", ",", "85.31`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "40", ",", "8.85`", ",", "144.17`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "50", ",", "12.31`", ",", "202.8`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.81`", ",", "275.66`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.9`", ",", "275.79`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "63", ",", "16.67`", ",", "276.05`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "0", ",", "0.`", ",", 
-       RowBox[{"-", "55.96`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "10", ",", "0.54`", ",", "0.`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "20", ",", "3.`", ",", "26.13`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "30", ",", "5.74`", ",", "86.44`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "40", ",", "8.81`", ",", "145.73`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "50", ",", "12.21`", ",", "202.92`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "60", ",", "15.8`", ",", "259.2`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"50\"\>", ",", "69", ",", "19.09`", ",", "310.01`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "0", ",", "0.`", ",", 
-       RowBox[{"-", "116.49`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "10", ",", "1.6`", ",", 
-       RowBox[{"-", "61.62`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "20", ",", "3.88`", ",", 
-       RowBox[{"-", "1.6`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "30", ",", "9.05`", ",", "13.33`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "40", ",", "12.79`", ",", "76.16`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "50", ",", "17.25`", ",", "133.99`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "60", ",", "21.86`", ",", "190.37`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "70", ",", "26.69`", ",", "244.41`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "80", ",", "31.17`", ",", "298.84`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"100\"\>", ",", "79", ",", "30.21`", ",", "294.39`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "0", ",", "0.`", ",", 
-       RowBox[{"-", "165.31`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "10", ",", "2.63`", ",", 
-       RowBox[{"-", "126.42`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "20", ",", "6.34`", ",", 
-       RowBox[{"-", "70.49`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "30", ",", "10.39`", ",", 
-       RowBox[{"-", "10.67`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "40", ",", "18.84`", ",", "0.`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "50", ",", "23.02`", ",", "53.94`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "60", ",", "28.32`", ",", "109.34`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "70", ",", "33.83`", ",", "165.97`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "80", ",", "40.07`", ",", "216.6`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "90", ",", "46.77`", ",", "264.4`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"150\"\>", ",", "100", ",", "54.`", ",", "310.76`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "10", ",", "3.69`", ",", 
-       RowBox[{"-", "179.84`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "20", ",", "8.65`", ",", 
-       RowBox[{"-", "150.71`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "30", ",", "14.25`", ",", 
-       RowBox[{"-", "102.68`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "40", ",", "19.88`", ",", 
-       RowBox[{"-", "47.09`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "50", ",", "28.26`", ",", 
-       RowBox[{"-", "2.2`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "60", ",", "37.19`", ",", 
-       RowBox[{"-", "0.07`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "70", ",", "42.89`", ",", "60.47`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "80", ",", "50.05`", ",", "115.92`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "90", ",", "57.32`", ",", "166.4`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "100", ",", "64.73`", ",", "210.74`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "110", ",", "73.1`", ",", "248.43`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"200\"\>", ",", "120", ",", "81.47`", ",", "284.29`"}], 
-      "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "30", ",", "20.05`", ",", 
-       RowBox[{"-", "198.09`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "40", ",", "28.62`", ",", 
-       RowBox[{"-", "184.`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "50", ",", "38.08`", ",", 
-       RowBox[{"-", "160.47`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "60", ",", "47.`", ",", 
-       RowBox[{"-", "133.68`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "70", ",", "55.88`", ",", 
-       RowBox[{"-", "95.24`"}]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "80", ",", "64.68`", ",", "0.`"}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{"\<\"300\"\>", ",", "90", ",", "25.29`", ",", "434.86`"}], "]"}]}
-   },
-   DefaultBaseStyle->"Column",
-   GridBoxAlignment->{"Columns" -> {{Left}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Column"]], "Output"]
-}, Closed]],
+Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -351,12 +130,19 @@ Cell[BoxData[{
     RowBox[{"UnitConvert", "[", 
      RowBox[{
       RowBox[{
-       RowBox[{"final", "[", 
-        RowBox[{"[", 
-         RowBox[{"All", ",", "1"}], "]"}], "]"}], "*", 
-       TemplateBox[{
-        InterpretationBox["\[InvisibleSpace]", 1],"\"g\"","grams","\"Grams\""},
-        "Quantity"], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"final", "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "1"}], "]"}], "]"}], "*", 
+          
+          TemplateBox[{
+           InterpretationBox["\[InvisibleSpace]", 1],"\"g\"","grams",
+            "\"Grams\""},
+           "Quantity"]}], "+", 
+         TemplateBox[{"5","\"g\"","grams","\"Grams\""},
+          "Quantity"]}], ")"}], "*", 
        TemplateBox[{
         InterpretationBox["\[InvisibleSpace]", 1],StyleBox[
          "\"g\"", Italic, StripOnInput -> False],
@@ -410,903 +196,11 @@ Cell[CellGroupData[{
 
 Cell[BoxData[{"\"\<result[mass,power,current,speed]\>\"", \
 "\[IndentingNewLine]", 
- RowBox[{"Column", "@", "final"}]}], "Input"],
+ RowBox[{
+  RowBox[{"Column", "@", "final"}], ";"}]}], "Input"],
 
-Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.09803921568627451`", ",", 
-       TemplateBox[{"0.020087976539589443`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "4.586666666666666`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.14901960784313725`", ",", 
-       TemplateBox[{"0.04022482893450636`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "11.02`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.`", ",", 
-       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "4.725`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0392156862745098`", ",", 
-       TemplateBox[{"0.002394916911045943`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "0.`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0784313725490196`", ",", 
-       TemplateBox[{"0.014858260019550342`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "2.058333333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.02825024437927664`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "7.109166666666667`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.04325513196480938`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "12.014166666666664`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.06016617790811339`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "16.9`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.24705882352941178`", ",", 
-       TemplateBox[{"0.08216031280547409`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "22.971666666666668`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.24705882352941178`", ",", 
-       TemplateBox[{"0.0826001955034213`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "22.9825`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.24705882352941178`", ",", 
-       TemplateBox[{"0.08147605083088955`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "23.004166666666666`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.`", ",", 
-       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "4.663333333333333`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0392156862745098`", ",", 
-       TemplateBox[{"0.0026392961876832845`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "0.`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0784313725490196`", ",", 
-       TemplateBox[{"0.01466275659824047`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "2.1774999999999998`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.028054740957966767`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "7.203333333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.04305962854349951`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "12.144166666666665`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.059677419354838716`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "16.909999999999997`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.23529411764705882`", ",", 
-       TemplateBox[{"0.0772238514173998`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "21.599999999999998`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0122583125`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.27058823529411763`", ",", 
-       TemplateBox[{"0.09330400782013686`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "25.834166666666665`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.`", ",", 
-       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "9.7075`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0392156862745098`", ",", 
-       TemplateBox[{"0.007820136852394917`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "5.135`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0784313725490196`", ",", 
-       TemplateBox[{"0.018963831867057673`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "0.13333333333333333`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.04423264907135875`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "1.1108333333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.06251221896383186`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "6.346666666666666`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.08431085043988269`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "11.165833333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.23529411764705882`", ",", 
-       TemplateBox[{"0.10684261974584555`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "15.864166666666666`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.27450980392156865`", ",", 
-       TemplateBox[{"0.13044965786901272`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "20.3675`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3137254901960784`", ",", 
-       TemplateBox[{"0.15234604105571847`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "24.90333333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.024516625`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.30980392156862746`", ",", 
-       TemplateBox[{"0.14765395894428152`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "24.5325`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.`", ",", 
-       TemplateBox[{"0.`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "13.775833333333333`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0392156862745098`", ",", 
-       TemplateBox[{"0.012854349951124144`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "10.535`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0784313725490196`", ",", 
-       TemplateBox[{"0.030987292277614858`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "5.874166666666666`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.05078201368523949`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "0.8891666666666667`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.09208211143695015`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "0.`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.11251221896383186`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "4.494999999999999`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.23529411764705882`", ",", 
-       TemplateBox[{"0.13841642228739004`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "9.111666666666666`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.27450980392156865`", ",", 
-       TemplateBox[{"0.16534701857282502`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "13.830833333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3137254901960784`", ",", 
-       TemplateBox[{"0.19584555229716522`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "18.049999999999997`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3529411764705882`", ",", 
-       TemplateBox[{"0.22859237536656893`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "22.03333333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.0367749375`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.39215686274509803`", ",", 
-       TemplateBox[{"0.26392961876832843`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "25.896666666666665`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0392156862745098`", ",", 
-       TemplateBox[{"0.018035190615835778`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "14.986666666666666`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.0784313725490196`", ",", 
-       TemplateBox[{"0.042277614858260024`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "12.559166666666666`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.06964809384164222`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "8.556666666666667`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.09716520039100683`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "3.924166666666667`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.13812316715542522`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "0.18333333333333335`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.23529411764705882`", ",", 
-       TemplateBox[{"0.18176930596285434`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "0.005833333333333334`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.27450980392156865`", ",", 
-       TemplateBox[{"0.20962854349951124`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "5.039166666666667`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3137254901960784`", ",", 
-       TemplateBox[{"0.24462365591397847`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "9.66`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3529411764705882`", ",", 
-       TemplateBox[{"0.2801564027370479`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "13.866666666666667`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.39215686274509803`", ",", 
-       TemplateBox[{"0.3163734115347019`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "17.561666666666667`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.43137254901960786`", ",", 
-       TemplateBox[{"0.3572825024437927`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "20.7025`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.04903325`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.47058823529411764`", ",", 
-       TemplateBox[{"0.3981915933528837`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "23.690833333333334`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.11764705882352941`", ",", 
-       TemplateBox[{"0.09799608993157381`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "16.5075`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.1568627450980392`", ",", 
-       TemplateBox[{"0.13988269794721409`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "15.333333333333332`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.19607843137254902`", ",", 
-       TemplateBox[{"0.186119257086999`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "13.372499999999999`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.23529411764705882`", ",", 
-       TemplateBox[{"0.22971652003910067`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "11.14`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.27450980392156865`", ",", 
-       TemplateBox[{"0.2731182795698925`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        RowBox[{"-", "7.936666666666666`"}],
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3137254901960784`", ",", 
-       TemplateBox[{"0.31612903225806455`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "0.`",RowBox[{
-          "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-           "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]},
-    {
-     RowBox[{"result", "[", 
-      RowBox[{
-       TemplateBox[{
-        "0.073549875`",RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}],
-         "meter newtons",RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
-        "Quantity"], ",", "0.3529411764705882`", ",", 
-       TemplateBox[{"0.12360703812316715`","\"V\"","volts","\"Volts\""},
-        "Quantity"], ",", 
-       TemplateBox[{
-        "36.23833333333333`",
-         RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
-            "\"s\""}],"revolutions per second",FractionBox[
-         "\"Revolutions\"", "\"Seconds\""]},
-        "Quantity"]}], "]"}]}
-   },
-   DefaultBaseStyle->"Column",
-   GridBoxAlignment->{"Columns" -> {{Left}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Column"]], "Output"]
-}, Closed]]
+Cell[BoxData["\<\"result[mass,power,current,speed]\"\>"], "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -1326,7 +220,7 @@ Cell[BoxData[{
          RowBox[{"#", "[", 
           RowBox[{"[", "2", "]"}], "]"}], "&"}], ")"}]}], "]"}], "&"}], "/@", 
     
-    RowBox[{"GatherBy", "[", 
+    RowBox[{"GroupBy", "[", 
      RowBox[{"final", ",", 
       RowBox[{
        RowBox[{"#", "[", 
@@ -1348,101 +242,1576 @@ Cell[BoxData[
         RowBox[{"{", 
          RowBox[{
           RowBox[{"#", "[", 
-           RowBox[{"[", "2", "]"}], "]"}], ",", 
+           RowBox[{"[", "4", "]"}], "]"}], ",", 
           RowBox[{"#", "[", 
-           RowBox[{"[", "4", "]"}], "]"}]}], "}"}], "&"}], "/@", "#"}], ")"}],
-      "&"}], "/@", "weightGroupings"}], ",", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "&"}], "/@", "#"}], ")"}],
+      "&"}], "/@", 
+    RowBox[{"Values", "@", "weightGroupings"}]}], ",", 
    RowBox[{"AxesLabel", "\[Rule]", 
     RowBox[{"{", 
-     RowBox[{"\"\<Power (percentage)\>\"", ",", "Automatic"}], "}"}]}]}], 
-  "]"}]], "Input"],
+     RowBox[{"Automatic", ",", "\"\<Power (percentage)\>\""}], "}"}]}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", 
+    RowBox[{"Keys", "@", "weightGroupings"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
- GraphicsBox[{{}, {{}, {}, 
-    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.016666666666666666`],
-      AbsoluteThickness[1.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGAQBmIQDQNpIPBM6ACMv5y35JbDcqEDImCwxB4mjp2/xf51
-4A651mxGBxi/HAwYHCTBYKd9xKdu1f0RQg5yYLDP/kIm81yzCzJwvsG0P0kn
-82UchMHgsD3X9cUFtlxqUPOO2IOVe2rA+ctA7mPXgJp/0l4jpv/Q1xcGcD7E
-PwZQ88/ZzwQDU4cF80HgvL0gCDCaw/mRIPf9MIPz34D889vMIRAMLtoDHf+p
-+6qlAwAHZl+g
-      "]]}, 
-    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.016666666666666666`],
-      AbsoluteThickness[1.6], 
-     LineBox[{{0., -9.7075}, {0.0392156862745098, -5.135}, {
-      0.0784313725490196, -0.13333333333333333`}, {0.11764705882352941`, 
-      1.1108333333333333`}, {0.1568627450980392, 6.346666666666666}, {
-      0.19607843137254902`, 11.165833333333333`}, {0.23529411764705882`, 
-      15.864166666666666`}, {0.27450980392156865`, 20.3675}, {
-      0.30980392156862746`, 24.5325}, {0.3137254901960784, 
-      24.90333333333333}}]}, 
-    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.016666666666666666`],
-      AbsoluteThickness[1.6], 
-     LineBox[{{0., -13.775833333333333`}, {0.0392156862745098, -10.535}, {
-      0.0784313725490196, -5.874166666666666}, {
-      0.11764705882352941`, -0.8891666666666667}, {0.1568627450980392, 0.}, {
-      0.19607843137254902`, 4.494999999999999}, {0.23529411764705882`, 
-      9.111666666666666}, {0.27450980392156865`, 13.830833333333333`}, {
-      0.3137254901960784, 18.049999999999997`}, {0.3529411764705882, 
-      22.03333333333333}, {0.39215686274509803`, 25.896666666666665`}}]}, 
-    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.016666666666666666`],
-      AbsoluteThickness[1.6], 
-     LineBox[{{0.0392156862745098, -14.986666666666666`}, {
-      0.0784313725490196, -12.559166666666666`}, {
-      0.11764705882352941`, -8.556666666666667}, {
-      0.1568627450980392, -3.924166666666667}, {
-      0.19607843137254902`, -0.18333333333333335`}, {
-      0.23529411764705882`, -0.005833333333333334}, {0.27450980392156865`, 
-      5.039166666666667}, {0.3137254901960784, 9.66}, {0.3529411764705882, 
-      13.866666666666667`}, {0.39215686274509803`, 17.561666666666667`}, {
-      0.43137254901960786`, 20.7025}, {0.47058823529411764`, 
-      23.690833333333334`}}]}, 
-    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.016666666666666666`],
-      AbsoluteThickness[1.6], 
-     LineBox[{{0.11764705882352941`, -16.5075}, {
-      0.1568627450980392, -15.333333333333332`}, {
-      0.19607843137254902`, -13.372499999999999`}, {
-      0.23529411764705882`, -11.14}, {
-      0.27450980392156865`, -7.936666666666666}, {0.3137254901960784, 0.}, {
-      0.3529411764705882, 36.23833333333333}}]}}, {}, {}, {{}, {}}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->{True, True},
-  AxesLabel->{
-    FormBox["\"Power (percentage)\"", TraditionalForm], 
+ TemplateBox[{GraphicsBox[{{}, {{{}, {}, {
+        Hue[0.67, 0.6, 0.6], 
+        Directive[
+         PointSize[0.016666666666666666`], 
+         RGBColor[0.368417, 0.506779, 0.709798], 
+         AbsoluteThickness[1.6]], 
+        LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBmIQnQYCz4QOMEDBct6SWw7LEXwYEAGDJfbo/NeBO+Ra
+sxkdIPwt9uVgwADnR3zqVt0fIeQgCQY77S9kMs81uyDjIAcG++wNpv1JOpmP
+4HNdX1xgy6XmIAwGh+3Byj01oOYdsV8Gch87gq8R03/o6wsDqPkn7SH+QfBn
+goEp1Pxz9oIgwGjusGA+CJy3jwS574cZnP8G5J/fCD7Q8Z+6r1o6BILBRXsA
+ox5foA==
+         "]]}, {
+        Hue[0.9060679774997897, 0.6, 0.6], 
+        Directive[
+         PointSize[0.016666666666666666`], 
+         RGBColor[0.880722, 0.611041, 0.142051], 
+         AbsoluteThickness[1.6]], 
+        LineBox[{{-9.7075, 0.}, {-5.135, 
+         0.0392156862745098}, {-0.13333333333333333`, 0.0784313725490196}, {
+         1.1108333333333333`, 0.11764705882352941`}, {6.346666666666666, 
+         0.1568627450980392}, {11.165833333333333`, 0.19607843137254902`}, {
+         15.864166666666666`, 0.23529411764705882`}, {20.3675, 
+         0.27450980392156865`}, {24.5325, 0.30980392156862746`}, {
+         24.90333333333333, 0.3137254901960784}}]}, {
+        Hue[0.1421359549995791, 0.6, 0.6], 
+        Directive[
+         PointSize[0.016666666666666666`], 
+         RGBColor[0.560181, 0.691569, 0.194885], 
+         AbsoluteThickness[1.6]], 
+        LineBox[{{-13.775833333333333`, 0.}, {-10.535, 
+         0.0392156862745098}, {-5.874166666666666, 
+         0.0784313725490196}, {-0.8891666666666667, 0.11764705882352941`}, {
+         0., 0.1568627450980392}, {4.494999999999999, 0.19607843137254902`}, {
+         9.111666666666666, 0.23529411764705882`}, {13.830833333333333`, 
+         0.27450980392156865`}, {18.049999999999997`, 0.3137254901960784}, {
+         22.03333333333333, 0.3529411764705882}, {25.896666666666665`, 
+         0.39215686274509803`}}]}, {
+        Hue[0.37820393249936934`, 0.6, 0.6], 
+        Directive[
+         PointSize[0.016666666666666666`], 
+         RGBColor[0.922526, 0.385626, 0.209179], 
+         AbsoluteThickness[1.6]], 
+        LineBox[{{-14.986666666666666`, 
+         0.0392156862745098}, {-12.559166666666666`, 
+         0.0784313725490196}, {-8.556666666666667, 
+         0.11764705882352941`}, {-3.924166666666667, 
+         0.1568627450980392}, {-0.18333333333333335`, 
+         0.19607843137254902`}, {-0.005833333333333334, 
+         0.23529411764705882`}, {5.039166666666667, 0.27450980392156865`}, {
+         9.66, 0.3137254901960784}, {13.866666666666667`, 
+         0.3529411764705882}, {17.561666666666667`, 0.39215686274509803`}, {
+         20.7025, 0.43137254901960786`}, {23.690833333333334`, 
+         0.47058823529411764`}}]}, {
+        Hue[0.6142719099991583, 0.6, 0.6], 
+        Directive[
+         PointSize[0.016666666666666666`], 
+         RGBColor[0.528488, 0.470624, 0.701351], 
+         AbsoluteThickness[1.6]], 
+        LineBox[{{-16.5075, 0.11764705882352941`}, {-15.333333333333332`, 
+         0.1568627450980392}, {-13.372499999999999`, 
+         0.19607843137254902`}, {-11.14, 
+         0.23529411764705882`}, {-7.936666666666666, 0.27450980392156865`}, {
+         0., 0.3137254901960784}, {36.23833333333333, 
+         0.3529411764705882}}]}}}, {}, {}, {{}, {}}}, {
+    DisplayFunction -> Identity, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, AxesOrigin -> {0, 0}, 
+     PlotRange -> {{-16.5075, 36.23833333333333}, {0, 0.47058823529411764`}}, 
+     PlotRangeClipping -> True, ImagePadding -> All, DisplayFunction -> 
+     Identity, AspectRatio -> NCache[GoldenRatio^(-1), 0.6180339887498948], 
+     Axes -> {True, True}, AxesLabel -> {
+       FormBox[
+        TooltipBox[
+         StyleBox[
+          
+          RowBox[{"\"rev\"", "\[InvisibleSpace]", "\"/\"", 
+            "\[InvisibleSpace]", "\"s\""}], ShowStringCharacters -> False], 
+         "revolutions per second"], TraditionalForm], 
+       FormBox["\"Power (percentage)\"", TraditionalForm]}, 
+     AxesOrigin -> {0, 0}, DisplayFunction :> Identity, 
+     Frame -> {{False, False}, {False, False}}, 
+     FrameLabel -> {{None, None}, {None, None}}, 
+     FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+     GridLines -> {None, None}, GridLinesStyle -> Directive[
+       GrayLevel[0.5, 0.4]], ImageSize -> Large, 
+     Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& )}}, 
+     PlotRange -> {{-16.5075, 36.23833333333333}, {0, 0.47058823529411764`}}, 
+     PlotRangeClipping -> True, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
     FormBox[
-     TooltipBox[
-      StyleBox[
+     TemplateBox[{
+       TemplateBox[{"0.01348414375`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.02574245625`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.03800076875`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.050259081250000004`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.07477570625`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod]}, "LineLegend", DisplayFunction -> (FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+           TagBox[
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #4}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
+                 GridBoxAlignment -> {
+                  "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                 AutoDelete -> False, 
+                 GridBoxDividers -> {
+                  "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                 GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
+                  GridBoxSpacings -> {
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+             AutoDelete -> False, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+            "Grid"], Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+         FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+         False], TraditionalForm]& ), 
+      InterpretationFunction :> (RowBox[{"LineLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.24561133333333335`, 0.3378526666666667, 
+                    0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
+                    None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.368417, 0.506779, 0.709798]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.368417, 0.506779, 0.709798], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.880722, 0.611041, 0.142051]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.880722, 0.611041, 0.142051], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.560181, 0.691569, 0.194885]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.560181, 0.691569, 0.194885]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.560181, 0.691569, 0.194885], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.6150173333333333, 0.25708400000000003`, 
+                    0.13945266666666667`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.922526, 0.385626, 0.209179]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.922526, 0.385626, 0.209179]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.922526, 0.385626, 0.209179], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.3523253333333333, 0.3137493333333333, 
+                    0.46756733333333333`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.528488, 0.470624, 0.701351]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.528488, 0.470624, 0.701351]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.528488, 0.470624, 0.701351], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}]}],
+              "}"}], ",", 
+           RowBox[{"{", 
+             RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
+           RowBox[{"LegendMarkers", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"Joined", "\[Rule]", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "True", ",", "True", ",", "True", ",", "True", ",", "True"}], 
+               "}"}]}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
+      Editable -> True], TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Guess the form of the key equation", "Section"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "power", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"power", "[", 
+   RowBox[{"torque_", ",", "speed_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sol", ",", "deadzonespeed", ",", "deadzoneadjust"}], "}"}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"sol", "=", 
+      RowBox[{
+       RowBox[{"k1", " ", 
+        RowBox[{"(", 
+         RowBox[{"torque", "+", "k5"}], ")"}]}], " ", "-", 
+       RowBox[{"k2", " ", "speed"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"deadzonespeed", "=", 
+      RowBox[{"Max", "[", 
        RowBox[{
-        "\"rev\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-         "\"s\""}], ShowStringCharacters -> False], "revolutions per second"],
-      TraditionalForm]},
-  AxesOrigin->{0, 0},
-  DisplayFunction->Identity,
-  Frame->{{False, False}, {False, False}},
-  FrameLabel->{{None, None}, {None, None}},
-  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-  GridLines->{None, None},
-  GridLinesStyle->Directive[
-    GrayLevel[0.5, 0.4]],
-  ImagePadding->All,
-  ImageSize->{793., Automatic},
-  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
-        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
-         Part[#, 1]], 
-        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
-         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
-        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
-         Part[#, 1]], 
-        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
-         Part[#, 2]]}& )}},
-  PlotRange->{{0, 0.47058823529411764`}, {-16.5075, 36.23833333333333}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{{
-     Scaled[0.02], 
-     Scaled[0.02]}, {
-     Scaled[0.05], 
-     Scaled[0.05]}},
-  Ticks->{Automatic, Automatic}]], "Output"]
+        RowBox[{"Min", "[", 
+         RowBox[{"k3", ",", "speed"}], "]"}], ",", 
+        RowBox[{"-", "k3"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"deadzoneadjust", "=", 
+      RowBox[{"k4", " ", "deadzonespeed"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"sol", "+", "deadzoneadjust"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Fit the data", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tspdata", "=", 
+   RowBox[{"QuantityMagnitude", "[", 
+    RowBox[{"List", "@@@", 
+     RowBox[{"final", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{";;", 
+         RowBox[{"-", "2"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "4", ",", "2"}], "}"}]}], "]"}], "]"}]}], "]"}]}], 
+  ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fit", "=", 
+  RowBox[{"FindFit", "[", 
+   RowBox[{"tspdata", ",", 
+    RowBox[{"power", "[", 
+     RowBox[{"t", ",", "s"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k1", ",", "k2", ",", "k3", ",", "k4", ",", "k5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "s"}], "}"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"k1", "\[Rule]", "4.723625131842297`"}], ",", 
+   RowBox[{"k2", "\[Rule]", 
+    RowBox[{"-", "0.008905883532020176`"}]}], ",", 
+   RowBox[{"k3", "\[Rule]", "0.19455445221646883`"}], ",", 
+   RowBox[{"k4", "\[Rule]", "0.06958126214652462`"}], ",", 
+   RowBox[{"k5", "\[Rule]", 
+    RowBox[{"-", "0.006110361807961874`"}]}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fitted", "=", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"power", "[", 
+      RowBox[{"torque", ",", "speed"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"torque", ",", 
+       RowBox[{"QuantityMagnitude", "@", 
+        RowBox[{"Keys", "@", "weightGroupings"}]}]}], "}"}]}], "]"}], "/.", 
+   "fit"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"0.03483098169813619`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.008905883532020176`", " ", "speed"}], "+", 
+    RowBox[{"0.06958126214652462`", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"-", "0.19455445221646883`"}], ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"0.19455445221646883`", ",", "speed"}], "]"}]}], "]"}]}]}], 
+   ",", 
+   RowBox[{"0.09273465469711277`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.008905883532020176`", " ", "speed"}], "+", 
+    RowBox[{"0.06958126214652462`", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"-", "0.19455445221646883`"}], ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"0.19455445221646883`", ",", "speed"}], "]"}]}], "]"}]}]}], 
+   ",", 
+   RowBox[{"0.15063832769608934`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.008905883532020176`", " ", "speed"}], "+", 
+    RowBox[{"0.06958126214652462`", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"-", "0.19455445221646883`"}], ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"0.19455445221646883`", ",", "speed"}], "]"}]}], "]"}]}]}], 
+   ",", 
+   RowBox[{"0.20854200069506595`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.008905883532020176`", " ", "speed"}], "+", 
+    RowBox[{"0.06958126214652462`", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"-", "0.19455445221646883`"}], ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"0.19455445221646883`", ",", "speed"}], "]"}]}], "]"}]}]}], 
+   ",", 
+   RowBox[{"0.3243493466930191`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.008905883532020176`", " ", "speed"}], "+", 
+    RowBox[{"0.06958126214652462`", " ", 
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"-", "0.19455445221646883`"}], ",", 
+       RowBox[{"Min", "[", 
+        RowBox[{"0.19455445221646883`", ",", "speed"}], "]"}]}], "]"}]}]}]}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fitplot", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"fitted", ",", 
+     RowBox[{"{", 
+      RowBox[{"speed", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dataplot", "=", 
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], "&"}], "/@", "#"}], 
+        ")"}], "&"}], "/@", 
+      RowBox[{"Values", "@", "weightGroupings"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Power (percentage)\>\"", ",", "Automatic"}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"Keys", "@", "weightGroupings"}]}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"dataplot", ",", "fitplot"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ TemplateBox[{GraphicsBox[{{{}, {{{}, {}, {
+         Hue[0.67, 0.6, 0.6], 
+         Directive[
+          PointSize[0.016666666666666666`], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBmIQnQYCz4QOMEDBct6SWw7LEXwYEAGDJfbo/NeBO+Ra
+sxkdIPwt9uVgwADnR3zqVt0fIeQgCQY77S9kMs81uyDjIAcG++wNpv1JOpmP
+4HNdX1xgy6XmIAwGh+3Byj01oOYdsV8Gch87gq8R03/o6wsDqPkn7SH+QfBn
+goEp1Pxz9oIgwGjusGA+CJy3jwS574cZnP8G5J/fCD7Q8Z+6r1o6BILBRXsA
+ox5foA==
+          "]]}, {
+         Hue[0.9060679774997897, 0.6, 0.6], 
+         Directive[
+          PointSize[0.016666666666666666`], 
+          RGBColor[0.880722, 0.611041, 0.142051], 
+          AbsoluteThickness[1.6]], 
+         LineBox[{{-9.7075, 0.}, {-5.135, 
+          0.0392156862745098}, {-0.13333333333333333`, 0.0784313725490196}, {
+          1.1108333333333333`, 0.11764705882352941`}, {6.346666666666666, 
+          0.1568627450980392}, {11.165833333333333`, 0.19607843137254902`}, {
+          15.864166666666666`, 0.23529411764705882`}, {20.3675, 
+          0.27450980392156865`}, {24.5325, 0.30980392156862746`}, {
+          24.90333333333333, 0.3137254901960784}}]}, {
+         Hue[0.1421359549995791, 0.6, 0.6], 
+         Directive[
+          PointSize[0.016666666666666666`], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6]], 
+         LineBox[{{-13.775833333333333`, 0.}, {-10.535, 
+          0.0392156862745098}, {-5.874166666666666, 
+          0.0784313725490196}, {-0.8891666666666667, 0.11764705882352941`}, {
+          0., 0.1568627450980392}, {4.494999999999999, 
+          0.19607843137254902`}, {9.111666666666666, 0.23529411764705882`}, {
+          13.830833333333333`, 0.27450980392156865`}, {18.049999999999997`, 
+          0.3137254901960784}, {22.03333333333333, 0.3529411764705882}, {
+          25.896666666666665`, 0.39215686274509803`}}]}, {
+         Hue[0.37820393249936934`, 0.6, 0.6], 
+         Directive[
+          PointSize[0.016666666666666666`], 
+          RGBColor[0.922526, 0.385626, 0.209179], 
+          AbsoluteThickness[1.6]], 
+         LineBox[{{-14.986666666666666`, 
+          0.0392156862745098}, {-12.559166666666666`, 
+          0.0784313725490196}, {-8.556666666666667, 
+          0.11764705882352941`}, {-3.924166666666667, 
+          0.1568627450980392}, {-0.18333333333333335`, 
+          0.19607843137254902`}, {-0.005833333333333334, 
+          0.23529411764705882`}, {5.039166666666667, 0.27450980392156865`}, {
+          9.66, 0.3137254901960784}, {13.866666666666667`, 
+          0.3529411764705882}, {17.561666666666667`, 0.39215686274509803`}, {
+          20.7025, 0.43137254901960786`}, {23.690833333333334`, 
+          0.47058823529411764`}}]}, {
+         Hue[0.6142719099991583, 0.6, 0.6], 
+         Directive[
+          PointSize[0.016666666666666666`], 
+          RGBColor[0.528488, 0.470624, 0.701351], 
+          AbsoluteThickness[1.6]], 
+         LineBox[{{-16.5075, 0.11764705882352941`}, {-15.333333333333332`, 
+          0.1568627450980392}, {-13.372499999999999`, 
+          0.19607843137254902`}, {-11.14, 
+          0.23529411764705882`}, {-7.936666666666666, 0.27450980392156865`}, {
+          0., 0.3137254901960784}, {36.23833333333333, 
+          0.3529411764705882}}]}}}, {}, {}, {{}, {}}}, {{{{}, {}, {
+         Directive[
+          Opacity[1.], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJwBUQOu/CFib1JlAgAAADQAAAACAAAAfedN8v//I8D9o3JND1mxv+Z7FvXb
+/CPA32jqynpVsb9OEN/3t/kjwL8tYkjmUbG/IDlw/W/zI8CDt1FDvUqxv8KK
+kgjg5iPACMswOWs8sb8ILtcewM0jwBTy7iTHH7G/lHRgS4CbI8ArQGv8fuaw
+v6sBc6QANyPAWtxjq+5zsL8FZUcyGV0iwJcuxlAQ966/E9jFbKKRIcBztvBc
+Lyetv1LDmmMpyiDAq/ZB32dgq7977z1skOMfwA08r58Uc6m/uHeaaq9PHsBj
+k0hyraanv06SVSD+mRzA5e/9grqzpb9Hnb1OSOwawMUE2gnhyaO/psd51nNb
+GcCZK+Ki8wCiv16ElBXPqBfAmFcGenoRoL9+YAOuCxMWwBwrrcbahZy/AC0f
+v0OFFMDAF5uF8/qYv9qLmYer1RLAuA7BwPQilb8cCmip9EIRwJwpPyDOjJG/
+azUqBdscD8Cpner3H1OLv2M33qjDwwvAjcnxhwmxg78qeDr/bqQIwJJ6UsFG
+JXm/od1TxHlBBcC0FkPHOGhjv+eBFTxHGALAuFC7orXWUj+6lShF6Fb9v2YK
+H0TVU3Q/MOnZ9C+d9r/bviy3mNSBP0S62wn9VvC/q7CZg5b7iD9wqa/4ERPj
+v+pGy6thXpA/MA5ug0Lg4r8W4OGk3GyQP/FyLA5zreK/QHn4nVd7kD9yPKkj
+1Efiv5arJZBNmJA/dc+iTpZ84b9AEIB0OdKQP/PqK0k1zN+/lNk0PRFGkT8G
+g/igRnLZvz5sns7ALZI/h0x1tqcM2b9qBbXHOzySPwgW8ssIp9i/lJ7LwLZK
+kj8Kqev2ytvXv+rQ+LKsZ5I/D8/eTE9F1r+UNVOXmKGSPxgbxfhXGNO/6P4H
+YHAVkz+Z5EEOubLSvxSYHlnrI5M/Gq6+IxpN0r8+MTVSZjKTPx1BuE7cgdG/
+lGNiRFxPkz9DzlZJwdbPvz7IvChIiZM/RmFQdIMLz79oYdMhw5eTP0j0SZ9F
+QM6/kvrpGj6mkz9MGj31yanMv+gsFw00w5M/Tq02IIzey78Sxi0Gr9GTP1FA
+MEtOE8u/Pl9E/yngkz9U0yl2EEjKv2j4Wvik7pM/s6JPzyO4yb/wkyYL5viT
+P34TriQ=
+          "]], 
+         LineBox[CompressedData["
+1:eJwB0QMu/CFib1JlAgAAADwAAAACAAAAsqJPzyO4yT+2hoyXSK6pP6nP20Gs
+28o/An92Q6u4qT9Ke9x+1LPLP6HAMIlewKk/6ibdu/yLzD9AAuvOEcipP4vS
+3fgkZM0/30OlFMXPqT/MKd9ydRTPPx7HGaAr36k/bNXfr53szz+9CNTl3uap
+P4ZAcPZiYtA/XEqOK5LuqT8n7HAzizrRP5vNArf4/ak/aENyrdvq0j8X1OvN
+xRyqPziZ8svvVtM/txWmE3kkqj8I73LqA8PTP1ZXYFksLKo/qZpzJyyb1D+U
+2tTkkjuqP+rxdKF8S9Y/EeG9+19aqj9soHeVHazZPwvujyn6l6o/Oi3BslCX
+4z/xIdjgYo6rPwJ2FdxkGfA/yHc8PUharT8HDFCBYu72P3XIhFu5TK8/g+DW
+Q3Kj/T9jMNOBCJuwP7CbhlB+8gFAkPPNTD5/sT9vomQQ5FYFQCi0uvi5drI/
+XmqaHYeBCEDEa5Gbv12zP4lRdjkznAtAM8dUgzhAtD8EFJXmf/oOQA0gCkz3
+NbU/18uF8IQPEUDrb6kLQBu2P1V7YjaawxJANL06rM4Ttz9sC+sizloUQIMB
+tkPn+7c/H6vGlgbqFUCj6R0gc9+4P3u4Q1MPmxdALc933UTWuT9wpmy2Ni8Z
+QL2ru5GgvLo/DAI3Yi7lGkC5hfEmQra7P0VtVJUqkxxAhQMUAVervD8YuR1v
+RSQeQFd4INL1j70/knKIkTDXH0CT6h6E2oe+P1KGTy2dtiBA01MHLUlvvz8q
+W4RVpH0hQHQwbo0VKcA/1uYJopNVIkCztdF0KaTAP85i5UESHyNAdDaqVwIX
+wT/hBKf4lSIjQLOSgygDGcE/9KZorxkmI0Dy7lz5AxvBPxnr6xwhLSNAb6cP
+mwUfwT9kc/L3LzsjQGsYdd4IJ8E/+oP/rU1XI0Bi+j9lDzfBPyalGRqJjyNA
+T77VchxXwT85R9vQDJMjQI4ar0MdWcE/TOmch5CWI0DNdogUHlvBP3EtIPWX
+nSNASy87th9fwT+8tSbQpqsjQEagoPkiZ8E/UsYzhsTHI0A9gmuAKXfBP2Vo
+9TxIyyNAfN5EUSp5wT94Crfzy84jQLs6HiIre8E/nU46YdPVI0A489DDLH/B
+P+jWQDzi4yNANGQ2BzCHwT/6eALzZecjQHLAD9gwicE/DRvEqenqI0CxHOmo
+MYvBPzJfRxfx8SNAL9WbSjOPwT9FAQnOdPUjQG4xdRs0kcE/WKPKhPj4I0Ct
+jU7sNJPBP2pFjDt8/CNA6+knvTWVwT99503y//8jQCpGAY42l8E/k8XAVw==
+
+          "]], 
+         LineBox[CompressedData["
+1:eJwBgQF+/iFib1JlAgAAABcAAAACAAAAS/Y/Qi4WyL9nOGpnAYuUPySTYz7S
+X8a/9uCICECelT9YnrMlkpjFv2hrXN9bG5Y/i6kDDVLRxL/d9S+2d5iWP/K/
+o9vRQsO/xgrXY6+Slz8eM0gsohG6v2lecxqOe5s/8JiZZPGZcr/XAtbDpaah
+P3wClMVGOFk/Ecg/rzPloT8ummPHFDZ/P0uNqZrBI6I/UzPYvIZBlD+/F31x
+3aCiP3Fma+nElKY/qSwkHxWboz8AALX/Y763P3lWcnqEj6U/mekUMeRMuT+z
+G9xlEs6lPzLTdGJk27o/7uBFUaAMpj9kpjTFZPi9P2JrGSi8iaY/ZCZaxTIZ
+wj9KgMDV84OnPzAbCt5y4MI/hUUqwYHCpz/9D7r2sqfDP78KlKwPAag/lvkZ
+KDM2xT80lWeDK36oP2LuyUBz/cU/blrRbrm8qD8u43lZs8TGP6cfO1pH+6g/
++tcpcvOLxz/h5KRF1TmpP0r2P0IuFsg/erRq6TplqT9reLU5
+          "]]}, {
+         Directive[
+          Opacity[1.], 
+          RGBColor[0.880722, 0.611041, 0.142051], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJwBUQOu/CFib1JlAgAAADQAAAACAAAAfedN8v//I8DpnMr8RjKEv+Z7FvXb
+/CPA+cOI6KIVhL9OEN/3t/kjwPnqRtT++IO/IDlw/W/zI8AZOcOrtr+Dv8KK
+kgjg5iPAQdW7WiZNg78ILtcewM0jwKENrbgFaIK/lHRgS4CbI8BZfo90xJ2A
+v6sBc6QANyPAor+o2IMSer8FZUcyGV0iwITdOFE3GGW/E9jFbKKRIcDwknqw
+X5dPP1LDmmMpyiDAnlCF4ycpcj977z1skOMfwMeSDfDgyYA/uHeaaq9PHsBv
+NailffuHP06SVSD+mRzAZ8PSYknHjz9Hnb1OSOwawPQ3saNXt5M/psd51nNb
+GcBM6qBxMkmXP16ElBXPqBfATpJYwyQomz9+YAOuCxMWwGIWuPA+xZ4/AC0f
+v0OFFMDfFOUYEyihP9qLmYer1RLAYxlSexIUoz8cCmip9EIRwPELk8sl36Q/
+azUqBdscD8BV+bfdxNCmP2M33qjDwwvAXC62eUq5qD8qeDr/bqQIwG5RiAPk
+gKo/od1TxHlBBcBUbz5PCW+sP+eBFTxHGALARnvIiEI8rj+6lShF6Fb9vwZB
+G8IDGLA/MOnZ9C+d9r876L6EWQ2xP0S62wn9VvC/dYZMPjnysT9wqa/4ERPj
+vxoizNhe6rI/MA5ug0Lg4r9lyBGX/e2yP/FyLA5zreK/sG5XVZzxsj9yPKkj
+1Efiv0W74tHZ+LI/dc+iTpZ84b9vVPnKVAezP/PqK0k1zN+/xYYmvUoksz8G
+g/igRnLZv2/rgKE2XrM/h0x1tqcM2b+6kcZf1WGzPwgW8ssIp9i/BDgMHnRl
+sz8Kqev2ytvXv5qEl5qxbLM/D8/eTE9F1r/EHa6TLHuzPxgbxfhXGNO/GlDb
+hSKYsz+Z5EEOubLSv2T2IETBm7M/Gq6+IxpN0r+vnGYCYJ+zPx1BuE7cgdG/
+ROnxfp2msz9DzlZJwdbPv2+CCHgYtbM/RmFQdIMLz7+6KE42t7izP0j0SZ9F
+QM6/BM+T9FW8sz9MGj31yanMv5kbH3GTw7M/Tq02IIzey7/kwWQvMsezP1FA
+MEtOE8u/L2iq7dDKsz9U0yl2EEjKv3kO8KtvzrM/s6JPzyO4yb9c9aLw/9Cz
+PzWBqT8=
+          "]], 
+         LineBox[CompressedData["
+1:eJwB0QMu/CFib1JlAgAAADwAAAACAAAAsqJPzyO4yT+6k5+56qm7P6nP20Gs
+28o/4I+UDxyvuz9Ke9x+1LPLP7CwcbL1srs/6ibdu/yLzD+A0U5Vz7a7P4vS
+3fgkZM0/T/Ir+Ki6uz/MKd9ydRTPP+4z5j1cwrs/bNXfr53szz++VMPgNca7
+P4ZAcPZiYtA/jnWggw/Kuz8n7HAzizrRPy23WsnC0bs/aENyrdvq0j9rOs9U
+KeG7PziZ8svvVtM/O1us9wLluz8I73LqA8PTPwp8iZrc6Ls/qZpzJyyb1D+q
+vUPgj/C7P+rxdKF8S9Y/6EC4a/b/uz9soHeVHazZP2VHoYLDHrw/Oi3BslCX
+4z9YYUXe95m8PwJ2FdxkGfA/Q4x3jOp/vT8HDFCBYu72P5q0mxsjeb4/g+DW
+Q3Kj/T/CgKzvzm2/P7CbhlB+8gFA+KFTXQIpwD9vomQQ5FYFQEQCSjPApMA/
+XmqaHYeBCEASXrUEQxjBP4lRdjkznAtAyQuXeH+JwT8EFJXmf/oOQDe48dxe
+BMI/18uF8IQPEUAlYME8A3fCP1V7YjaawxJAygYKjUrzwj9sC+sizloUQPKo
+x9hWZ8M/H6vGlgbqFUABnfvGHNnDP3u4Q1MPmxdAx4+opYVUxD9wpmy2Ni8Z
+QA9+yn+zx8Q/DAI3Yi7lGkANa2VKhETFP0VtVJUqkxxA86l2tw6/xT8YuR1v
+RSQeQFvk/B9eMcY/knKIkTDXH0B5Hfx4UK3GP1KGTy2dtiBAGlJwzQchxz8q
+W4RVpH0hQKPYWsR4ksc/1uYJopNVIkDjXb6rjA3IP85i5UESHyNAo96WjmWA
+yD/hBKf4lSIjQOM6cF9mgsg/9KZorxkmI0Ahl0kwZ4TIPxnr6xwhLSNAn0/8
+0WiIyD9kc/L3LzsjQJvAYRVskMg/+oP/rU1XI0CRoiyccqDIPyalGRqJjyNA
+f2bCqX/AyD85R9vQDJMjQL7Cm3qAwsg/TOmch5CWI0D9HnVLgcTIP3EtIPWX
+nSNAe9cn7YLIyD+8tSbQpqsjQHZIjTCG0Mg/UsYzhsTHI0BtKli3jODIP2Vo
+9TxIyyNArIYxiI3iyD94Crfzy84jQOviClmO5Mg/nU46YdPVI0Bom736j+jI
+P+jWQDzi4yNAYwwjPpPwyD/6eALzZecjQKJo/A6U8sg/DRvEqenqI0DhxNXf
+lPTIPzJfRxfx8SNAX32IgZb4yD9FAQnOdPUjQJ3ZYVKX+sg/WKPKhPj4I0Dd
+NTsjmPzIP2pFjDt8/CNAG5IU9Jj+yD99503y//8jQFru7cSZAMk/vh3dIQ==
+
+          "]], 
+         LineBox[CompressedData["
+1:eJwBgQF+/iFib1JlAgAAABcAAAACAAAAS/Y/Qi4WyL963rPHhvWzPySTYz7S
+X8a/nYj7b1Y6tD9YnrMlkpjFvzprsGWdWbQ/i6kDDVLRxL/XTWVb5Hi0P/K/
+o9vRQsO/EhPPRnK3tD8eM0gsohG6v/ondvSpsbU/8JiZZPGZcr/LUcRPGaa3
+P3wClMVGOFk/aDR5RWDFtz8ummPHFDZ/PwUXLjun5Lc/UzPYvIZBlD9A3Jcm
+NSO4P3Fma+nElKY/s2Zr/VCguD8AALX/Y763P5x7EquImrk/mekUMeRMuT86
+Xsegz7m5PzLTdGJk27o/10B8lhbZuT9kpjTFZPi9PxAG5oGkF7o/ZCZaxTIZ
+wj+FkLlYwJS6PzAbCt5y4MI/InNuTge0uj/9D7r2sqfDP79VI0RO07o/lvkZ
+KDM2xT/5Go0v3BG7P2LuyUBz/cU/lv1BJSMxuz8u43lZs8TGPzTg9hpqULs/
++tcpcvOLxz/RwqsQsW+7P0r2P0IuFsg/nKqO4mOFuz+M/7ey
+          "]]}, {
+         Directive[
+          Opacity[1.], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJwBUQOu/CFib1JlAgAAADQAAAACAAAAfedN8v//I8CE+X8c+5ioP+Z7FvXb
+/CPAwG+QISSgqD9OEN/3t/kjwADmoCZNp6g/IDlw/W/zI8B40sEwn7WoP8KK
+kgjg5iPAbqsDRUPSqD8ILtcewM0jwFZdh22LC6k/lHRgS4CbI8AowY6+G36p
+P6sBc6QANyPAyoidYDxjqj8FZUcyGV0iwOYSn2YJVKw/E9jFbKKRIcAKi3Ra
+6iOuP1LDmmMpyiDA0koj2LHqrz977z1skOMfwLgC24sC7LA/uHeaaq9PHsAN
+V44iNtKxP06SVSD+mRzAzKgzmq/Lsj9Hnb1OSOwawFyexVacwLM/psd51nNb
+GcDyikEKE6W0P16ElBXPqBfA83Svns+ctT9+YAOuCxMWwPdVByoWhLY/AC0f
+v0OFFMDP2kv6z2a3P9qLmYer1RLAEV2Cq89cuD8cCmip9EIRwFfWolNZQrk/
+azUqBdscD8AJTbXcKDu6P2M33qjDwwvAjWe0qmsvuz8qeDr/bqQIwBV5nW84
+E7w/od1TxHlBBcAJiHgVSwq9P+eBFTxHGALAAY49sufwvT+6lShF6Fb9v2WR
+9C/K6r4/MOnZ9C+d9r+bOJjyH+C/P0S62wn9VvC/ausS1n9iwD9wqa/4ERPj
+vzy5UqOS3sA/MA5ug0Lg4r9hjHUCYuDAP/FyLA5zreK/h1+YYTHiwD9yPKkj
+1Efiv9EF3h/Q5cA/dc+iTpZ84b9nUmmcDe3AP/PqK0k1zN+/ket/lYj7wD8G
+g/igRnLZv+cdrYd+GME/h0x1tqcM2b8M8c/mTRrBPwgW8ssIp9i/McTyRR0c
+wT8Kqev2ytvXv3xqOAS8H8E/D8/eTE9F1r8Rt8OA+SbBPxgbxfhXGNO/PFDa
+eXQ1wT+Z5EEOubLSv2Ej/dhDN8E/Gq6+IxpN0r+G9h84EznBPx1BuE7cgdG/
+0Zxl9rE8wT9DzlZJwdbPv2bp8HLvQ8E/RmFQdIMLz7+MvBPSvkXBP0j0SZ9F
+QM6/sY82MY5HwT9MGj31yanMv/w1fO8sS8E/Tq02IIzey78hCZ9O/EzBP1FA
+MEtOE8u/RtzBrctOwT9U0yl2EEjKv2yv5AybUME/s6JPzyO4yb/dIj4v41HB
+P36eouU=
+          "]], 
+         LineBox[CompressedData["
+1:eJwVjn001XccgCWZIsxrGvPy5V51UmRpYX0+Xu4sJO7ysmXJHSZjdDVzjigx
+NHYM0UbOWYqOCTtstGZ/hJ+Xe7m/b4m2UUJxXRX3ernXW2Z/POf583msBYn8
+aHU1NTX3Tf53U9UJltzthZ3CtpKwowzUssMed4ZFYDXXclSODPimjWQ8ahZD
+3iU7/aeeDMg4T/5cy++DOf2rYyJvBvIfPlHZRvVD2A315tYPGejbMyr82ogF
+bvtocJEvA/GDo42VL1ko5AdwM/wZyMGkJYGAgnK8TRUXwAD3ZZJzvusD6Npa
+XuHNZyDWS1g/LHsIMbyTY8pPGHj/J4V4NmQA+gfbm56fYkBrVijb2jEAh2Kc
+sh98tvlbnszdV/EItuXqcusiN//k529c8BuCWz098afPbvZ//qbU4s4/MO73
+gaozlQFXh/tNgdcmYCRMjxPRwoB6ivFIlNkc8L+yTw/b0wVv6QRmCl4vQfrl
+e50L1V2Q9WzIS3hzHYqk7Q2+Vt3wa0VOYIZiC3J98Wp0cTckVkXpPw/Zhsm/
+uMQR3R44HVdukZuphZ6aVW41mT1wJSjliPN1bVxuzmocV/SAhlHp5MUVXYw5
+89SwPaEXHou/ncvWexuDtRqSY571QnCawKW8wwBXGpY66sNFEK89YyP51Ait
+g37Tu0dFYFnXVaYpM0YnnnT9oqcY0u56faxXYYrKw6Uj0r/EkFQT3+JywAyB
+09pi4tQHOuqHBftf7EZ3Q37mVH0f8BJOlu4tMUcb/uevz9n3w64/LBJ5tu9i
+fsF0yP3yfigW5hU5PrbEWkba2GwiAX7OCYfKFis8thKu8eV3Eth7Kjv4Vro1
+DlzyWR1elcDQ5PaqkmAbNNCsG59NYUEieOFhYElwICeL6ZlmYUzjtqrUhqDB
+RHhZ7wwLCzWxjWYcgkHg8oXoFQtmMzPm1g4EWaVUq0/OQlSyQnnAjaAoNsCf
+XWZhJWuj/ngowTPVBdMyDQqcarPdVwoJhuaGJsmNKBzxGaY6JQRTDnX+LTem
+4D99PfeHMoJlE44eChMK5xysFq9VEhyEHQbzuyi0/c6hNXUE+aq25gVzCvwu
+55zOboIBZ22USlsK0bGL7h+JCSaYFkao7Cik7midF0sIfs+sdqs4FCoDXCMH
+BgmKrQd/XLanIB1C9/EJgsf+zXVd3UdhJVV9PnqKYGzeQtWqA4Wd73TWTssI
+5rlEaq/tp3AwwsdULifYXew6suZIgbdlu+T8IsFJvO297kQh7KYoW6UiqDlr
+WL9+kEIcr8DtwhpBu8pLxm+cKaRPHVdsbBD09nuV/uY9Cv8BmK/YoA==
+          "]], 
+         LineBox[CompressedData["
+1:eJwBgQF+/iFib1JlAgAAABcAAAACAAAAS/Y/Qi4WyL9sl8aaJmTBPySTYz7S
+X8a/fmzqbo6GwT9YnrMlkpjFv8zdxOkxlsE/i6kDDVLRxL8bT59k1aXBP/K/
+o9vRQsO/uDFUWhzFwT8eM0gsohG6vyy8JzE4QsI/8JiZZPGZcr8V0c7ebzzD
+P3wClMVGOFk/ZEKpWRNMwz8ummPHFDZ/P7Kzg9S2W8M/UzPYvIZBlD9PljjK
+/XrDP3Fma+nElKY/iluitYu5wz8AALX/Y763P/3ldYynNsQ/mekUMeRMuT9M
+V1AHS0bEPzLTdGJk27o/msgqgu5VxD9kpjTFZPi9Pzir33c1dcQ/ZCZaxTIZ
+wj9ycEljw7PEPzAbCt5y4MI/wOEj3mbDxD/9D7r2sqfDPw9T/lgK08Q/lvkZ
+KDM2xT+sNbNOUfLEP2LuyUBz/cU/+6aNyfQBxT8u43lZs8TGP0kYaESYEcU/
++tcpcvOLxz+YiUK/OyHFP0r2P0IuFsg/fv0zKBUsxT+tnLi3
+          "]]}, {
+         Directive[
+          Opacity[1.], 
+          RGBColor[0.922526, 0.385626, 0.209179], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJwBUQOu/CFib1JlAgAAADQAAAACAAAAfedN8v//I8AkTRn8Qx+7P+Z7FvXb
+/CPAQoihftgiuz9OEN/3t/kjwGLDKQFtJrs/IDlw/W/zI8CeOToGli27P8KK
+kgjg5iPAGSZbEOg7uz8ILtcewM0jwA3/nCSMWLs/lHRgS4CbI8D2sCBN1JG7
+P6sBc6QANyPAxxQonmQEvD8FZUcyGV0iwNXZKCHL/Lw/E9jFbKKRIcDnlROb
+u+S9P1LDmmMpyiDAy/XqWR/Ivj977z1skOMfwBtTtPnIvr8/uHeaaq9PHsC3
+0zNIflLAP06SVSD+mRzAl3wGBDvPwD9Hnb1OSOwawF93T2KxScE/psd51nNb
+GcCpbQ287LvBP16ElBXPqBfAqmJEBss3wj9+YAOuCxMWwCxT8Etuq8I/AC0f
+v0OFFMCYlRI0yxzDP9qLmYer1RLAudatDMuXwz8cCmip9EIRwFwTvuCPCsQ/
+azUqBdscD8C1Tkel94bEP2M33qjDwwvA99tGDBkBxT8qeDr/bqQIwLtku27/
+csU/od1TxHlBBcA17KjBiO7FP+eBFTxHGALAMW8LENdhxj+6lShF6Fb9v+Pw
+5k7I3sY/MOnZ9C+d9r9+xDgwc1nHP0S62wn9VvC/m5P/DOPLxz9wqa/4ERPj
+v21hP9r1R8g/MA5ug0Lg4r+SNGI5xUnIP/FyLA5zreK/uAeFmJRLyD9yPKkj
+1EfivwKuylYzT8g/dc+iTpZ84b+Y+lXTcFbIP/PqK0k1zN+/wpNszOtkyD8G
+g/igRnLZvxjGmb7hgcg/h0x1tqcM2b89mbwdsYPIPwgW8ssIp9i/YmzffICF
+yD8Kqev2ytvXv60SJTsficg/D8/eTE9F1r9CX7C3XJDIPxgbxfhXGNO/bfjG
+sNeeyD+Z5EEOubLSv5LL6Q+noMg/Gq6+IxpN0r+3ngxvdqLIPx1BuE7cgdG/
+AkVSLRWmyD9DzlZJwdbPv5eR3alSrcg/RmFQdIMLz7+9ZAAJIq/IP0j0SZ9F
+QM6/4jcjaPGwyD9MGj31yanMvy3eaCaQtMg/Tq02IIzey79SsYuFX7bIP1FA
+MEtOE8u/d4Su5C64yD9U0yl2EEjKv51X0UP+ucg/s6JPzyO4yb8OyypmRrvI
+P8u4prs=
+          "]], 
+         LineBox[CompressedData["
+1:eJwVzn8w1Hkcx3Fc3XHEJY7da4lPI0y4SYOk3h9jHHdy5FLuipvbMGa5ofVz
+Bl1+tCWmOm7JrxH7a9baH1dHGXczSj8u+92fnzDdMvI7S+e3hDj3x2uef74e
+Lsz0mCQzExOToJ3933stURr08AWcpIt7u0QUiDWG4DZDL5y+w8s+00rBN/mD
+l1/eV0Knu21YcBsFRrehrs1yClw6rzh6yygo1w+tHUxUQdnXc9N0BQWUxzA7
+204DcSyqYvk+BWl9w/LGWQ10rwcmjLRTwMEZq0ymFtzLxT7qBxQcms3wLQ/U
+wTsJRy/qoiAlhC01GPVQ8xY7nu+hIKB2UTl3lsBWoXw67CkF5nNs40c9BJKt
+nbqOPt/x1mUeOlz/Evx8NuKtlTu+hazmgoh+6Mto5z3S7/zfzeUy2l7BvmUP
+H/dRCgK9Ht2LrhmDPaabFx47q8Asx34wkTYPJZ/b/9FVqYJPrKKLmP+ugsxT
+tHHORg0lr/tD2LwP8Pi2fEJapgZFPSf68qIp/n7xsPLvDTWktyR+Nn52NxbE
+oGZOrgYSWHWMa0XmOFN2k20xo4Gy0znHfBsssb13wJKrtxZ22XEnf1m3xhGl
+SYLKVC0MKK/Ol9rsxSFxkX3jfC3E5jP96npsMVdyqdB8TAtpljOu6h/ssLgg
+mmfN0IGz5Fn1x0Z7rMhh1S3E6iD/Ych3NvUOeN98t4WwSgcZwrQOPx8a9p/S
+rQapdGBl5s/0nqDjjnjnCwJLPYT+fIbrWbUfe3wQVRrD9eDYyUgPPeiEE+gz
+X9kW66GSff3XLwec8WwHK9OyWw8xnCivxo4D+ISOz5h6rwfP86Wx/EIXXGxH
+r206QqB/0qKlKtYVuwwoKzwyCKiZE8G2zggXOwRsccUERnaJ1riuCDc/5SdX
+txJYFqbIaW4Id2fu1VRLCNBmZva7eCG8rTE21UgJJGYuvvM5jnDh9cbg2t8J
+rJdsSyPPIZz33uxqQycBNwGNXnYL4XSDypL3gsCxMIPWqgrhW2WBWbxeAqem
+G67drkZY5i8a5CkJXPI6sFLTiPDbqitSvorAn+1uWqEE4dRTvlFCHYGYZ76c
+J88RTv7rTqX4FYGklJWgcCXCnNTdG+J/COR9+mBJqUZYQGNfbDUQaPw28CfS
+h/B4dsRRyRCBN/04aHQMYab3Vl/byI43z2wpaQrhokHWSekogT1fPBFPGxG+
+e2NAKB0jcOTHMIeFBYSHJxW5sgkCoaYW6qwVhLd+Y7yWTRKI4/WWrq0h7BRy
+I1w+RYAVWnG8YBPhEwurCvkbAoVTkYvb2wjHN12kKaYJ/AcpcOJE
+          "]], 
+         LineBox[CompressedData["
+1:eJwBgQF+/iFib1JlAgAAABcAAAACAAAAS/Y/Qi4WyL+dP7PRic3IPySTYz7S
+X8a/rxTXpfHvyD9YnrMlkpjFv/6FsSCV/8g/i6kDDVLRxL9M94ubOA/JP/K/
+o9vRQsO/6dlAkX8uyT8eM0gsohG6v11kFGibq8k/8JiZZPGZcr9GebsV06XK
+P3wClMVGOFk/leqVkHa1yj8ummPHFDZ/P+NbcAsaxco/UzPYvIZBlD+APiUB
+YeTKP3Fma+nElKY/uwOP7O4iyz8AALX/Y763Py6OYsMKoMs/mekUMeRMuT99
+/zw+rq/LPzLTdGJk27o/y3AXuVG/yz9kpjTFZPi9P2lTzK6Y3ss/ZCZaxTIZ
+wj+jGDaaJh3MPzAbCt5y4MI/8YkQFcoszD/9D7r2sqfDP0D76o9tPMw/lvkZ
+KDM2xT/d3Z+FtFvMP2LuyUBz/cU/LE96AFhrzD8u43lZs8TGP3rAVHv7esw/
++tcpcvOLxz/JMS/2norMP0r2P0IuFsg/r6UgX3iVzD+fqrx3
+          "]]}, {
+         Directive[
+          Opacity[1.], 
+          RGBColor[0.528488, 0.470624, 0.701351], 
+          AbsoluteThickness[1.6]], 
+         LineBox[CompressedData["
+1:eJwBUQOu/CFib1JlAgAAADQAAAACAAAAfedN8v//I8Dx9uVraGLMP+Z7FvXb
+/CPAgRQqrTJkzD9OEN/3t/kjwBEybu78Zcw/IDlw/W/zI8AvbfZwkWnMP8KK
+kgjg5iPAbOMGdrpwzD8ILtcewM0jwObPJ4AMf8w/lHRgS4CbI8DbqGmUsJvM
+P6sBc6QANyPAw1rtvPjUzD8FZUcyGV0iwEq9bf4rUc0/E9jFbKKRIcBTG2M7
+JMXNP1LDmmMpyiDARcvOGtY2zj977z1skOMfwO15s+oqss4/uHeaaq9PHsAX
+JA22RCXPP06SVSD+mRzA98zfcQGizz9Hnb1OSOwawOBjFOg7DtA/psd51nNb
+GcAFX/OUWUfQP16ElBXPqBfAhdkOukiF0D9+YAOuCxMWwMfR5Fwav9A/AC0f
+v0OFFMD88vXQyPfQP9qLmYer1RLAjZNDvUg10T8cCmip9EIRwN+xSyerbtE/
+azUqBdscD8CLT5AJ36zRP2M33qjDwwvALBYQve/p0T8qeDr/bqQIwI5aSu7i
+ItI/od1TxHlBBcBLHsGXp2DSP+eBFTxHGALAyV/yvk6a0j+6lShF6Fb9v6Ig
+YF7H2NI/MOnZ9C+d9r9vCgnPHBbTP0S62wn9VvC//nFsvVRP0z9wqa/4ERPj
+v+dYDCRejdM/MA5ug0Lg4r96wp3TRY7TP/FyLA5zreK/DCwvgy2P0z9yPKkj
+1EfivzL/UeL8kNM/dc+iTpZ84b98pZegm5TTP/PqK0k1zN+/EvIiHdmb0z8G
+g/igRnLZvzyLORZUqtM/h0x1tqcM2b/P9MrFO6vTPwgW8ssIp9i/Yl5cdSOs
+0z8Kqev2ytvXv4cxf9TyrdM/D8/eTE9F1r/S18SSkbHTPxgbxfhXGNO/ZyRQ
+D8+40z+Z5EEOubLSv/qN4b62udM/Gq6+IxpN0r+M93JunrrTPx1BuE7cgdG/
+ssqVzW280z9DzlZJwdbPv/xw24sMwNM/RmFQdIMLz7+P2mw79MDTP0j0SZ9F
+QM6/IkT+6tvB0z9MGj31yanMv0cXIUqrw9M/Tq02IIzey7/agLL5ksTTP1FA
+MEtOE8u/bOpDqXrF0z9U0yl2EEjKv/9T1VhixtM/s6JPzyO4yb+3DQJqBsfT
+P7RJtMs=
+          "]], 
+         LineBox[CompressedData["
+1:eJwB0QMu/CFib1JlAgAAADwAAAACAAAAsqJPzyO4yT9PNUEcQb3VP6nP20Gs
+28o/WHS+cY2+1T9Ke9x+1LPLP4y8ddqDv9U/6ibdu/yLzD/ABC1DesDVP4vS
+3fgkZM0/9Ezkq3DB1T/MKd9ydRTPP1zdUn1dw9U/bNXfr53szz+QJQrmU8TV
+P4ZAcPZiYtA/w23BTkrF1T8n7HAzizrRPyv+LyA3x9U/aENyrdvq0j/7Hg3D
+EMvVPziZ8svvVtM/L2fEKwfM1T8I73LqA8PTP2Ove5T9zNU/qZpzJyyb1D/K
+P+pl6s7VP+rxdKF8S9Y/mmDHCMTS1T9soHeVHazZPzmigU532tU/Oi3BslCX
+4z+2qGplRPnVPwJ2FdxkGfA/cTP3EMEy1j8HDFCBYu72P4Y9wDQPcdY/g+DW
+Q3Kj/T+QcMQpOq7WP7CbhlB+8gFAXCGDnEfn1j9vomQQ5FYFQIJRfocmJdc/
+XmqaHYeBCEBp/zPw517XP4lRdjkznAtARdYkKoaX1z8EFJXmf/oOQHssUtz1
+1Nc/18uF8IQPEUByADoMSA7YP1V7YjaawxJAxVNetGtM2D9sC+sizloUQNkk
+Pdpxhtg/H6vGlgbqFUDgHlfRVL/YP3u4Q1MPmxdAQ5itQAn92D9wpmy2Ni8Z
+QGePvi2gNtk/DAI3Yi7lGkDmBQyTCHXZP0VtVJUqkxxAWaWUyU2y2T8YuR1v
+RSQeQI7C131169k/knKIkTDXH0AcX1eqbinaP1KGTy2dtiBAbXmRVEpj2j8q
+W4RVpH0hQLK8BtACnNo/1uYJopNVIkBRf7jDjNnaP85i5UESHyNAsr8kNfkS
+2z/hBKf4lSIjQNFtkZ35E9s/9KZorxkmI0DwG/4F+hTbPxnr6xwhLSNAL3jX
+1voW2z9kc/L3LzsjQK0winj8Gts/+oP/rU1XI0Cooe+7/yLbPyalGRqJjyNA
+n4O6QgYz2z85R9vQDJMjQL8xJ6sGNNs/TOmch5CWI0De35MTBzXbP3EtIPWX
+nSNAHTxt5Ac32z+8tSbQpqsjQJv0H4YJO9s/UsYzhsTHI0CWZYXJDEPbP2Vo
+9TxIyyNAthPyMQ1E2z94Crfzy84jQNXBXpoNRds/nU46YdPVI0AUHjhrDkfb
+P+jWQDzi4yNAktbqDBBL2z/6eALzZecjQLGEV3UQTNs/DRvEqenqI0DQMsTd
+EE3bPzJfRxfx8SNAD4+drhFP2z9FAQnOdPUjQC49ChcSUNs/WKPKhPj4I0BO
+63Z/ElHbP2pFjDt8/CNAbZnj5xJS2z99503y//8jQI1HUFATU9s/IXnHyw==
+
+          "]], 
+         LineBox[CompressedData["
+1:eJwBgQF+/iFib1JlAgAAABcAAAACAAAAS/Y/Qi4WyL/+R8YfKNDTPySTYz7S
+X8a/hzLYCVzh0z9YnrMlkpjFvy9rRcct6dM/i6kDDVLRxL/Wo7KE//DTP/K/
+o9vRQsO/JBWN/6IA1D8eM0gsohG6v17a9uowP9Q/8JiZZPGZcr/TZMrBTLzU
+P3wClMVGOFk/ep03fx7E1D8ummPHFDZ/PyLWpDzwy9Q/UzPYvIZBlD9wR3+3
+k9vUP3Fma+nElKY/DSo0rdr61D8AALX/Y763P0jvnZhoOdU/mekUMeRMuT/u
+JwtWOkHVPzLTdGJk27o/lmB4EwxJ1T9kpjTFZPi9P+XRUo6vWNU/ZCZaxTIZ
+wj+CtAeE9nfVPzAbCt5y4MI/Ke10Qch/1T/9D7r2sqfDP9El4v6Zh9U/lvkZ
+KDM2xT8el7x5PZfVP2LuyUBz/cU/xs8pNw+f1T8u43lZs8TGP20Il/TgptU/
++tcpcvOLxz8UQQSysq7VP0r2P0IuFsg/CPt8Zh+01T9+57zf
+          
+          "]]}, {}}, {{}, {}, {}, {}, {}, {}, {}}}, {}, {}}}, {
+    DisplayFunction -> Identity, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, AxesOrigin -> {0, 0}, 
+     PlotRange -> {{-16.5075, 36.23833333333333}, {0, 0.47058823529411764`}}, 
+     PlotRangeClipping -> True, ImagePadding -> All, DisplayFunction -> 
+     Identity, AspectRatio -> NCache[GoldenRatio^(-1), 0.6180339887498948], 
+     Axes -> {True, True}, AxesLabel -> {
+       FormBox["\"Power (percentage)\"", TraditionalForm], None}, 
+     AxesOrigin -> {0, 0}, DisplayFunction :> Identity, 
+     Frame -> {{False, False}, {False, False}}, 
+     FrameLabel -> {{None, None}, {None, None}}, 
+     FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+     GridLines -> {None, None}, GridLinesStyle -> Directive[
+       GrayLevel[0.5, 0.4]], ImageSize -> Large, 
+     Method -> {"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+            Part[#, 1]], 
+           (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+            Part[#, 2]]}& )}}, 
+     PlotRange -> {{-16.5075, 36.23833333333333}, {0, 0.47058823529411764`}}, 
+     PlotRangeClipping -> True, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
+    FormBox[
+     TemplateBox[{
+       TemplateBox[{"0.01348414375`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.02574245625`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.03800076875`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.050259081250000004`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod], 
+       TemplateBox[{"0.07477570625`", 
+         RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+         RowBox[{"\"Meters\"", " ", "\"Newtons\""}]}, "QuantityTF", 
+        SyntaxForm -> Mod]}, "LineLegend", DisplayFunction -> (FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+           TagBox[
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #4}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.3], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
+                 GridBoxAlignment -> {
+                  "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                 AutoDelete -> False, 
+                 GridBoxDividers -> {
+                  "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                 GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
+                  GridBoxSpacings -> {
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+             AutoDelete -> False, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+            "Grid"], Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+         FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+         False], TraditionalForm]& ), 
+      InterpretationFunction :> (RowBox[{"LineLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.24561133333333335`, 0.3378526666666667, 
+                    0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
+                    None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.368417, 0.506779, 0.709798]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.368417, 0.506779, 0.709798], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.880722, 0.611041, 0.142051]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.880722, 0.611041, 0.142051], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.560181, 0.691569, 0.194885]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.560181, 0.691569, 0.194885]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.560181, 0.691569, 0.194885], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.6150173333333333, 0.25708400000000003`, 
+                    0.13945266666666667`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.922526, 0.385626, 0.209179]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.922526, 0.385626, 0.209179]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.922526, 0.385626, 0.209179], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.016666666666666666`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.3523253333333333, 0.3137493333333333, 
+                    0.46756733333333333`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "RGBColor[0.528488, 0.470624, 0.701351]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.528488, 0.470624, 0.701351]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.528488, 0.470624, 0.701351], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}]}],
+              "}"}], ",", 
+           RowBox[{"{", 
+             RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
+           RowBox[{"LegendMarkers", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"Joined", "\[Rule]", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "True", ",", "True", ",", "True", ",", "True", ",", "True"}], 
+               "}"}]}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
+      Editable -> True], TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CForm", "[", " ", 
+  RowBox[{
+   RowBox[{"power", "[", 
+    RowBox[{"torque", ",", "speed"}], "]"}], "/.", "fit"}], "]"}]], "Input"],
+
+Cell["\<\
+0.008905883532020176*speed + 4.723625131842297*(-0.006110361807961874 + \
+torque) + 
+   0.06958126214652462*Max(-0.19455445221646883,Min(0.19455445221646883,speed)\
+)\
+\>", "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

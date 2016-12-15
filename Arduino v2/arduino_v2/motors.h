@@ -27,3 +27,15 @@ void moveMotors(int speed){
 		digitalWrite(PWM_PIN_A, LOW);
 	}
 }
+
+
+float calculateMotorPower(float desiredForce) {
+	float torque = desiredForce * WHEEL_RADIUS;
+
+	float speed = getEncoderSpeed();
+
+	float power = 0.008905883532020176*speed + 4.723625131842297*(-0.006110361807961874 + torque) + 
+   0.06958126214652462*max(-0.19455445221646883,min(0.19455445221646883,speed));
+
+   	return power*255;
+}

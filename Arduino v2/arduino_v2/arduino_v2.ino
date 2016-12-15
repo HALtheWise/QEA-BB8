@@ -6,8 +6,9 @@ int testSpeed = 0;
 
 #include "imu.h"
 #include "encoders.h"
-#include "motors.h"
+#include "sensorfusion.h"
 #include "controller.h"
+#include "motors.h"
 
 // Controlling constants
 
@@ -56,7 +57,12 @@ void loop()
 	if (time - lastActionTime >= LOOP_DURATION) {
 
 		// testMotors();
-		testSensorsMotors();
+		// testSensorsMotors();
+
+		calculateFusedSensors();
+		float motorForce = calculatePDPD();
+		float motorPower = calculateMotorPower(motorForce);
+		moveMotors(motorPower);
 
 		// This formulation attempts to ensure average loop duration is LOOP_DURATION,
 		// without causing hyperactive behavior if something blocks for a while.

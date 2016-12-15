@@ -3,19 +3,12 @@
 #include <Wire.h>
 
 #include "sensor.h"
+#include "motors.h"
 
 // Controlling constants
 
 const int LOOP_DURATION = 10; //(ms) This is the inverse of the main loop frequency
 const int START_DELAY = 20000;
-
-const byte RIGHT_ENABLE_1	= 4;
-const byte RIGHT_ENABLE_2	= 5;
-const byte RIGHT_POWER		= 6;
-
-const byte LEFT_ENABLE_1  = 7;
-const byte LEFT_ENABLE_2  = 8;
-const byte LEFT_POWER     = 9;
 
 // Global variable setup (things that change each loop)
 long lastActionTime;
@@ -34,21 +27,9 @@ void setup()
 
 	lastActionTime = millis();
 
-	// Initialize pins
-	// Note that the analog sensors don't need initialization
-	pinMode(RIGHT_ENABLE_1, OUTPUT);
-	pinMode(RIGHT_ENABLE_2, OUTPUT);
-	pinMode(RIGHT_POWER,    OUTPUT);
-
-  pinMode(LEFT_ENABLE_1, OUTPUT);
-  pinMode(LEFT_ENABLE_2, OUTPUT);
-  pinMode(LEFT_POWER,    OUTPUT);
-
 	setupSensor();
 
-	// pid.SetMode(AUTOMATIC);
-	// pid.SetSampleTime(LOOP_DURATION);
-	// pid.SetOutputLimits(-1, 1);
+	setupMotors();
 }
 
 void loop()
@@ -60,8 +41,8 @@ void loop()
 
 	loopSensor(); // sets the new value of ypr. This happens in the sensor.h script
 
-  // Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
-  // This is because the accelerometer sensor needs about 12-15 seconds to calibrate
+	// Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
+	// This is because the accelerometer sensor needs about 12-15 seconds to calibrate
 	if(millis() < START_DELAY){
 	    return;
 	}
@@ -79,7 +60,7 @@ void loop()
 }
 
 void testMotors(){
-	driveMotors(testSpeed);
+	moveMotors(testSpeed);
 }
 
 void testSensorsMotors(){
@@ -96,7 +77,7 @@ void testSensorsMotors(){
 
 	Serial.print("power:\t"); Serial.println(power);
 
-	driveMotors(power);
+	moveMotors(power);
 }
 
 void handleIncomingSerial()
@@ -114,30 +95,4 @@ void handleIncomingSerial()
 
 		Serial.println(testSpeed);
 	}
-}
-
-void driveMotors(int power){
-	// Inputs leftPower and rightPower vary from -255...255
-	// Code in this function is based on https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/using-dc-motors
-
-	// For each motor, decide whether to run it FORWARD, BACKWARD, (or RELEASE)
-	// These are ternary operators, returning FORWARD if power > 0 and backward otherwise.
-	if(power > 0){
-	    // Go forward
-	    digitalWrite(RIGHT_ENABLE_1, HIGH);
-	    digitalWrite(RIGHT_ENABLE_2, LOW);
-      digitalWrite(LEFT_ENABLE_1, HIGH);
-      digitalWrite(LEFT_ENABLE_2, LOW);
-	} else {
-		// Go backward
-	    digitalWrite(RIGHT_ENABLE_1, LOW);
-	    digitalWrite(RIGHT_ENABLE_2, HIGH);
-      digitalWrite(LEFT_ENABLE_1, LOW);
-      digitalWrite(LEFT_ENABLE_2, HIGH);
-	}
-	
-	// Set motor speeds
-	analogWrite(RIGHT_POWER, abs(power));
-  analogWrite(LEFT_POWER, abs(power));
-
 }

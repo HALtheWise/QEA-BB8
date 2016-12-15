@@ -16,13 +16,18 @@ float constantmotion(){
 
 float PDPDcontrol(){
 	const float kPtheta = 10;
-	const float kDtheta = 1.5;
-	const float kPx = 0.1;
-	const float kDx = 0.5;
+	const float kDtheta = .442;
+	const float kPx = 0.0884;
+	const float kDx = 0.648;
+
+	const float kEverything = 1.0;
 
 	float xset = zeromotion();
 
 	float forceCommand = kPtheta * (theta - 0) + kDtheta * (thetadot) + kPx * (x - xset) + kDx * (xdot);
+
+	forceCommand *= kEverything;
+	return forceCommand
 }
 
 

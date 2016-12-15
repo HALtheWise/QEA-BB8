@@ -129,10 +129,10 @@ void setupSensor() {
         Serial.print(devStatus);
         Serial.println(F(")"));
     }
-    
+
 }
 
-
+void calculateImuSpeed();
 
 // ================================================================
 // ===                    MAIN PROGRAM LOOP                     ===
@@ -185,6 +185,8 @@ void loopSensor() {
             // Serial.print(ypr[1] * 180/M_PI);
             // Serial.print("\t");
             // Serial.println(ypr[2] * 180/M_PI);
+
+            calculateImuSpeed();
         #endif
 
         // blink LED to indicate activity
@@ -193,6 +195,27 @@ void loopSensor() {
     }
 }
 
+
 float getImuAngle(){
     return ypr[2];
+}
+
+
+float imuSpeed = 0;
+void calculateImuSpeed(){
+    static unsigned long lastReadTime = 0;
+    static float lastReading = 0;
+
+    float val = getImuAngle();
+    unsigned long time = micros();
+
+    imuSpeed = float(val - lastReading) / float(time - lastReadTime) * 1e6;
+
+    lastReading = val;
+    lastReadTime = time;
+}
+
+// Returns speed in degrees/second
+float getIMUSpeed(){
+    return imuSpeed;
 }

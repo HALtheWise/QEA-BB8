@@ -6,8 +6,8 @@ const byte PWM_PIN_B = 10;
 const byte currentpin = A2;
 
 void setupMotors(){
-   pinMode(PWM_PIN_A, OUTPUT);
-   pinMode(PWM_PIN_B, OUTPUT);
+	pinMode(PWM_PIN_A, OUTPUT);
+	pinMode(PWM_PIN_B, OUTPUT);
 
 }
 
@@ -35,7 +35,15 @@ float calculateMotorPower(float desiredForce) {
 	float speed = getEncoderSpeed();
 
 	float power = 0.008905883532020176*speed + 4.723625131842297*(-0.006110361807961874 + torque) + 
-   0.06958126214652462*max(-0.19455445221646883,min(0.19455445221646883,speed));
+		0.06958126214652462*max(-0.19455445221646883,min(0.19455445221646883,speed));
 
-   	return power*255;
+	if (power > 1)
+	{
+		power = 1;
+	}
+	if (power < -1){
+		power = -1;
+	}
+
+	return power*255;
 }

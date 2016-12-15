@@ -18,14 +18,14 @@ float x = 0;
 float xdot = 0;
 
 void calculateFusedSensors(){
-	theta = getImuAngle();
-	thetadot = getImuSpeed();
+	theta = getImuAngle() * (M_PI / 180);
+	thetadot = getImuSpeed() * (M_PI / 180);
 
 	float encoderdist = getEncoderVal() / 12 / (M_2_PI * WHEEL_RADIUS);
 	float encoderdistdot = getEncoderSpeed() / 12 / (M_2_PI * WHEEL_RADIUS);
 
-	float distFromTop = (theta / 360.0) * (M_2_PI * CYLINDER_RADIUS);
+	float distFromTop = (theta / M_2_PI) * (M_2_PI * CYLINDER_RADIUS);
 	x = -encoder + distFromTop;
 
-	xdot = -encoderdot + (thetadot / 360.0) * (M_2_PI * CYLINDER_RADIUS);
+	xdot = -encoderdot + (thetadot / M_2_PI) * (M_2_PI * CYLINDER_RADIUS);
 }

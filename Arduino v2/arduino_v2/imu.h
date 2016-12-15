@@ -23,7 +23,6 @@ MPU6050 mpu;
 
 
 #define INTERRUPT_PIN 2  // use pin 2 on Arduino Uno & most boards
-#define LED_PIN 13 // (Arduino is 13, Teensy is 11, Teensy++ is 6)
 bool blinkState = false;
 
 // MPU control/status vars
@@ -130,9 +129,7 @@ void setupSensor() {
         Serial.print(devStatus);
         Serial.println(F(")"));
     }
-
-    // configure LED for output
-    pinMode(LED_PIN, OUTPUT);
+    
 }
 
 
@@ -191,7 +188,11 @@ void loopSensor() {
         #endif
 
         // blink LED to indicate activity
-        blinkState = !blinkState;
-        digitalWrite(LED_PIN, blinkState);
+        // blinkState = !blinkState;
+        // digitalWrite(LED_PIN, blinkState);
     }
+}
+
+float getImuAngle(){
+    return ypr[2];
 }

@@ -4,7 +4,8 @@
 
 int testSpeed = 0;
 
-#include "sensor.h"
+#include "imu.h"
+#include "encoders.h"
 #include "motors.h"
 #include "controller.h"
 

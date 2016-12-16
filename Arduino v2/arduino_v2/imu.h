@@ -97,11 +97,22 @@ void setupSensor() {
     Serial.println(F("Initializing DMP..."));
     devStatus = mpu.dmpInitialize();
 
+
+    /* Offsets can be found by running MPU6050_calibration.ino
+
+    Your offsets:   -483    -1185   1009    211 -11 -6
+
+    Data is printed as: acelX acelY acelZ giroX giroY giroZ
+    
+    */
+
     // supply your own gyro offsets here, scaled for min sensitivity
-    mpu.setXGyroOffset(-830);
-    mpu.setYGyroOffset(50);
-    mpu.setZGyroOffset(20);
-    mpu.setZAccelOffset(1788); // 1688 factory default for my test chip
+    mpu.setXAccelOffset(-483);
+    mpu.setYAccelOffset(-1185);
+    mpu.setZAccelOffset(1009);
+    mpu.setXGyroOffset(211);
+    mpu.setYGyroOffset(-11);
+    mpu.setZGyroOffset(-6);
 
     // make sure it worked (returns 0 if so)
     if (devStatus == 0) {

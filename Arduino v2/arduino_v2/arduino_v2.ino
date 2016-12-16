@@ -67,7 +67,32 @@ void loop()
 		// This formulation attempts to ensure average loop duration is LOOP_DURATION,
 		// without causing hyperactive behavior if something blocks for a while.
 		lastActionTime = lastActionTime + LOOP_DURATION*int((time-lastActionTime) / LOOP_DURATION);
+
+		printDebugInformation(motorForce, motorPower);
 	}
+}
+
+void printDebugInformation(float force, float power) {
+	static int runcount = 0;
+
+	if(runcount == 0){
+		Serial.println("theta, thetadot, encoder, encoderdot, motorforce, motorpower");
+	}
+
+	Serial.print(theta);
+	Serial.print(", \t");
+	Serial.print(thetadot);
+	Serial.print(", \t");
+	Serial.print(getEncoderVal());
+	Serial.print(", \t");
+	Serial.print(getEncoderSpeed());
+	Serial.print(", \t");
+	Serial.print(force);
+	Serial.print(", \t");
+	Serial.print(power);
+	Serial.println();
+
+	runcount++;
 }
 
 

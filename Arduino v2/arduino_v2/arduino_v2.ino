@@ -13,7 +13,7 @@ int testSpeed = 0;
 // Controlling constants
 
 const int LOOP_DURATION = 10; //(ms) This is the inverse of the main loop frequency
-const int START_DELAY = 2000;
+const int START_DELAY = 5000;
 
 // Global variable setup (things that change each loop)
 long lastActionTime;
@@ -47,7 +47,7 @@ void loop()
 	loopSensor(); // sets the new value of ypr. This happens in the sensor.h script
 	loopEncoder();
 
-	failsafes();
+	//failsafes();
 
 	// Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
 	// This is because the accelerometer sensor needs about 12-15 seconds to calibrate
@@ -76,7 +76,7 @@ void loop()
 
 void failsafes(){
 	float encoderSpeed = getEncoderSpeed();
-	if(abs(encoderSpeed) > 120){
+	if(abs(encoderSpeed) > 200){
 		moveMotors(0);
 		Serial.println("Speed failsafe activated");
 
@@ -84,7 +84,7 @@ void failsafes(){
 	}
 }
 
-const int DEBUG_DURATION = 500; //ms
+const int DEBUG_DURATION = 200; //ms
 
 void printDebugInformation(float force, float power) {
 	static int runcount = 0;

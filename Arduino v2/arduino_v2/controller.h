@@ -30,6 +30,22 @@ float PDPDcontrol(){
 	return forceCommand;
 }
 
+float PDcontrol(){
+	const float kPtheta = 10;
+	const float kDtheta = .7;
+	const float kPx = 0;
+	const float kDx = 0;
+
+	const float kEverything = 3.0;
+
+	float xset = zeromotion();
+
+	float forceCommand = kPtheta * (theta - 0) + kDtheta * (thetadot) + kPx * (x - xset) + kDx * (xdot);
+
+	forceCommand *= kEverything;
+	return forceCommand;
+}
+
 float Constantcontrol(){
 	return 2.0; // Newtons
 }

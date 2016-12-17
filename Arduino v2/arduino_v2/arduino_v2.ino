@@ -47,6 +47,8 @@ void loop()
 	loopSensor(); // sets the new value of ypr. This happens in the sensor.h script
 	loopEncoder();
 
+	failsafes();
+
 	// Wait until arduino time is greater than (20) seconds before we start running the rest of the main loop.
 	// This is because the accelerometer sensor needs about 12-15 seconds to calibrate
 	if(millis() < START_DELAY){
@@ -69,6 +71,16 @@ void loop()
 		lastActionTime = lastActionTime + LOOP_DURATION*int((time-lastActionTime) / LOOP_DURATION);
 
 		printDebugInformation(motorForce, motorPower);
+	}
+}
+
+void failsafes(){
+	float encoderSpeed = getEncoderSpeed();
+	if(abs(encoderSpeed) > 120){
+		moveMotors(0);
+		Serial.println("Speed failsafe activated");
+
+		while(true){}
 	}
 }
 

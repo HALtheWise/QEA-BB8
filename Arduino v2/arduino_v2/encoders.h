@@ -43,7 +43,7 @@ void loopEncoder(){
 	{
 		unsigned long time = micros();
 		lastEncoderDeltaTime = time - lastEncoderChangeTime;
-		lastEncoderDeltaPosition = lastEncoderPosition - val;
+		lastEncoderDeltaPosition = val - lastEncoderPosition;
 
 		lastEncoderChangeTime = time;
 		lastEncoderPosition = val;

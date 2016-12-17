@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-const byte PWM_PIN_A = 9;
-const byte PWM_PIN_B = 10;
+const byte PWM_PIN_A = 8;
+const byte PWM_PIN_B = 9;
 
 const byte currentpin = A2;
 

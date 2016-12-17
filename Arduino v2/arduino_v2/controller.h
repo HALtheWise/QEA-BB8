@@ -27,7 +27,7 @@ float PDPDcontrol(){
 	float forceCommand = kPtheta * (theta - 0) + kDtheta * (thetadot) + kPx * (x - xset) + kDx * (xdot);
 
 	forceCommand *= kEverything;
-	return forceCommand
+	return forceCommand;
 }
 
 float Constantcontrol(){

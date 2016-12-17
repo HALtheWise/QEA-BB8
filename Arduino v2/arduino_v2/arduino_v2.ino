@@ -13,7 +13,7 @@ int testSpeed = 0;
 // Controlling constants
 
 const int LOOP_DURATION = 10; //(ms) This is the inverse of the main loop frequency
-const int START_DELAY = 20000;
+const int START_DELAY = 2000;
 
 // Global variable setup (things that change each loop)
 long lastActionTime;
@@ -72,25 +72,34 @@ void loop()
 	}
 }
 
+const int DEBUG_DURATION = 500; //ms
+
 void printDebugInformation(float force, float power) {
 	static int runcount = 0;
 
 	if(runcount == 0){
-		Serial.println("theta, thetadot, encoder, encoderdot, motorforce, motorpower");
+		Serial.println("theta, thetadot, x, xdot, encoder, encoderdot, motorforce, motorpower");
 	}
 
-	Serial.print(theta);
-	Serial.print(", \t");
-	Serial.print(thetadot);
-	Serial.print(", \t");
-	Serial.print(getEncoderVal());
-	Serial.print(", \t");
-	Serial.print(getEncoderSpeed());
-	Serial.print(", \t");
-	Serial.print(force);
-	Serial.print(", \t");
-	Serial.print(power);
-	Serial.println();
+	if (runcount % (DEBUG_DURATION/LOOP_DURATION) == 0){
+		Serial.print(theta);
+		Serial.print(", \t");
+		Serial.print(thetadot);
+		Serial.print(", \t");
+		Serial.print(x);
+		Serial.print(", \t");
+		Serial.print(xdot);
+		Serial.print(", \t");
+		Serial.print(getEncoderVal());
+		Serial.print(", \t");
+		Serial.print(getEncoderSpeed());
+		Serial.print(", \t");
+		Serial.print(force);
+		Serial.print(", \t");
+		Serial.print(power);
+		Serial.println();
+
+	}
 
 	runcount++;
 }

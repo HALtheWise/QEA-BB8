@@ -11,7 +11,7 @@
 //   Best Performance: both pins have interrupt capability
 //   Good Performance: only the first pin has interrupt capability
 //   Low Performance:  neither pin has interrupt capability
-Encoder encoder1(5, 6);
+Encoder encoder1(18, 19);
 //   avoid using pins with LEDs attached
 
 long lastEncoderPosition = 0;
@@ -19,7 +19,7 @@ long lastEncoderDeltaPosition = 0;
 unsigned long lastEncoderChangeTime = micros();
 unsigned long lastEncoderDeltaTime = 1; // microseconds
 
-const int ENCODER_TIMEOUT = 500*1000; // microseconds, speed is zero if no reading in this time.
+const unsigned long ENCODER_TIMEOUT = 500*long(1000); // microseconds, speed is zero if no reading in this time.
 
 // Returns position in ticks
 float getEncoderVal(){

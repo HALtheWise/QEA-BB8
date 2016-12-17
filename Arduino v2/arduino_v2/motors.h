@@ -32,7 +32,7 @@ void moveMotors(int speed){
 float calculateMotorPower(float desiredForce) {
 	float torque = desiredForce * WHEEL_RADIUS;
 
-	float speed = -getEncoderSpeed();
+	float speed = -getEncoderSpeed() / 12;
 
 	// Constrain speed to be in reasonable bounds
 	const float speedlimit = 4*12;

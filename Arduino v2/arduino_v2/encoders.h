@@ -16,7 +16,7 @@ Encoder encoder1(18, 19);
 
 long lastEncoderPosition = 0;
 long lastEncoderDeltaPosition = 0;
-unsigned long lastEncoderChangeTime = micros();
+unsigned long lastEncoderChangeTime = 0;
 unsigned long lastEncoderDeltaTime = 1; // microseconds
 
 const unsigned long ENCODER_TIMEOUT = 500*long(1000); // microseconds, speed is zero if no reading in this time.
@@ -37,16 +37,21 @@ float getEncoderSpeed(){
 	return (float(lastEncoderDeltaPosition) / lastEncoderDeltaTime) * 1e6;
 }
 
+const long encoderSmoothingTime = 100*long(1000); //microseconds
+
 void loopEncoder(){
 	long val = encoder1.read();
 	if (val != lastEncoderPosition)
 	{
 		unsigned long time = micros();
-		lastEncoderDeltaTime = time - lastEncoderChangeTime;
-		lastEncoderDeltaPosition = val - lastEncoderPosition;
+		if (time - lastEncoderChangeTime >= encoderSmoothingTime)
+		{
+			lastEncoderDeltaTime = time - lastEncoderChangeTime;
+			lastEncoderDeltaPosition = val - lastEncoderPosition;
 
-		lastEncoderChangeTime = time;
-		lastEncoderPosition = val;
+			lastEncoderChangeTime = time;
+			lastEncoderPosition = val;
+		}
 	}
 }
 

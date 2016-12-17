@@ -211,6 +211,7 @@ float getImuAngle(){
     return ypr[2];
 }
 
+const long imuSmoothingTime = 100 * long(1000); // IMU smoothing time, microseconds
 
 float imuSpeed = 0;
 void calculateImuSpeed(){
@@ -220,10 +221,12 @@ void calculateImuSpeed(){
     float val = getImuAngle();
     unsigned long time = micros();
 
-    imuSpeed = float(val - lastReading) / float(time - lastReadTime) * 1e6;
+    if (time - lastReadTime >= imuSmoothingTime){ 
+        imuSpeed = float(val - lastReading) / float(time - lastReadTime) * 1e6;
 
-    lastReading = val;
-    lastReadTime = time;
+        lastReading = val;
+        lastReadTime = time;
+    }
 }
 
 // Returns speed in degrees/second

@@ -36,7 +36,7 @@ float PDcontrol(){
 	const float kPx = 0;
 	const float kDx = 0;
 
-	const float kEverything = 3.14; // Not pi
+	const float kEverything = 3.14 / 5; // Not pi
 
 	float xset = zeromotion();
 

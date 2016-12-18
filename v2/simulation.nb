@@ -699,19 +699,16 @@ Cell[BoxData[
           RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
          RowBox[{"1.4", " ", 
           RowBox[{
-           RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}]}], 
-        RowBox[{"(*", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"+", "0.0884"}], " ", 
-           RowBox[{"(", 
-            RowBox[{
-             RowBox[{"x0", "[", "t", "]"}], "-", 
-             RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
-          RowBox[{"0.648", " ", 
+           RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "+", 
+         RowBox[{"0.0884", " ", 
+          RowBox[{"(", 
            RowBox[{
-            RowBox[{"x0", "'"}], "[", "t", "]"}]}]}], "*)"}], ")"}]}]}]}], 
-    ";", "\[IndentingNewLine]", 
+            RowBox[{"x0", "[", "t", "]"}], "-", 
+            RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
+         RowBox[{"0.648", " ", 
+          RowBox[{
+           RowBox[{"x0", "'"}], "[", "t", "]"}]}]}], ")"}]}]}]}], ";", 
+    "\[IndentingNewLine]", 
     RowBox[{"sol", "=", 
      RowBox[{"Quiet", "@", 
       RowBox[{"NDSolveValue", "[", 
@@ -737,11 +734,11 @@ Cell[BoxData[
     "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`b$$], 0.5, 5}}, Typeset`size$$ = {497.5, {99., 34.}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`b$61007$$ = 0}, 
+    True, $CellContext`b$64825$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`b$$ = 0.5}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`b$$, $CellContext`b$61007$$, 0]}, 
+        Hold[$CellContext`b$$, $CellContext`b$64825$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -749,9 +746,11 @@ Cell[BoxData[
          Typeset`skipInitDone$$}, 
       "Body" :> ($CellContext`ceq = $CellContext`f2[$CellContext`t] == 
          3.14 (10 $CellContext`\[Theta][$CellContext`t] + 
-           1.4 Derivative[
-             1][$CellContext`\[Theta]][$CellContext`t]); $CellContext`sol = 
-        Quiet[
+           1.4 Derivative[1][$CellContext`\[Theta]][$CellContext`t] + 
+           0.0884 ($CellContext`x0[$CellContext`t] - \
+$CellContext`goal[$CellContext`t]) + 
+           0.648 Derivative[
+             1][$CellContext`x0][$CellContext`t]); $CellContext`sol = Quiet[
           NDSolveValue[
            
            ReplaceAll[{$CellContext`eq, $CellContext`initial, \
@@ -797,7 +796,7 @@ Cell[BoxData[
      Map[#[$CellContext`t]& , $CellContext`sol]], {$CellContext`t, 0, 5}, 
     PlotRange -> All, PlotLegends -> {"Position x", "Angle \[Theta]"}], 
    StandardForm],
-  ImageSizeCache->{587., {134., 140.}}]], "Output"]
+  ImageSizeCache->{587., {133., 141.}}]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{

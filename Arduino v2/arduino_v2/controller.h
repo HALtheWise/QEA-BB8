@@ -15,10 +15,10 @@ float constantmotion(){
 }
 
 float PDPDcontrol(){
-	const float kPtheta = 10;
-	const float kDtheta = 1.4;
-	const float kPx = 0.16;
-	const float kDx = 0.838;
+	const float kPtheta = 15;
+	const float kDtheta = 3.16;
+	const float kPx = 0.386;
+	const float kDx = 2.96;
 
 	const float kEverything = 3.14; // Not pi
 

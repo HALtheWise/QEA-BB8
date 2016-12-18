@@ -51,18 +51,17 @@ float Constantcontrol(){
 }
 
 float BangBangcontrol(){
-	float theta = ypr[2];
 
 	int force = 0;
 
 	if (theta > 5 * M_PI/180){
-		force = 4.0;
+		force = 2.0;
 	}
 	if (theta < -5 * M_PI/180){
-		force = -4.0;
+		force = -2.0;
 	}
 
-	Serial.print("force:\t"); Serial.println(force);
+	// Serial.print("force:\t"); Serial.println(force);
 
 	return force;
 }

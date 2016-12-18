@@ -35,7 +35,7 @@ float calculateMotorPower(float desiredForce) {
 	float speed = -getEncoderSpeed() / 12;
 
 	// Constrain speed to be in reasonable bounds
-	const float speedlimit = 4*12;
+	const float speedlimit = 10;
 	if (speed > speedlimit)
 		speed = speedlimit;
 	if (speed < -speedlimit)
@@ -44,13 +44,15 @@ float calculateMotorPower(float desiredForce) {
 	float power = 0.008905883532020176*speed + 4.723625131842297*(-0.006110361807961874 + torque) + 
 		0.06958126214652462*max(-0.19455445221646883,min(0.19455445221646883,speed));
 
-	if (power > 1)
+	const float maxpower = 180.0/255;
+
+	if (power > maxpower)
 	{
-		power = 1;
+		power = maxpower;
 	}
-	if (power < -1)
+	if (power < -maxpower)
 	{
-		power = -1;
+		power = -maxpower;
 	}
 
 	return power*255;

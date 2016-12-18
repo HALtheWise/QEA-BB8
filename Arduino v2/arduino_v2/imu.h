@@ -211,7 +211,7 @@ float getImuAngle(){
     return ypr[2];
 }
 
-const long imuSmoothingTime = 100 * long(1000); // IMU smoothing time, microseconds
+const long imuSmoothingTime = 50 * long(1000); // IMU smoothing time, microseconds
 
 float imuSpeed = 0;
 void calculateImuSpeed(){

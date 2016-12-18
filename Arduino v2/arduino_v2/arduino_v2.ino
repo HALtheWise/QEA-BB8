@@ -62,7 +62,7 @@ void loop()
 		// testSensorsMotors();
 
 		calculateFusedSensors();
-		float motorForce = PDcontrol();
+		float motorForce = BangBangcontrol();
 		float motorPower = calculateMotorPower(motorForce);
 		moveMotors(motorPower);
 
@@ -84,7 +84,7 @@ void failsafes(){
 	}
 }
 
-const int DEBUG_DURATION = 200; //ms
+const int DEBUG_DURATION = 100; //ms
 
 void printDebugInformation(float force, float power) {
 	static int runcount = 0;

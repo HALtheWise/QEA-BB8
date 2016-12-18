@@ -17,8 +17,8 @@ float constantmotion(){
 float PDPDcontrol(){
 	const float kPtheta = 10;
 	const float kDtheta = 1.4;
-	const float kPx = 0.0884;
-	const float kDx = 0.648;
+	const float kPx = 0.16;
+	const float kDx = 0.838;
 
 	const float kEverything = 3.14; // Not pi
 
@@ -36,7 +36,7 @@ float PDcontrol(){
 	const float kPx = 0;
 	const float kDx = 0;
 
-	const float kEverything = 3.14 / 5; // Not pi
+	const float kEverything = 3.14; // Not pi
 
 	float xset = zeromotion();
 

@@ -211,7 +211,7 @@ Cell[BoxData[
      RowBox[{"x0", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
     RowBox[{
      RowBox[{
-      RowBox[{"x0", "'"}], "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+      RowBox[{"x0", "'"}], "[", "0", "]"}], "\[Equal]", ".1"}], ",", 
     RowBox[{
      RowBox[{"\[Theta]", "[", "0", "]"}], "\[Equal]", ".2"}], ",", 
     RowBox[{
@@ -227,7 +227,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{
      SuperscriptBox["x0", "\[Prime]",
-      MultilineFunction->None], "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+      MultilineFunction->None], "[", "0", "]"}], "\[Equal]", "0.1`"}], ",", 
    RowBox[{
     RowBox[{"\[Theta]", "[", "0", "]"}], "\[Equal]", "0.2`"}], ",", 
    RowBox[{
@@ -695,17 +695,18 @@ Cell[BoxData[
       RowBox[{"3.14", 
        RowBox[{"(", 
         RowBox[{
-         RowBox[{"10", " ", 
+         RowBox[{"15", " ", 
           RowBox[{"\[Theta]", "[", "t", "]"}]}], "+", 
-         RowBox[{"1.4", " ", 
+         RowBox[{"3.16", " ", 
           RowBox[{
            RowBox[{"\[Theta]", "'"}], "[", "t", "]"}]}], "+", 
-         RowBox[{"0.0884", " ", 
+         RowBox[{"b", " ", 
           RowBox[{"(", 
-           RowBox[{
-            RowBox[{"x0", "[", "t", "]"}], "-", 
-            RowBox[{"goal", "[", "t", "]"}]}], ")"}]}], "+", 
-         RowBox[{"0.648", " ", 
+           RowBox[{"x0", "[", "t", "]"}], 
+           RowBox[{"(*", 
+            RowBox[{"-", 
+             RowBox[{"goal", "[", "t", "]"}]}], "*)"}], ")"}]}], "+", 
+         RowBox[{"c", " ", 
           RowBox[{
            RowBox[{"x0", "'"}], "[", "t", "]"}]}]}], ")"}]}]}]}], ";", 
     "\[IndentingNewLine]", 
@@ -720,45 +721,50 @@ Cell[BoxData[
         RowBox[{"{", 
          RowBox[{"x0", ",", "\[Theta]"}], "}"}], ",", 
         RowBox[{"{", 
-         RowBox[{"t", ",", "0", ",", "5"}], "}"}], ",", 
+         RowBox[{"t", ",", "0", ",", "30"}], "}"}], ",", 
         RowBox[{"MaxSteps", "\[Rule]", "Infinity"}]}], "]"}]}]}]}], ",", 
    RowBox[{"{", 
-    RowBox[{"b", ",", ".5", ",", "5"}], "}"}]}], "]"}]], "Input"],
+    RowBox[{"b", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "0", ",", "5"}], "}"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`b$$ = 0.5, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`b$$], 0.5, 5}}, Typeset`size$$ = {497.5, {99., 34.}}, 
+   DynamicModuleBox[{$CellContext`b$$ = 0, $CellContext`c$$ = 0, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`b$$], 0, 2}, {
+      Hold[$CellContext`c$$], 0, 5}}, Typeset`size$$ = {506.5, {99., 34.}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`b$64825$$ = 0}, 
+    True, $CellContext`b$190257$$ = 0, $CellContext`c$190258$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`b$$ = 0.5}, 
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0, $CellContext`c$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`b$$, $CellContext`b$64825$$, 0]}, 
+        Hold[$CellContext`b$$, $CellContext`b$190257$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$190258$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, 
       "Body" :> ($CellContext`ceq = $CellContext`f2[$CellContext`t] == 
-         3.14 (10 $CellContext`\[Theta][$CellContext`t] + 
-           1.4 Derivative[1][$CellContext`\[Theta]][$CellContext`t] + 
-           0.0884 ($CellContext`x0[$CellContext`t] - \
-$CellContext`goal[$CellContext`t]) + 
-           0.648 Derivative[
-             1][$CellContext`x0][$CellContext`t]); $CellContext`sol = Quiet[
+         3.14 (15 $CellContext`\[Theta][$CellContext`t] + 
+           3.16 Derivative[
+             1][$CellContext`\[Theta]][$CellContext`t] + $CellContext`b$$ \
+$CellContext`x0[$CellContext`t] + $CellContext`c$$ 
+            Derivative[1][$CellContext`x0][$CellContext`t]); $CellContext`sol = 
+        Quiet[
           NDSolveValue[
            
            ReplaceAll[{$CellContext`eq, $CellContext`initial, \
 $CellContext`ceq}, $CellContext`params], {$CellContext`x0, $CellContext`\
-\[Theta]}, {$CellContext`t, 0, 5}, MaxSteps -> Infinity]]), 
-      "Specifications" :> {{$CellContext`b$$, 0.5, 5}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{555., {114., 122.}},
+\[Theta]}, {$CellContext`t, 0, 30}, MaxSteps -> Infinity]]), 
+      "Specifications" :> {{$CellContext`b$$, 0, 2}, {$CellContext`c$$, 0, 
+         5}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {127., 135.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -782,7 +788,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"#", "[", "t", "]"}], "&"}], "/@", "sol"}], "]"}], ",", 
     RowBox[{"{", 
-     RowBox[{"t", ",", "0", ",", "5"}], "}"}], ",", 
+     RowBox[{"t", ",", "0", ",", "30"}], "}"}], ",", 
     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
     RowBox[{"PlotLegends", "\[Rule]", 
      RowBox[{"{", 
@@ -793,10 +799,10 @@ Cell[BoxData[
  DynamicBox[ToBoxes[
    Plot[
     Evaluate[
-     Map[#[$CellContext`t]& , $CellContext`sol]], {$CellContext`t, 0, 5}, 
+     Map[#[$CellContext`t]& , $CellContext`sol]], {$CellContext`t, 0, 30}, 
     PlotRange -> All, PlotLegends -> {"Position x", "Angle \[Theta]"}], 
    StandardForm],
-  ImageSizeCache->{587., {133., 141.}}]], "Output"]
+  ImageSizeCache->{587., {127., 135.}}]], "Output"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4868,6 +4874,7 @@ Cell[BoxData[
            {RGBColor[0.881, 0.611, 0.142], RectangleBox[{0, -1}, {2, 1}]}},
           AspectRatio->1,
           Frame->True,
+          
           FrameStyle->RGBColor[
            0.5873333333333334, 0.4073333333333333, 0.09466666666666666],
           FrameTicks->None,

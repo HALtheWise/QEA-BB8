@@ -726,25 +726,25 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"b", ",", "0", ",", "2"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"c", ",", "0", ",", "5"}], "}"}]}], "]"}]], "Input"],
+    RowBox[{"c", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`b$$ = 0, $CellContext`c$$ = 0, 
+   DynamicModuleBox[{$CellContext`b$$ = 1.716, $CellContext`c$$ = 6.19, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
       Hold[$CellContext`b$$], 0, 2}, {
-      Hold[$CellContext`c$$], 0, 5}}, Typeset`size$$ = {506.5, {99., 34.}}, 
+      Hold[$CellContext`c$$], 0, 10}}, Typeset`size$$ = {506.5, {99., 34.}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`b$190257$$ = 0, $CellContext`c$190258$$ = 0}, 
+    True, $CellContext`b$193262$$ = 0, $CellContext`c$193263$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`b$$ = 0, $CellContext`c$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`b$$, $CellContext`b$190257$$, 0], 
-        Hold[$CellContext`c$$, $CellContext`c$190258$$, 0]}, 
+        Hold[$CellContext`b$$, $CellContext`b$193262$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$193263$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -763,8 +763,8 @@ $CellContext`x0[$CellContext`t] + $CellContext`c$$
 $CellContext`ceq}, $CellContext`params], {$CellContext`x0, $CellContext`\
 \[Theta]}, {$CellContext`t, 0, 30}, MaxSteps -> Infinity]]), 
       "Specifications" :> {{$CellContext`b$$, 0, 2}, {$CellContext`c$$, 0, 
-         5}}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{564., {127., 135.}},
+         10}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {155., 163.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},

@@ -5,7 +5,7 @@ float zeromotion(){
 }
 
 float constantmotion(){
-	const int startTime = 3000;
+	const long startTime = 10000;
 	const float speed = 1/1000.0;
 	if (millis() < startTime)
 	{
@@ -17,8 +17,8 @@ float constantmotion(){
 float PDPDcontrol(){
 	const float kPtheta = 15;
 	const float kDtheta = 3.16;
-	const float kPx = 0.386;
-	const float kDx = 2.96;
+	const float kPx = 1.716;
+	const float kDx = 6.19;
 
 	const float kEverything = 3.14; // Not pi
 
